@@ -7,18 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130342C34B6A400551E2F /* StatisticView.swift */; };
+		9B7130372C34B9D700551E2F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130362C34B9D700551E2F /* SettingView.swift */; };
+		9B87FF572C3580C900E72743 /* TrainingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87FF562C3580C900E72743 /* TrainingCellModel.swift */; };
 		9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */; };
-		9B88B9292C32C1FE005931E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9282C32C1FE005931E3 /* ContentView.swift */; };
+		9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */; };
 		9B88B92B2C32C1FF005931E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B88B92A2C32C1FF005931E3 /* Assets.xcassets */; };
 		9B88B92E2C32C1FF005931E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B88B92D2C32C1FF005931E3 /* Preview Assets.xcassets */; };
+		9BA9DA922C342239004158EF /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9DA912C342239004158EF /* SFProText-Bold.ttf */; };
+		9BA9DA942C34224C004158EF /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9DA932C34224C004158EF /* SFProText-Regular.ttf */; };
+		9BA9DA982C342320004158EF /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA972C342320004158EF /* Digest.swift */; };
+		9BA9DA9B2C3423BC004158EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9DA992C3423BC004158EF /* Localizable.strings */; };
+		9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA9D2C342426004158EF /* PaletteApp.swift */; };
+		9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA9F2C3425FC004158EF /* OurFont.swift */; };
+		9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA32C3428E1004158EF /* Color+HEX.swift */; };
+		9BA9DAA62C342BF5004158EF /* ListImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA52C342BF5004158EF /* ListImages.swift */; };
+		9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B7130342C34B6A400551E2F /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		9B7130362C34B9D700551E2F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9B87FF562C3580C900E72743 /* TrainingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellModel.swift; sourceTree = "<group>"; };
 		9B88B9232C32C1FE005931E3 /* MyArcheryJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyArcheryJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArcheryJournalApp.swift; sourceTree = "<group>"; };
-		9B88B9282C32C1FE005931E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingView.swift; sourceTree = "<group>"; };
 		9B88B92A2C32C1FF005931E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B88B92D2C32C1FF005931E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BA9DA912C342239004158EF /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
+		9BA9DA932C34224C004158EF /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
+		9BA9DA972C342320004158EF /* Digest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
+		9BA9DA9A2C3423BC004158EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9BA9DA9D2C342426004158EF /* PaletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteApp.swift; sourceTree = "<group>"; };
+		9BA9DA9F2C3425FC004158EF /* OurFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurFont.swift; sourceTree = "<group>"; };
+		9BA9DAA32C3428E1004158EF /* Color+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+HEX.swift"; sourceTree = "<group>"; };
+		9BA9DAA52C342BF5004158EF /* ListImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListImages.swift; sourceTree = "<group>"; };
+		9BA9DAA72C342F99004158EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +57,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B85285B2C3526430006FB34 /* ServiceTraining */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceTraining;
+			sourceTree = "<group>";
+		};
 		9B88B91A2C32C1FE005931E3 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +83,15 @@
 		9B88B9252C32C1FE005931E3 /* MyArcheryJournal */ = {
 			isa = PBXGroup;
 			children = (
+				9BA9DAA72C342F99004158EF /* Info.plist */,
+				9BA9DAA12C3428BE004158EF /* Extention */,
+				9BA9DA8E2C341FA2004158EF /* SupportingFiles */,
+				9BA9DA952C3422F4004158EF /* Application */,
+				9B85285B2C3526430006FB34 /* ServiceTraining */,
+				9BA9DA8D2C341775004158EF /* Controller */,
+				9BA9DA8C2C341770004158EF /* View */,
+				9BA9DA8B2C341765004158EF /* Model */,
 				9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */,
-				9B88B9282C32C1FE005931E3 /* ContentView.swift */,
 				9B88B92A2C32C1FF005931E3 /* Assets.xcassets */,
 				9B88B92C2C32C1FF005931E3 /* Preview Content */,
 			);
@@ -65,6 +104,101 @@
 				9B88B92D2C32C1FF005931E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BA9DA8B2C341765004158EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B87FF562C3580C900E72743 /* TrainingCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BA9DA8C2C341770004158EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */,
+				9B7130342C34B6A400551E2F /* StatisticView.swift */,
+				9B7130362C34B9D700551E2F /* SettingView.swift */,
+				9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BA9DA8D2C341775004158EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BA9DA8E2C341FA2004158EF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DA8F2C341FD1004158EF /* Font */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9BA9DA8F2C341FD1004158EF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DA902C341FF0004158EF /* SF_PRO */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		9BA9DA902C341FF0004158EF /* SF_PRO */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DA932C34224C004158EF /* SFProText-Regular.ttf */,
+				9BA9DA912C342239004158EF /* SFProText-Bold.ttf */,
+			);
+			path = SF_PRO;
+			sourceTree = "<group>";
+		};
+		9BA9DA952C3422F4004158EF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DA9C2C34240B004158EF /* OurSetting */,
+				9BA9DA962C3422FD004158EF /* Localization */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9BA9DA962C3422FD004158EF /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DA972C342320004158EF /* Digest.swift */,
+				9BA9DA992C3423BC004158EF /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		9BA9DA9C2C34240B004158EF /* OurSetting */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DA9D2C342426004158EF /* PaletteApp.swift */,
+				9BA9DA9F2C3425FC004158EF /* OurFont.swift */,
+				9BA9DAA52C342BF5004158EF /* ListImages.swift */,
+			);
+			path = OurSetting;
+			sourceTree = "<group>";
+		};
+		9BA9DAA12C3428BE004158EF /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DAA22C3428CA004158EF /* Color */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		9BA9DAA22C3428CA004158EF /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9DAA32C3428E1004158EF /* Color+HEX.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +259,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BA9DA9B2C3423BC004158EF /* Localizable.strings in Resources */,
 				9B88B92E2C32C1FF005931E3 /* Preview Assets.xcassets in Resources */,
+				9BA9DA922C342239004158EF /* SFProText-Bold.ttf in Resources */,
 				9B88B92B2C32C1FF005931E3 /* Assets.xcassets in Resources */,
+				9BA9DA942C34224C004158EF /* SFProText-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +274,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B88B9292C32C1FE005931E3 /* ContentView.swift in Sources */,
+				9BA9DAA62C342BF5004158EF /* ListImages.swift in Sources */,
+				9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */,
+				9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */,
+				9B7130372C34B9D700551E2F /* SettingView.swift in Sources */,
+				9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */,
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
+				9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */,
+				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
+				9BA9DA982C342320004158EF /* Digest.swift in Sources */,
+				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
+				9B87FF572C3580C900E72743 /* TrainingCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9BA9DA992C3423BC004158EF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BA9DA9A2C3423BC004158EF /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9B88B92F2C32C1FF005931E3 /* Debug */ = {
@@ -275,6 +432,7 @@
 				DEVELOPMENT_TEAM = GX86CHN34S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyArcheryJournal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +462,7 @@
 				DEVELOPMENT_TEAM = GX86CHN34S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyArcheryJournal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

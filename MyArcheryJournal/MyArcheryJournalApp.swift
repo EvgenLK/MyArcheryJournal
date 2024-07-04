@@ -11,7 +11,7 @@ import SwiftUI
 struct MyArcheryJournalApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListTrainingView()
         }
     }
 }
