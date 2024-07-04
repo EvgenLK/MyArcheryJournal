@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  MyArcheryJournal
+
+  Created by Evgenii Kutasov on 02.07.2024.
+  
+*/
+
+// MARK: - System
+"System.error" = "Ошибка";
+"System.close" = "Закрыть";
+// MARK: - ScreenMain
+"ScreenMain.Mytraining" = "Мои Тренировки";
+"ScreenMain.training" = "Тренировки";
+"ScreenMain.statistics" = "Статистика";
+"ScreenMain.setting" = "Настройки";
+"ScreenMain.emptyList" = "Список тренировок пуст";

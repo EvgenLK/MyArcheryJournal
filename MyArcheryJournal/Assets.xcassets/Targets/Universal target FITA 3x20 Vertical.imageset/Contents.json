@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Универсальная мишень FITA 3x20см Vertical.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
