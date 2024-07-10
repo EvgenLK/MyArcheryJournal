@@ -24,4 +24,9 @@ enum ListImages {
         static let recurceFita3x20Ver = Image("Recurce FITA 3x20 Vertical")
         static let universalFita3x20Ver = Image("Universal target FITA 3x20 Vertical")
     }
+    enum IconButton {
+        static let calculator = Image("calculator")
+        static let target_mark = Image("target_mark")
+
+    }
 }

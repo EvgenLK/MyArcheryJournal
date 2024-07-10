@@ -55,65 +55,63 @@ struct ListTrainingView: View {
     }
     
     var body: some View {
-        TabView {
-            NavigationView {
-                ZStack {
-                    Color(PaletteApp.backGroundView)
-                        .edgesIgnoringSafeArea(.all)
-                        .navigationTitle(Tx.ListTraining.myTraining)
-                    VStack {
-                        if emptyListData {
-                            ListImages.Other.emptyTraining
-                                .padding()
-                            Text(Tx.ListTraining.emptyList)
-                                .foregroundColor(PaletteApp.gray)
-                                .font(OurFonts.fontSFProTextRegular17)
-                        } else {
-                            
-                            List {
-                                Section(header: Text("06.24")) {
-                                    ForEach(mokData) { item in
-                                        TrainingCellView(cellDataTrainig: item)
+        VStack {
+            TabView {
+                NavigationStack {
+                    ZStack {
+                        Color(PaletteApp.backGroundView)
+                        VStack {
+                            if emptyListData {
+                                ListImages.Other.emptyTraining
+                                    .padding()
+                                Text(Tx.ListTraining.emptyList)
+                                    .foregroundColor(PaletteApp.backGroundView)
+                                    .font(OurFonts.fontSFProTextRegular17)
+                            } else {
+                                
+                                List {
+                                    Section(header: Text("06.24")) {
+                                        ForEach(mokData) { item in
+                                            TrainingCellView(cellDataTrainig: item)
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    VStack {
-                        Spacer()
-                        Button(action: {
-                            print("Кнопка нажата")
-                        }) {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.largeTitle)
-                                .foregroundColor(PaletteApp.blue)
-                                .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
-                                .background(PaletteApp.white)
-                                .scaleEffect(1.8)
-                                .clipShape(Circle())
+                        VStack {
+                            Spacer()
+                            NavigationLink(destination: SettingTrainingView()) {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(.largeTitle)
+                                    .foregroundColor(PaletteApp.blue)
+                                    .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
+                                    .background(PaletteApp.white)
+                                    .scaleEffect(1.8)
+                                    .clipShape(Circle())
+                                
+                            }
+                            .frame(maxWidth: .infinity, alignment: .trailing )
+                            .padding()
                         }
-                        .frame(maxWidth: .infinity, alignment: .trailing )
-                        .padding()
                     }
+                    .navigationTitle(Tx.ListTraining.myTraining)
                 }
-            }
-            .tabItem {
-                ListImages.TapBar.target
-                Text(Tx.ListTraining.training)
-            }
-            .tag(0)
-            StatisticView()
                 .tabItem {
-                    ListImages.TapBar.statictic
-                    Text(Tx.ListTraining.statictics)
+                    ListImages.TapBar.target
+                    Text(Tx.ListTraining.training)
                 }
-                .tag(1)
-            SettingView()
-                .tabItem {
-                    ListImages.TapBar.setting
-                    Text(Tx.ListTraining.setting)
-                }
-                .tag(2)
+                StatisticView()
+                    .tabItem {
+                        ListImages.TapBar.statictic
+                        Text(Tx.ListTraining.statictics)
+                        
+                    }
+                SettingView()
+                    .tabItem {
+                        ListImages.TapBar.setting
+                        Text(Tx.ListTraining.setting)
+                    }
+            }
         }
     }
 }

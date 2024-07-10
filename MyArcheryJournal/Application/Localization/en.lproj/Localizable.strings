@@ -15,3 +15,6 @@
 "ScreenMain.statistics" = "Статистика";
 "ScreenMain.setting" = "Настройки";
 "ScreenMain.emptyList" = "Список тренировок пуст";
+// MARK: - AddTraining
+"AddTraining.addTraining" = "Добавить тренировку";
+

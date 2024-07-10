@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1274072C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274052C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld */; };
+		9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274082C3C9FA700A3B17B /* ArcheryService.swift */; };
+		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
 		9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130342C34B6A400551E2F /* StatisticView.swift */; };
 		9B7130372C34B9D700551E2F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130362C34B9D700551E2F /* SettingView.swift */; };
 		9B87FF572C3580C900E72743 /* TrainingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87FF562C3580C900E72743 /* TrainingCellModel.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1274062C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyArheryJournal.xcdatamodel; sourceTree = "<group>"; };
+		9B1274082C3C9FA700A3B17B /* ArcheryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryService.swift; sourceTree = "<group>"; };
+		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
 		9B7130342C34B6A400551E2F /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		9B7130362C34B9D700551E2F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9B87FF562C3580C900E72743 /* TrainingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellModel.swift; sourceTree = "<group>"; };
@@ -57,11 +63,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B85285B2C3526430006FB34 /* ServiceTraining */ = {
+		9B85285B2C3526430006FB34 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9B1274082C3C9FA700A3B17B /* ArcheryService.swift */,
 			);
-			path = ServiceTraining;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		9B88B91A2C32C1FE005931E3 = {
@@ -87,13 +94,14 @@
 				9BA9DAA12C3428BE004158EF /* Extention */,
 				9BA9DA8E2C341FA2004158EF /* SupportingFiles */,
 				9BA9DA952C3422F4004158EF /* Application */,
-				9B85285B2C3526430006FB34 /* ServiceTraining */,
+				9B85285B2C3526430006FB34 /* Service */,
 				9BA9DA8D2C341775004158EF /* Controller */,
 				9BA9DA8C2C341770004158EF /* View */,
 				9BA9DA8B2C341765004158EF /* Model */,
 				9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */,
 				9B88B92A2C32C1FF005931E3 /* Assets.xcassets */,
 				9B88B92C2C32C1FF005931E3 /* Preview Content */,
+				9B1274052C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld */,
 			);
 			path = MyArcheryJournal;
 			sourceTree = "<group>";
@@ -121,6 +129,7 @@
 				9B7130342C34B6A400551E2F /* StatisticView.swift */,
 				9B7130362C34B9D700551E2F /* SettingView.swift */,
 				9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */,
+				9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,7 +291,10 @@
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
 				9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */,
 				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
+				9B1274072C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld in Sources */,
+				9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */,
 				9BA9DA982C342320004158EF /* Digest.swift in Sources */,
+				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
 				9B87FF572C3580C900E72743 /* TrainingCellModel.swift in Sources */,
 			);
@@ -503,6 +515,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B1274052C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B1274062C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodel */,
+			);
+			currentVersion = 9B1274062C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodel */;
+			name = MyArheryJournal.xcdatamodeld;
+			path = /Users/evgeniikutasov/Desktop/RealPJ/MyArcheryJournal/MyArcheryJournal/MyArheryJournal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B88B91B2C32C1FE005931E3 /* Project object */;
 }
