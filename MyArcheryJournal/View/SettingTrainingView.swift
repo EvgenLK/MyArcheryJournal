@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SettingTrainingView: View {
     @State private var selectedSegment = 0
-    @State private var selectedButton = 0
-    @State private var selectedDist = 0
-    let dist = ["Не выбрано","10","20","30"]
-    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedDist = "Не выбрано"
+    @State private var selectedButton: Int? = nil
+    let dist = ["Не выбрано", "10","20","30","40"]
+
     var body: some View {
         VStack {
             Picker(selection: $selectedSegment , label: Text("Picker")) {
@@ -20,31 +20,37 @@ struct SettingTrainingView: View {
                 Text("Фиксированая").tag(1)
             }
             .pickerStyle(SegmentedPickerStyle())
-            .padding(EdgeInsets(top: 16, leading: 16, bottom: 20, trailing: 16))
+            .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
             
-            Form {
-                Picker("Дистанция", selection: $selectedDist) {
-                    ForEach(dist, id: \.self) { item in
-                        Text("\(item)")
+            VStack {
+                
+                    Form {
+                        Picker("Дистанция", selection: $selectedDist) {
+                            ForEach(dist, id: \.self) {
+                                Text("\($0)")
+                            }
+                        }
+                        .pickerStyle(.navigationLink)
+                        
+                        Picker("Отметка на мишени", selection: $selectedDist) {
+                            ForEach(dist, id: \.self) {
+                                Text("\($0)")
+                            }
+                        }
+                        .pickerStyle(.navigationLink)
                     }
-                }
-                .pickerStyle(.navigationLink)
-                Picker("Мишень", selection: $selectedDist) {
-                    ForEach(dist, id: \.self) { item in
-                        Text("\(item)")
-                    }
-                }
-                .pickerStyle(.navigationLink)
+                    
+                    .scrollDisabled(true)
+                    .frame(height: 150)
+                
             }
-            .scrollDisabled(true)
-            .frame(height: 150)
-            
             VStack(alignment: .leading) {
                 Text("Способ ввода")
                     .padding(.leading, 32)
                 
                 HStack {
                     Button(action: {
+                        self.selectedButton = 1
                         print("1111")
                     }) {
                         VStack {
@@ -56,11 +62,12 @@ struct SettingTrainingView: View {
                         }
                         .padding()
                         .frame(width: 177)
-                        .background(PaletteApp.white)
+                        .background(selectedButton == 1 ? PaletteApp.systemGray : PaletteApp.white)
                         .cornerRadius(10)
                     }
                     
                     Button(action: {
+                        self.selectedButton = 2
                         print("1111")
                     }) {
                         VStack {
@@ -72,10 +79,9 @@ struct SettingTrainingView: View {
                         }
                         .padding()
                         .frame(width: 177)
-
-                        .background(PaletteApp.white)
-                        .cornerRadius(10)
                         
+                        .background(selectedButton == 2 ? PaletteApp.systemGray : PaletteApp.white)
+                        .cornerRadius(10)
                     }
                 }
                 .padding(.horizontal, 16)
@@ -83,32 +89,23 @@ struct SettingTrainingView: View {
             Spacer()
             VStack {
                 Button(action: {
-                    print("121212")
+                    
                 }) {
                     Text("Далее")
                         .font(OurFonts.fontSFProTextRegular17)
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue)
+                        .background(selectedButton == nil ? PaletteApp.systemGray : PaletteApp.blue)
+                    
                         .cornerRadius(10)
                 }
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                .frame(width: .infinity, height: 45,alignment: .center)
+                .disabled(selectedButton == nil)
             }
         }
         .background(PaletteApp.backGroundView)
-            .navigationBarItems(leading:
-                                    Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(PaletteApp.blue)
-                    .font(.title)
-            }
-            )
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle(Tx.AddTraining.addTraining, displayMode: .inline)
-            .toolbar(.hidden, for: .tabBar)
-        }        
+        .navigationBarTitle(Tx.AddTraining.addTraining, displayMode: .inline)
+        .toolbar(.hidden, for: .tabBar)
+    }
 }

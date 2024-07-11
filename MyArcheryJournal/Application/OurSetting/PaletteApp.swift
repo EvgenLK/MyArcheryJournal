@@ -14,4 +14,5 @@ struct PaletteApp {
     static let backGroundView = Color(hex: "#F2F2F7")
     static let gray = Color(hex: "#3C3C43")
     static let blue = Color(hex: "#0076F6")
+    static let systemGray = Color(hex: "#E5E5EA")
 }

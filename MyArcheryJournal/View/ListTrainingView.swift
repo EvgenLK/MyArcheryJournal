@@ -17,35 +17,30 @@ struct ListTrainingView: View {
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM"
-        let currentDate = Date()
-        let formattedDate = dateFormatter.string(from: currentDate)
-        
         mokData = [
             TrainingCellModel(imageTaghet: ListImages.Target.fita40mm,
-                              dateTraining: formattedDate,
+                              dateTraining: Date().formatDate("dd.MM"),
                               countShot: "296",
                               allShot: "300",
                               distance: "70м",
                               nameTaget: "40mm",
                               avarageShot: "10"),
             TrainingCellModel(imageTaghet: ListImages.Target.fita122mm,
-                              dateTraining: formattedDate,
+                              dateTraining: Date().formatDate("dd.MM"),
                               countShot: "250",
                               allShot: "300",
                               distance: "50м",
                               nameTaget: "30mm",
                               avarageShot: "8"),
             TrainingCellModel(imageTaghet: ListImages.Target.recurceFita3x20Ver,
-                              dateTraining: formattedDate,
+                              dateTraining: Date().formatDate("dd.MM"),
                               countShot: "250",
                               allShot: "300",
                               distance: "50м",
                               nameTaget: "30mm",
                               avarageShot: "8"),
             TrainingCellModel(imageTaghet: ListImages.Target.universalFita3x20Ver,
-                              dateTraining: formattedDate,
+                              dateTraining: Date().formatDate("dd.MM"),
                               countShot: "250",
                               allShot: "300",
                               distance: "50м",
@@ -59,7 +54,7 @@ struct ListTrainingView: View {
             TabView {
                 NavigationStack {
                     ZStack {
-                        Color(PaletteApp.backGroundView)
+                        PaletteApp.backGroundView
                         VStack {
                             if emptyListData {
                                 ListImages.Other.emptyTraining
@@ -70,11 +65,14 @@ struct ListTrainingView: View {
                             } else {
                                 
                                 List {
-                                    Section(header: Text("06.24")) {
+                                    Section(header: Text("\(Date().formatDate("MM.YYYY"))")
+                                        .font(OurFonts.fontSFProTextBold20)
+                                        .foregroundColor(PaletteApp.black)) {
                                         ForEach(mokData) { item in
                                             TrainingCellView(cellDataTrainig: item)
                                         }
                                     }
+                                    
                                 }
                             }
                         }
