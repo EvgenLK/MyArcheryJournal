@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct TrainingModel {
-    let id: String
+    let id: UUID?
     let imageTarget: String
     let dateTraining: Date
     let nameTaget: String
     let distance: Int
-    var trainig: [TrainingSeriesModel]
+    var training: [TrainingSeriesModel]?
 }
 
 struct TrainingSeriesModel {
     let series: Int
     var dataShot: [PointModel]
-    
 }
 
 struct PointModel {

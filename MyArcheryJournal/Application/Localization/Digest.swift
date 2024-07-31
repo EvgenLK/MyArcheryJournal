@@ -21,6 +21,17 @@ enum Tx {
     }
     enum AddTraining {
         static let addTraining = NSLocalizedString("AddTraining.addTraining", comment: "Добавить тренировку")
-
+        static let freeTraining = NSLocalizedString("AddTraining.free", comment: "Свободная")
+        static let fixedTraining = NSLocalizedString("AddTraining.fixed", comment: "Фиксированая")
+        static let markOnTarget = NSLocalizedString("AddTraining.markOnTarget", comment: "Отметка на мишени")
+        static let calculator = NSLocalizedString("AddTraining.calculator", comment: "Калькулятор")
+        static let inputMethod = NSLocalizedString("AddTraining.inputMethod", comment: "Способ ввода")
+        static let further = NSLocalizedString("AddTraining.further", comment: "Далее")
+        static let notSelected = NSLocalizedString("AddTraining.notSelected", comment: "Не выбрано")
+    }
+    enum DataInCell {
+        static let milimetr = NSLocalizedString("DataInCell.milimetr", comment: "мм")
+        static let distance = NSLocalizedString("DataInCell.distance", comment: "Дистанция")
+        static let average = NSLocalizedString("DataInCell.average", comment: "Сред.")
     }
 }

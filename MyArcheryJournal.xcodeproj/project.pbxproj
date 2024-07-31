@@ -27,6 +27,10 @@
 		9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA9F2C3425FC004158EF /* OurFont.swift */; };
 		9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA32C3428E1004158EF /* Color+HEX.swift */; };
 		9BA9DAA62C342BF5004158EF /* ListImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA52C342BF5004158EF /* ListImages.swift */; };
+		9BED220E2C566AA300598529 /* TrainingUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220D2C566AA300598529 /* TrainingUserController.swift */; };
+		9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220F2C57D3D000598529 /* EnumDistance.swift */; };
+		9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED22112C57D3E400598529 /* EnumTarget.swift */; };
+		9BED22142C584DBA00598529 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED22132C584DBA00598529 /* String+Extension.swift */; };
 		9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,10 @@
 		9BA9DAA32C3428E1004158EF /* Color+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+HEX.swift"; sourceTree = "<group>"; };
 		9BA9DAA52C342BF5004158EF /* ListImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListImages.swift; sourceTree = "<group>"; };
 		9BA9DAA72C342F99004158EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9BED220D2C566AA300598529 /* TrainingUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingUserController.swift; sourceTree = "<group>"; };
+		9BED220F2C57D3D000598529 /* EnumDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDistance.swift; sourceTree = "<group>"; };
+		9BED22112C57D3E400598529 /* EnumTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTarget.swift; sourceTree = "<group>"; };
+		9BED22132C584DBA00598529 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				9B84DF9C2C4015A4003DB50F /* Date+Extension.swift */,
+				9BED22132C584DBA00598529 /* String+Extension.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -131,6 +140,8 @@
 			children = (
 				9B87FF562C3580C900E72743 /* TrainingCellModel.swift */,
 				9B84DF992C400C53003DB50F /* TrainingModel.swift */,
+				9BED220F2C57D3D000598529 /* EnumDistance.swift */,
+				9BED22112C57D3E400598529 /* EnumTarget.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +161,7 @@
 		9BA9DA8D2C341775004158EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BED220D2C566AA300598529 /* TrainingUserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,13 +314,17 @@
 				9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */,
 				9B7130372C34B9D700551E2F /* SettingView.swift in Sources */,
 				9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */,
+				9BED220E2C566AA300598529 /* TrainingUserController.swift in Sources */,
 				9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */,
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
 				9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */,
 				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
+				9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */,
 				9B1274072C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld in Sources */,
+				9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */,
 				9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */,
 				9BA9DA982C342320004158EF /* Digest.swift in Sources */,
+				9BED22142C584DBA00598529 /* String+Extension.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
 				9B84DF9A2C400C53003DB50F /* TrainingModel.swift in Sources */,
