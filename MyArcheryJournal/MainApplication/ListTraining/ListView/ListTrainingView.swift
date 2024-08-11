@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ListTrainingView: View {
-    @EnvironmentObject var trainingController: TrainingUserController
-    
-    init() {
+    @EnvironmentObject var archeryService: ArcheryService
+    @ObservedObject var trainingController: ListTrainingController
+
+    init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.backgroundColor = .white
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        self.trainingController = ListTrainingController(archeryServise: archeryService)
     }
     
     var body: some View {
@@ -31,13 +33,19 @@ struct ListTrainingView: View {
                                     .font(OurFonts.fontSFProTextRegular17)
                             } else {
                                 List {
-                                    Section(header: Text("\(Date().formatDate("MM.YYYY"))")
-                                        .font(OurFonts.fontSFProTextBold20)
-                                        .foregroundColor(PaletteApp.black)) {
-                                            ForEach(trainingController.training.indices, id: \.self) { index in
-                                                let item = trainingController.training[index]
+                                    ForEach(trainingController.training, id: \.monthYear) { section in
+                                        
+                                        let headerText = Text(section.monthYear)
+                                            .font(OurFonts.fontSFProTextBold20)
+                                            .foregroundColor(PaletteApp.black)
+                                        
+                                        Section(header: headerText) {
+                                            let trainings = section.trainings
+                                            
+                                            ForEach(trainings.indices, id: \.self) { index in
+                                                let item = trainings[index]
                                                 
-                                                TrainingCellView(cellDataTrainig: item)
+                                                ListTrainingViewCell(cellDataTrainig: item)
                                                     .padding()
                                                     .background(PaletteApp.white)
                                                     .cornerRadius(10)
@@ -45,12 +53,13 @@ struct ListTrainingView: View {
                                                     .background(PaletteApp.backGroundView)
                                                     .listRowInsets(EdgeInsets())
                                                     .listRowSeparator(.hidden)
-                                                    .padding(.bottom, index == trainingController.training.count - 1 ? 60 : 0)
+                                                    .padding(.bottom, index == trainings.count - 1 ? 60 : 0)
                                             }
                                             .background(PaletteApp.backGroundView)
                                         }
+                                    }
+                                    .scrollIndicators(.hidden)
                                 }
-                                .scrollIndicators(.hidden)
                             }
                         }
                         VStack {
@@ -88,14 +97,18 @@ struct ListTrainingView: View {
                     }
             }
         }
+        .onAppear{
+            trainingController.fetchTraining()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let trainingController = TrainingUserController()
+        let archeryService = ArcheryService()
+        _ = ListTrainingController(archeryServise: archeryService)
         
-        return ListTrainingView()
-            .environmentObject(trainingController)
+        return ListTrainingView(archeryService: archeryService)
+            .environmentObject(archeryService)
     }
 }

@@ -27,7 +27,7 @@ final class ArcheryService: ObservableObject {
 
 extension ArcheryService {
 
-    func createOrUpdateTraining(data: TrainingModel) {
+    func createOrUpdateTraining(_ data: TrainingModel) {
         let context = persistentContainer.viewContext
         let newTraining = EntityTraining(context: context)
         newTraining.id = UUID()

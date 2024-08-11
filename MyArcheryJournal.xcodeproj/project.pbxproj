@@ -12,9 +12,9 @@
 		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
 		9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130342C34B6A400551E2F /* StatisticView.swift */; };
 		9B7130372C34B9D700551E2F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130362C34B9D700551E2F /* SettingView.swift */; };
-		9B84DF9A2C400C53003DB50F /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84DF992C400C53003DB50F /* TrainingModel.swift */; };
+		9B84DF9A2C400C53003DB50F /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84DF992C400C53003DB50F /* SettingModel.swift */; };
 		9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84DF9C2C4015A4003DB50F /* Date+Extension.swift */; };
-		9B87FF572C3580C900E72743 /* TrainingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87FF562C3580C900E72743 /* TrainingCellModel.swift */; };
+		9B87FF572C3580C900E72743 /* ListTrainingModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87FF562C3580C900E72743 /* ListTrainingModelCell.swift */; };
 		9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */; };
 		9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */; };
 		9B88B92B2C32C1FF005931E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B88B92A2C32C1FF005931E3 /* Assets.xcassets */; };
@@ -27,11 +27,11 @@
 		9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA9F2C3425FC004158EF /* OurFont.swift */; };
 		9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA32C3428E1004158EF /* Color+HEX.swift */; };
 		9BA9DAA62C342BF5004158EF /* ListImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA52C342BF5004158EF /* ListImages.swift */; };
-		9BED220E2C566AA300598529 /* TrainingUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220D2C566AA300598529 /* TrainingUserController.swift */; };
+		9BED220E2C566AA300598529 /* ListTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220D2C566AA300598529 /* ListTrainingController.swift */; };
 		9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220F2C57D3D000598529 /* EnumDistance.swift */; };
 		9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED22112C57D3E400598529 /* EnumTarget.swift */; };
 		9BED22142C584DBA00598529 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED22132C584DBA00598529 /* String+Extension.swift */; };
-		9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */; };
+		9BF43E152C360E0F002C0D98 /* ListTrainingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF43E142C360E0F002C0D98 /* ListTrainingViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +40,9 @@
 		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
 		9B7130342C34B6A400551E2F /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		9B7130362C34B9D700551E2F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		9B84DF992C400C53003DB50F /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
+		9B84DF992C400C53003DB50F /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		9B84DF9C2C4015A4003DB50F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		9B87FF562C3580C900E72743 /* TrainingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellModel.swift; sourceTree = "<group>"; };
+		9B87FF562C3580C900E72743 /* ListTrainingModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingModelCell.swift; sourceTree = "<group>"; };
 		9B88B9232C32C1FE005931E3 /* MyArcheryJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyArcheryJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArcheryJournalApp.swift; sourceTree = "<group>"; };
 		9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingView.swift; sourceTree = "<group>"; };
@@ -57,11 +57,11 @@
 		9BA9DAA32C3428E1004158EF /* Color+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+HEX.swift"; sourceTree = "<group>"; };
 		9BA9DAA52C342BF5004158EF /* ListImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListImages.swift; sourceTree = "<group>"; };
 		9BA9DAA72C342F99004158EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9BED220D2C566AA300598529 /* TrainingUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingUserController.swift; sourceTree = "<group>"; };
+		9BED220D2C566AA300598529 /* ListTrainingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingController.swift; sourceTree = "<group>"; };
 		9BED220F2C57D3D000598529 /* EnumDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDistance.swift; sourceTree = "<group>"; };
 		9BED22112C57D3E400598529 /* EnumTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTarget.swift; sourceTree = "<group>"; };
 		9BED22132C584DBA00598529 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellView.swift; sourceTree = "<group>"; };
+		9BF43E142C360E0F002C0D98 /* ListTrainingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +75,151 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B7D8B082C6189250018DF1A /* MainApplication */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D8B122C618B260018DF1A /* SettingMain */,
+				9B7D8B112C618AF90018DF1A /* Statistics */,
+				9B7D8B092C6189420018DF1A /* ListTraining */,
+				9B7D8B0A2C6189610018DF1A /* SettingTraining */,
+			);
+			path = MainApplication;
+			sourceTree = "<group>";
+		};
+		9B7D8B092C6189420018DF1A /* ListTraining */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D8B0B2C61897D0018DF1A /* ListModel */,
+				9B7D8B0C2C6189860018DF1A /* ListView */,
+				9B7D8B0D2C61898E0018DF1A /* ListController */,
+			);
+			path = ListTraining;
+			sourceTree = "<group>";
+		};
+		9B7D8B0A2C6189610018DF1A /* SettingTraining */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D8B0E2C618A1F0018DF1A /* SettingModel */,
+				9B7D8B0F2C618A260018DF1A /* SettingView */,
+				9B7D8B102C618A2F0018DF1A /* SettingController */,
+			);
+			path = SettingTraining;
+			sourceTree = "<group>";
+		};
+		9B7D8B0B2C61897D0018DF1A /* ListModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B87FF562C3580C900E72743 /* ListTrainingModelCell.swift */,
+			);
+			path = ListModel;
+			sourceTree = "<group>";
+		};
+		9B7D8B0C2C6189860018DF1A /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */,
+				9BF43E142C360E0F002C0D98 /* ListTrainingViewCell.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		9B7D8B0D2C61898E0018DF1A /* ListController */ = {
+			isa = PBXGroup;
+			children = (
+				9BED220D2C566AA300598529 /* ListTrainingController.swift */,
+			);
+			path = ListController;
+			sourceTree = "<group>";
+		};
+		9B7D8B0E2C618A1F0018DF1A /* SettingModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B84DF992C400C53003DB50F /* SettingModel.swift */,
+				9BED22112C57D3E400598529 /* EnumTarget.swift */,
+				9BED220F2C57D3D000598529 /* EnumDistance.swift */,
+			);
+			path = SettingModel;
+			sourceTree = "<group>";
+		};
+		9B7D8B0F2C618A260018DF1A /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		9B7D8B102C618A2F0018DF1A /* SettingController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingController;
+			sourceTree = "<group>";
+		};
+		9B7D8B112C618AF90018DF1A /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D8B142C618B590018DF1A /* StatisticsModel */,
+				9B7D8B152C618B630018DF1A /* StatisticsView */,
+				9B7D8B132C618B450018DF1A /* StatisticsController */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		9B7D8B122C618B260018DF1A /* SettingMain */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D8B172C618B7C0018DF1A /* SettingMainModel */,
+				9B7D8B162C618B6E0018DF1A /* SettingMainView */,
+				9B7D8B182C618B880018DF1A /* SettingMainController */,
+			);
+			path = SettingMain;
+			sourceTree = "<group>";
+		};
+		9B7D8B132C618B450018DF1A /* StatisticsController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatisticsController;
+			sourceTree = "<group>";
+		};
+		9B7D8B142C618B590018DF1A /* StatisticsModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatisticsModel;
+			sourceTree = "<group>";
+		};
+		9B7D8B152C618B630018DF1A /* StatisticsView */ = {
+			isa = PBXGroup;
+			children = (
+				9B7130342C34B6A400551E2F /* StatisticView.swift */,
+			);
+			path = StatisticsView;
+			sourceTree = "<group>";
+		};
+		9B7D8B162C618B6E0018DF1A /* SettingMainView */ = {
+			isa = PBXGroup;
+			children = (
+				9B7130362C34B9D700551E2F /* SettingView.swift */,
+			);
+			path = SettingMainView;
+			sourceTree = "<group>";
+		};
+		9B7D8B172C618B7C0018DF1A /* SettingMainModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingMainModel;
+			sourceTree = "<group>";
+		};
+		9B7D8B182C618B880018DF1A /* SettingMainController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingMainController;
+			sourceTree = "<group>";
+		};
 		9B84DF9B2C401591003DB50F /* Date */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +261,7 @@
 				9BA9DA8E2C341FA2004158EF /* SupportingFiles */,
 				9BA9DA952C3422F4004158EF /* Application */,
 				9B85285B2C3526430006FB34 /* Service */,
-				9BA9DA8D2C341775004158EF /* Controller */,
-				9BA9DA8C2C341770004158EF /* View */,
-				9BA9DA8B2C341765004158EF /* Model */,
+				9B7D8B082C6189250018DF1A /* MainApplication */,
 				9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */,
 				9B88B92A2C32C1FF005931E3 /* Assets.xcassets */,
 				9B88B92C2C32C1FF005931E3 /* Preview Content */,
@@ -133,37 +276,6 @@
 				9B88B92D2C32C1FF005931E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		9BA9DA8B2C341765004158EF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9B87FF562C3580C900E72743 /* TrainingCellModel.swift */,
-				9B84DF992C400C53003DB50F /* TrainingModel.swift */,
-				9BED220F2C57D3D000598529 /* EnumDistance.swift */,
-				9BED22112C57D3E400598529 /* EnumTarget.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9BA9DA8C2C341770004158EF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */,
-				9B7130342C34B6A400551E2F /* StatisticView.swift */,
-				9B7130362C34B9D700551E2F /* SettingView.swift */,
-				9BF43E142C360E0F002C0D98 /* TrainingCellView.swift */,
-				9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9BA9DA8D2C341775004158EF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9BED220D2C566AA300598529 /* TrainingUserController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		9BA9DA8E2C341FA2004158EF /* SupportingFiles */ = {
@@ -314,10 +426,10 @@
 				9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */,
 				9B7130372C34B9D700551E2F /* SettingView.swift in Sources */,
 				9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */,
-				9BED220E2C566AA300598529 /* TrainingUserController.swift in Sources */,
+				9BED220E2C566AA300598529 /* ListTrainingController.swift in Sources */,
 				9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */,
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
-				9BF43E152C360E0F002C0D98 /* TrainingCellView.swift in Sources */,
+				9BF43E152C360E0F002C0D98 /* ListTrainingViewCell.swift in Sources */,
 				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
 				9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */,
 				9B1274072C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld in Sources */,
@@ -327,8 +439,8 @@
 				9BED22142C584DBA00598529 /* String+Extension.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
-				9B84DF9A2C400C53003DB50F /* TrainingModel.swift in Sources */,
-				9B87FF572C3580C900E72743 /* TrainingCellModel.swift in Sources */,
+				9B84DF9A2C400C53003DB50F /* SettingModel.swift in Sources */,
+				9B87FF572C3580C900E72743 /* ListTrainingModelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

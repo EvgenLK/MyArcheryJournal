@@ -13,7 +13,9 @@ struct SettingTrainingView: View {
     @State private var selectedTarget: EnumTarget = .notSelected
     @State private var selectedButton: Int? = nil
     @State private var disabledTaggetPicker: Bool = true
-    @EnvironmentObject var trainingController: TrainingUserController
+    @EnvironmentObject var trainingController: ListTrainingController
+    @EnvironmentObject var archeryService: ArcheryService
+
     
     var body: some View {
         VStack {
@@ -104,12 +106,17 @@ struct SettingTrainingView: View {
             
             VStack {
                 Button(action: {
-                    trainingController.saveTraining(TrainingModel(id: nil,
-                                                                  imageTarget: selectedTarget.caseName(),
-                                                                  dateTraining: Date(),
-                                                                  nameTaget: selectedTarget.sizeTargerCase().rawValue,
-                                                                  distance: Int(selectedDistance.rawValue) ?? 0))
-                    trainingController.featchTraining()
+                    archeryService.createOrUpdateTraining(TrainingModel(id: nil,
+                                                                        imageTarget: selectedTarget.caseName(),
+                                                                        dateTraining: Date(),
+                                                                        nameTaget: selectedTarget.sizeTargerCase().rawValue,
+                                                                        distance: Int(selectedDistance.rawValue) ?? 0))
+//                    trainingController.saveTraining(TrainingModel(id: nil,
+//                                                                  imageTarget: selectedTarget.caseName(),
+//                                                                  dateTraining: Date(),
+//                                                                  nameTaget: selectedTarget.sizeTargerCase().rawValue,
+//                                                                  distance: Int(selectedDistance.rawValue) ?? 0))
+                    trainingController.fetchTraining()
                 }) {
                     Text(Tx.AddTraining.further)
                         .font(OurFonts.fontSFProTextRegular17)

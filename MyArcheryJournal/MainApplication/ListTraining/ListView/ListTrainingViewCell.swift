@@ -1,5 +1,5 @@
 //
-//  TrainingCellView.swift
+//  ListTrainingViewCell.swift
 //  MyArcheryJournal
 //
 //  Created by Evgenii Kutasov on 04.07.2024.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TrainingCellView: View {
-    var cellDataTrainig: TrainingCellModel
+struct ListTrainingViewCell: View {
+    var cellDataTrainig: ListTrainingModelCell
     var body: some View {
         HStack {
             

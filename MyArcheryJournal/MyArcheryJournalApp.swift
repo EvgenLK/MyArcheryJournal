@@ -9,15 +9,14 @@ import SwiftUI
 
 @main
 struct MyArcheryJournalApp: App {
-    @StateObject var trainingController = TrainingUserController()
+    
+    @StateObject private var archeryService = ArcheryService()
     
     var body: some Scene {
         WindowGroup {
-            ListTrainingView()
-                .environmentObject(trainingController)
-                .onAppear{
-                    trainingController.featchTraining()
-                }
+            ListTrainingView(archeryService: archeryService)
+                .environmentObject(archeryService)
+
         }
     }
 }
