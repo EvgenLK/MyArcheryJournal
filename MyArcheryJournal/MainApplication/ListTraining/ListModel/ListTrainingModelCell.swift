@@ -1,5 +1,5 @@
 //
-//  TrainingCellModel.swift
+//  ListTrainingModelCell.swift
 //  MyArcheryJournal
 //
 //  Created by Evgenii Kutasov on 03.07.2024.
@@ -7,7 +7,13 @@
 
 import SwiftUI
 
-struct TrainingCellModel: Identifiable {
+struct TrainingSection {
+    let monthYear: String
+    let trainings: [ListTrainingModelCell]
+    
+}
+
+struct ListTrainingModelCell: Identifiable {
     let id = UUID()
     let imageTaghet: Image
     let dateTraining: String
