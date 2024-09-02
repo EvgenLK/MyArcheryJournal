@@ -11,7 +11,6 @@ struct ListTrainingViewCell: View {
     var cellDataTrainig: ListTrainingModelCell
     var body: some View {
         HStack {
-            
             VStack(alignment: .center) {
                 cellDataTrainig.imageTaghet
                     .resizable()

@@ -10,10 +10,15 @@
 		9B1274072C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274052C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld */; };
 		9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274082C3C9FA700A3B17B /* ArcheryService.swift */; };
 		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
+		9B1B352C2C7B520D00D84AA6 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */; };
 		9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130342C34B6A400551E2F /* StatisticView.swift */; };
 		9B7130372C34B9D700551E2F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130362C34B9D700551E2F /* SettingView.swift */; };
+		9B7148022C813A1D00EE7EB1 /* EnumListingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */; };
+		9B8161D92C7FDD8A00606803 /* EnumColorMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8161D82C7FDD8A00606803 /* EnumColorMark.swift */; };
+		9B8161DB2C809B8800606803 /* EnumMarkCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8161DA2C809B8800606803 /* EnumMarkCount.swift */; };
 		9B84DF9A2C400C53003DB50F /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84DF992C400C53003DB50F /* SettingModel.swift */; };
 		9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84DF9C2C4015A4003DB50F /* Date+Extension.swift */; };
+		9B8525152C6C236900C22E42 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8525142C6C236900C22E42 /* CalculatorView.swift */; };
 		9B87FF572C3580C900E72743 /* ListTrainingModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87FF562C3580C900E72743 /* ListTrainingModelCell.swift */; };
 		9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */; };
 		9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */; };
@@ -27,6 +32,9 @@
 		9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA9F2C3425FC004158EF /* OurFont.swift */; };
 		9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA32C3428E1004158EF /* Color+HEX.swift */; };
 		9BA9DAA62C342BF5004158EF /* ListImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DAA52C342BF5004158EF /* ListImages.swift */; };
+		9BBEADF22C71AD2900F3BBDE /* MarkAttemptCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEADF12C71AD2900F3BBDE /* MarkAttemptCellView.swift */; };
+		9BBEADF42C71AE0900F3BBDE /* MarkAttemptCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEADF32C71AE0900F3BBDE /* MarkAttemptCellModel.swift */; };
+		9BBEADF62C7233FB00F3BBDE /* EnumSelectedTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEADF52C7233FB00F3BBDE /* EnumSelectedTraining.swift */; };
 		9BED220E2C566AA300598529 /* ListTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220D2C566AA300598529 /* ListTrainingController.swift */; };
 		9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED220F2C57D3D000598529 /* EnumDistance.swift */; };
 		9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED22112C57D3E400598529 /* EnumTarget.swift */; };
@@ -38,10 +46,15 @@
 		9B1274062C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyArheryJournal.xcdatamodel; sourceTree = "<group>"; };
 		9B1274082C3C9FA700A3B17B /* ArcheryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryService.swift; sourceTree = "<group>"; };
 		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
+		9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
 		9B7130342C34B6A400551E2F /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		9B7130362C34B9D700551E2F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumListingButton.swift; sourceTree = "<group>"; };
+		9B8161D82C7FDD8A00606803 /* EnumColorMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumColorMark.swift; sourceTree = "<group>"; };
+		9B8161DA2C809B8800606803 /* EnumMarkCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMarkCount.swift; sourceTree = "<group>"; };
 		9B84DF992C400C53003DB50F /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		9B84DF9C2C4015A4003DB50F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9B8525142C6C236900C22E42 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		9B87FF562C3580C900E72743 /* ListTrainingModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingModelCell.swift; sourceTree = "<group>"; };
 		9B88B9232C32C1FE005931E3 /* MyArcheryJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyArcheryJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArcheryJournalApp.swift; sourceTree = "<group>"; };
@@ -57,6 +70,9 @@
 		9BA9DAA32C3428E1004158EF /* Color+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+HEX.swift"; sourceTree = "<group>"; };
 		9BA9DAA52C342BF5004158EF /* ListImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListImages.swift; sourceTree = "<group>"; };
 		9BA9DAA72C342F99004158EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9BBEADF12C71AD2900F3BBDE /* MarkAttemptCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAttemptCellView.swift; sourceTree = "<group>"; };
+		9BBEADF32C71AE0900F3BBDE /* MarkAttemptCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAttemptCellModel.swift; sourceTree = "<group>"; };
+		9BBEADF52C7233FB00F3BBDE /* EnumSelectedTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumSelectedTraining.swift; sourceTree = "<group>"; };
 		9BED220D2C566AA300598529 /* ListTrainingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingController.swift; sourceTree = "<group>"; };
 		9BED220F2C57D3D000598529 /* EnumDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDistance.swift; sourceTree = "<group>"; };
 		9BED22112C57D3E400598529 /* EnumTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTarget.swift; sourceTree = "<group>"; };
@@ -78,6 +94,7 @@
 		9B7D8B082C6189250018DF1A /* MainApplication */ = {
 			isa = PBXGroup;
 			children = (
+				9B8525102C6C1C7100C22E42 /* CalculatorTraining */,
 				9B7D8B122C618B260018DF1A /* SettingMain */,
 				9B7D8B112C618AF90018DF1A /* Statistics */,
 				9B7D8B092C6189420018DF1A /* ListTraining */,
@@ -137,6 +154,7 @@
 				9B84DF992C400C53003DB50F /* SettingModel.swift */,
 				9BED22112C57D3E400598529 /* EnumTarget.swift */,
 				9BED220F2C57D3D000598529 /* EnumDistance.swift */,
+				9BBEADF52C7233FB00F3BBDE /* EnumSelectedTraining.swift */,
 			);
 			path = SettingModel;
 			sourceTree = "<group>";
@@ -227,6 +245,44 @@
 				9BED22132C584DBA00598529 /* String+Extension.swift */,
 			);
 			path = Date;
+			sourceTree = "<group>";
+		};
+		9B8525102C6C1C7100C22E42 /* CalculatorTraining */ = {
+			isa = PBXGroup;
+			children = (
+				9B8525132C6C1CB200C22E42 /* Model */,
+				9B8525122C6C1CAB00C22E42 /* View */,
+				9B8525112C6C1C9E00C22E42 /* Controller */,
+			);
+			path = CalculatorTraining;
+			sourceTree = "<group>";
+		};
+		9B8525112C6C1C9E00C22E42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9B8525122C6C1CAB00C22E42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B8525142C6C236900C22E42 /* CalculatorView.swift */,
+				9BBEADF12C71AD2900F3BBDE /* MarkAttemptCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B8525132C6C1CB200C22E42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9BBEADF32C71AE0900F3BBDE /* MarkAttemptCellModel.swift */,
+				9B8161D82C7FDD8A00606803 /* EnumColorMark.swift */,
+				9B8161DA2C809B8800606803 /* EnumMarkCount.swift */,
+				9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9B85285B2C3526430006FB34 /* Service */ = {
@@ -421,11 +477,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8161DB2C809B8800606803 /* EnumMarkCount.swift in Sources */,
+				9B7148022C813A1D00EE7EB1 /* EnumListingButton.swift in Sources */,
 				9BA9DAA62C342BF5004158EF /* ListImages.swift in Sources */,
 				9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */,
 				9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */,
 				9B7130372C34B9D700551E2F /* SettingView.swift in Sources */,
 				9BA9DAA02C3425FC004158EF /* OurFont.swift in Sources */,
+				9BBEADF42C71AE0900F3BBDE /* MarkAttemptCellModel.swift in Sources */,
 				9BED220E2C566AA300598529 /* ListTrainingController.swift in Sources */,
 				9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */,
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
@@ -435,12 +494,17 @@
 				9B1274072C3C9DDE00A3B17B /* MyArheryJournal.xcdatamodeld in Sources */,
 				9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */,
 				9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */,
+				9BBEADF62C7233FB00F3BBDE /* EnumSelectedTraining.swift in Sources */,
 				9BA9DA982C342320004158EF /* Digest.swift in Sources */,
+				9B1B352C2C7B520D00D84AA6 /* CalculatorController.swift in Sources */,
 				9BED22142C584DBA00598529 /* String+Extension.swift in Sources */,
+				9B8161D92C7FDD8A00606803 /* EnumColorMark.swift in Sources */,
+				9B8525152C6C236900C22E42 /* CalculatorView.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
 				9B84DF9A2C400C53003DB50F /* SettingModel.swift in Sources */,
 				9B87FF572C3580C900E72743 /* ListTrainingModelCell.swift in Sources */,
+				9BBEADF22C71AD2900F3BBDE /* MarkAttemptCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

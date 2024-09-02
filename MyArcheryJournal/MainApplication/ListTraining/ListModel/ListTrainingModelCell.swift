@@ -10,7 +10,6 @@ import SwiftUI
 struct TrainingSection {
     let monthYear: String
     let trainings: [ListTrainingModelCell]
-    
 }
 
 struct ListTrainingModelCell: Identifiable {

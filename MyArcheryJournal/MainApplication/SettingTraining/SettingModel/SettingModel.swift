@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TrainingModel {
     let id: UUID?
+    let typeTraining: Int
     let imageTarget: String
     let dateTraining: Date
     let nameTaget: String

@@ -6,18 +6,22 @@
 //
 
 import SwiftUI
+import Combine
 
 final class ListTrainingController: ObservableObject {
     @Published var training: [TrainingSection] = []
     
     let archeryServise: ArcheryService
+    private var cancellables = Set<AnyCancellable>()
     
     init(archeryServise: ArcheryService) {
         self.archeryServise = archeryServise
-    }
-    
-    func saveTraining(_ data: TrainingModel) {
-        archeryServise.createOrUpdateTraining(data)
+        
+        archeryServise.$trainingData
+            .sink { [weak self] _ in
+                self?.fetchTraining()
+            }
+            .store(in: &cancellables)
     }
     
     func fetchTraining() {
@@ -30,11 +34,13 @@ final class ListTrainingController: ObservableObject {
             return
         }
         
-        let groupedTrainings = Dictionary(grouping: trainingAllData) {
-            $0.dateTraining.formatDate("MM.YY")
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM.YY"
         
-        training = groupedTrainings.map { (key, value) in
+        training = Dictionary(grouping: trainingAllData) { training in
+            dateFormatter.string(from: training.dateTraining)
+        }
+        .map { (key, value) in
             let trainingCells = value.map { data in
                 ListTrainingModelCell(imageTaghet: data.imageTarget.fromStringInImage(),
                                   dateTraining: data.dateTraining.formatDate("dd.MM"),

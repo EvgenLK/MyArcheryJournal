@@ -10,7 +10,7 @@ import SwiftUI
 struct ListTrainingView: View {
     @EnvironmentObject var archeryService: ArcheryService
     @ObservedObject var trainingController: ListTrainingController
-
+    
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.backgroundColor = .white
@@ -20,7 +20,7 @@ struct ListTrainingView: View {
     }
     
     var body: some View {
-        ZStack {
+        NavigationStack {
             TabView {
                 NavigationStack {
                     ZStack {
@@ -81,6 +81,8 @@ struct ListTrainingView: View {
                     .navigationTitle(Tx.ListTraining.myTraining)
                 }
                 .environmentObject(trainingController)
+                .environmentObject(archeryService)
+                
                 .tabItem {
                     ListImages.TapBar.target
                     Text(Tx.ListTraining.training)
@@ -97,11 +99,9 @@ struct ListTrainingView: View {
                     }
             }
         }
-        .onAppear{
-            trainingController.fetchTraining()
-        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -6,6 +6,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="nameTarget" optional="YES" attributeType="String"/>
+        <attribute name="typeTraining" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="trainingSeries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainingSeries" inverseName="training" inverseEntity="TrainingSeries"/>
     </entity>
     <entity name="TrainingPoint" representedClassName="TrainingPoint" syncable="YES" codeGenerationType="class">

@@ -7,10 +7,11 @@
 
 import SwiftUI
 import CoreData
-
+import Combine
 
 final class ArcheryService: ObservableObject {
     // MARK: - Property
+    @Published var trainingData: [TrainingModel] = []
     private var managedObjectContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
@@ -26,7 +27,7 @@ final class ArcheryService: ObservableObject {
 }
 
 extension ArcheryService {
-
+    
     func createOrUpdateTraining(_ data: TrainingModel) {
         let context = persistentContainer.viewContext
         let newTraining = EntityTraining(context: context)
@@ -35,9 +36,11 @@ extension ArcheryService {
         newTraining.dateTraining = data.dateTraining
         newTraining.nameTarget = data.nameTaget
         newTraining.distance = Int64(data.distance)
-
+        newTraining.typeTraining = Int64(data.typeTraining)
+        
         do {
             try context.save()
+            trainingData.append(data)
         } catch {
             print("Ошибка сохранения данных: \(error.localizedDescription)")
         }
@@ -49,10 +52,10 @@ extension ArcheryService {
         
         do {
             let results = try managedObjectContext.fetch(request)
-            
             for data in results {
                 let trainingSeriesArray = convertNSSetToArray(nsSet: data.trainingSeries)
                 arrayTraining.append(TrainingModel(id: data.id,
+                                                   typeTraining: Int(data.typeTraining) ,
                                                    imageTarget: data.image ?? "",
                                                    dateTraining: data.dateTraining ?? Date(),
                                                    nameTaget: data.nameTarget ?? "",
@@ -77,8 +80,32 @@ extension ArcheryService {
             print("Ошибка удаления всех данных: \(error.localizedDescription)")
         }
     }
+    
+    
+//    func feathTrainingId(by id: UUID) -> TrainingModel? {
+//        let fetchRequest = NSFetchRequest<EntityTraining>(entityName: "EntityTraining")
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+//        print(id)
+//        do {
+//            let results = try managedObjectContext.fetch(fetchRequest)
+//            print(results)
+//            return results.first.map { TrainingModel(id: $0.id,
+//                                                     typeTraining: Int($0.typeTraining),
+//                                                     imageTarget: $0.image ?? "",
+//                                                     dateTraining: $0.dateTraining ?? Date(),
+//                                                     nameTaget: $0.nameTarget ?? "",
+//                                                     distance: Int($0.distance),
+//                                                     training: convertNSSetToArray(nsSet: $0.trainingSeries))
+//            }
+//        } catch {
+//            print("Ошибка при получении данных: \(error)")
+//            return nil
+//        }
+//    }
+    
+//    func saveOneTraining
+    
 }
-
 extension ArcheryService {
     
     func convertNSSetToArray(nsSet: NSSet?) -> [TrainingSeriesModel]? {
