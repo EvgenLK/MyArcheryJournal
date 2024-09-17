@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 final class CalculatorController: ObservableObject {
-    @Published var oneTraining: [MarkAttemptCellModel] = []
+    @Published var oneTrainingData: [MarkAttemptCellModel] = []
     
     let archeryServise: ArcheryService
     private var cancellables = Set<AnyCancellable>()
@@ -19,38 +19,37 @@ final class CalculatorController: ObservableObject {
         
         archeryServise.$trainingData
             .sink { [weak self] _ in
-                self?.fetchOneTraining(UUID())
+                self?.fetchOneTraining(UUID(), Int())
             }
             .store(in: &cancellables)
     }
     
-    func saveTraining(_ data: TrainingModel) {
-        archeryServise.createOrUpdateTraining(data)
-    }
-    
-    func fetchOneTraining(_ id: UUID) {
-        oneTraining.removeAll() // Очищаем старые данные
+    func fetchOneTraining(_ id: UUID, _ mark: Int) {
+        oneTrainingData.removeAll()
+        var sumPoints = 0
+        var series = 1
+        var pointArray = [String]()
         
-        guard let trainingOneData = archeryServise.fetchAndPrintData().last else {
-            // Если нет данных, просто выходим из функции
-            return
+        let oneTraining = archeryServise.fetchOneTraining(id)
+        
+        for point in oneTraining {
+            sumPoints += point == 0 ? 10 : point // Считаем сумму очков
+            pointArray.append(point == 0 ? "X" : "\(point)") // Добавляем в массив
+            
+            // Проверяем, достиг ли массив нужного размера
+            if pointArray.count == 3 { // Здесь мы проверяем на 3
+                oneTrainingData.append(MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray))
+                sumPoints = 0
+                pointArray.removeAll()
+                series += 1
+            }
+            
+            // Если у нас недостаточно точек для заполнения последней попытки
+            if pointArray.count < 3 && point == oneTraining.last {
+                // Это последний элемент в одном тренировочном наборе
+                // Добавляем его в массив
+                oneTrainingData.append(MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray))
+            }
         }
-        //
-        ////         Предположим, trainingOneData имеет свойства, которые нам нужны
-        ////         Например, предполагаем, что trainingOneData имеет массив `attempts`
-        //
-        //                for attempt in trainingOneData.training { // Измените `attempts` на соответствующее свойство
-        //                    let markAttempt = MarkAttemptCellModel(
-        //                        series: attempt.series,                 // Извлечение строки для серии
-        //                        sumAllPoint: "\(attempt.sumAllPoints)", // Преобразовываем сумму очков в строку
-        //                        numberAttempts: attempt.numberAttempts   // Массив чисел попыток
-        //                    )
-        //
-        //                    oneTraining.append(markAttempt) // Добавляем в массив oneTraining
-        //                }
-        //
-        //                // После обновления oneTraining будет автоматически обновлено представление
-        //            }
-        //    }
     }
 }
