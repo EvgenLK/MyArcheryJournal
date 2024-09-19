@@ -32,22 +32,25 @@ final class CalculatorController: ObservableObject {
         
         let oneTraining = archeryServise.fetchOneTraining(id)
         
-        for point in oneTraining {
-            sumPoints += point == 0 ? 10 : point // Считаем сумму очков
-            pointArray.append(point == 0 ? "X" : "\(point)") // Добавляем в массив
-            
+        for (index, point) in oneTraining.enumerated() {
+            sumPoints += point == 11 ? 10 : point // Считаем сумму очков
+            if point == 11 {
+                pointArray.append("X")
+            } else if point == 0 {
+                pointArray.append("M")
+            } else {
+                pointArray.append("\(point)")
+            }
+
             // Проверяем, достиг ли массив нужного размера
-            if pointArray.count == 3 { // Здесь мы проверяем на 3
+            if pointArray.count == mark { // Здесь мы проверяем на 3
                 oneTrainingData.append(MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray))
                 sumPoints = 0
                 pointArray.removeAll()
                 series += 1
             }
-            
-            // Если у нас недостаточно точек для заполнения последней попытки
-            if pointArray.count < 3 && point == oneTraining.last {
-                // Это последний элемент в одном тренировочном наборе
-                // Добавляем его в массив
+            // Если это последний элемент и у нас есть недостаточно точек для заполнения последней попытки
+            if index == oneTraining.count - 1 && pointArray.count > 0 {
                 oneTrainingData.append(MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray))
             }
         }

@@ -3,10 +3,10 @@
     <entity name="EntityTraining" representedClassName="EntityTraining" syncable="YES" codeGenerationType="class">
         <attribute name="dateTraining" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="distance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="nameTarget" optional="YES" attributeType="String"/>
-        <attribute name="trainingData" optional="YES" attributeType="Transformable"/>
-        <attribute name="typeTraining" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trainingData" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformerName"/>
+        <attribute name="typeTraining" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
 </model>

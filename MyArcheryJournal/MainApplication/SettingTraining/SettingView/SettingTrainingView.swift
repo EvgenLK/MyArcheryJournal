@@ -60,7 +60,6 @@ struct SettingTrainingView: View {
                     HStack {
                         Button(action: {
                             self.selectedButton = 1
-                            print("1111")
                         }) {
                             VStack {
                                 ListImages.IconButton.calculator
@@ -106,7 +105,8 @@ struct SettingTrainingView: View {
                                                                             imageTarget: selectedTarget.caseName(),
                                                                             dateTraining: Date(),
                                                                             nameTaget: selectedTarget.sizeTargerCase().rawValue,
-                                                                            distance: Int(selectedDistance.rawValue) ?? 0))
+                                                                            distance: Int(selectedDistance.rawValue) ?? 0,
+                                                                            training: []))
                         isActive.toggle()
                         
                     }) {

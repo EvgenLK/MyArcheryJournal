@@ -14,16 +14,8 @@ struct TrainingModel {
     let dateTraining: Date
     let nameTaget: String
     let distance: Int
-    var training: [PointModel]?
+    var training: [PointModel]
 }
 struct PointModel: Hashable {
     let point: Int
-    
-//    static func == (lhs: PointModel, rhs: PointModel) -> Bool {
-//        return lhs.point == rhs.point
-//    }
-//
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(point)
-//    }
 }

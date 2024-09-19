@@ -15,7 +15,7 @@ struct RoundSection {
 struct MarkAttemptCellModel: Identifiable {
     var id = UUID()
     let series: String
-    let sumAllPoint: Int
-    let numberAttempts: [String]
+    var sumAllPoint: Int
+    var numberAttempts: [String]
 }
 

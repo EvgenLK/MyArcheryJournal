@@ -12,7 +12,6 @@ struct CalculatorView: View {
     @ObservedObject var oneTraining: CalculatorController
     let idTraining: UUID
     var trainingSetting: [TrainingModel]
-//    @State private var test: [MarkAttemptCellModel] // Массив для хранения попыток
     let numberButton: [String]
     let markSeries: Int
 
@@ -45,18 +44,10 @@ struct CalculatorView: View {
                             ForEach(index..<min(index + 4, numberButton.count), id: \.self) { innerIndex in
                                 Button(action: {
                                     // Создаем новую попытку
-                                    let newScore = Int(numberButton[innerIndex]) ?? 0
-//                                    let newAttempt = MarkAttemptCellModel(
-//                                        series: "\(1)",
-//                                        sumAllPoint: newScore,
-//                                        numberAttempts: [numberButton[innerIndex]]
-//                                    )
-                                    
+                                    let newScore = EnumListingMark.fromValue(numberButton[innerIndex]).setMark
                                     // Сохраняем попытку в архивах
                                     archeryService.saveOneTraining(by: idTraining, newScore)
-                                    print("Нажата кнопка \(numberButton[innerIndex])")
                                     oneTraining.fetchOneTraining(idTraining, markSeries)
-                                    print("данные обновились")
                                     
                                 }) {
                                     Text("\(numberButton[innerIndex])")
@@ -76,5 +67,9 @@ struct CalculatorView: View {
             .background(PaletteApp.systemGray)
         }
         .navigationBarTitle("Калькулятор", displayMode: .inline)
+        .onDisappear {
+            // Обновляем данные при исчезновении калькулятора
+            archeryService.updateAllTrainingData()
+        }
     }
 }
