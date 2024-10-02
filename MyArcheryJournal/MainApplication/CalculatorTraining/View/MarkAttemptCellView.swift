@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MarkAttemptCellView: View {
-    var cellDataAttempt: MarkAttemptCellModel
+    let cellDataAttempt: MarkAttemptCellModel
     let countMarkInCell: Int
     
     var body: some View {
@@ -23,7 +23,8 @@ struct MarkAttemptCellView: View {
             }
             
             HStack(alignment: .center, spacing: 10) {
-                ForEach(cellDataAttempt.numberAttempts.prefix(countMarkInCell), id: \.self) { attempt in
+                ForEach(0..<min(countMarkInCell, cellDataAttempt.numberAttempts.count), id: \.self) { index in
+                    let attempt = cellDataAttempt.numberAttempts[index]
                     ZStack {
                         Circle()
                             .fill(EnumColorMark.fromValue(attempt).color)

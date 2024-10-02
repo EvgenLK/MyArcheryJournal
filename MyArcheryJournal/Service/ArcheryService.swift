@@ -10,7 +10,7 @@ import CoreData
 import Combine
 
 final class ArcheryService: ObservableObject {
-    // MARK: - Property
+    // MARK: - Свойства
     @Published var trainingData: [TrainingModel] = []
     
     private var managedObjectContext: NSManagedObjectContext {
@@ -20,7 +20,7 @@ final class ArcheryService: ObservableObject {
         let container = NSPersistentContainer(name: "MyArcheryData")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("Неустранимая ошибка \(error), \(error.userInfo)")
             }
         })
         return container
@@ -29,13 +29,14 @@ final class ArcheryService: ObservableObject {
 
 extension ArcheryService {
     
-    func createOrUpdateTraining(_ data: TrainingModel) {
-        let context = persistentContainer.viewContext
+    func createTraining(_ data: TrainingModel) {
+        let context = managedObjectContext
         let newTraining = EntityTraining(context: context)
+        
         newTraining.id = data.id
         newTraining.image = data.imageTarget
         newTraining.dateTraining = data.dateTraining
-        newTraining.nameTarget = data.nameTaget
+        newTraining.nameTarget = data.nameTaget 
         newTraining.distance = Int64(data.distance)
         newTraining.typeTraining = Int32(data.typeTraining)
         newTraining.trainingData = data.training as NSObject
@@ -49,21 +50,17 @@ extension ArcheryService {
     }
     
     func fetchAndPrintData() -> [TrainingModel] {
-        var arrayTraining = [TrainingModel]()
         let request: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
+        var arrayTraining = [TrainingModel]()
         
         do {
             let results = try managedObjectContext.fetch(request)
             
             for data in results {
-                // Попробуем получить trainingData как массив
                 guard let trainingDataArray = data.trainingData as? [NSNumber] else {
-                    continue // Пропустить данный элемент, если он не корректный
+                    continue
                 }
-                
-                // Преобразуем массив NSNumber в массив PointModel
                 let trainingArray = trainingDataArray.map { PointModel(point: $0.intValue) }
-                
                 let model = TrainingModel(
                     id: data.id,
                     typeTraining: Int(data.typeTraining),
@@ -73,10 +70,8 @@ extension ArcheryService {
                     distance: Int(data.distance),
                     training: trainingArray
                 )
-                
                 arrayTraining.append(model)
             }
-            
             return arrayTraining
             
         } catch {
@@ -86,7 +81,7 @@ extension ArcheryService {
     }
     
     func deleteAll() {
-        let context = persistentContainer.viewContext
+        let context = managedObjectContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "EntityTraining")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
@@ -97,27 +92,48 @@ extension ArcheryService {
         }
     }
     
-    func saveOneTraining(by id: UUID, _ mark: Int) {
-        let context = persistentContainer.viewContext
+    func saveOneTraining(by id: UUID, _ mark: Int, _ series: Int, _ typetraining: Int) {
+        let allAttempts = series == 10 ? (10 * 3) * 2 : (6 * 6) * 2
+        let context = managedObjectContext
         let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         
         do {
-            let results = try managedObjectContext.fetch(fetchRequest)
-            
-            // Проверяем, нашли ли мы тренировку по ID
+            let results = try context.fetch(fetchRequest)
             if let training = results.first {
-                // Обновляем необходимые свойства. Пример:
-                if var existingMarks = training.trainingData as? [Int] {
-                    existingMarks.append(mark) // Добавляем новую отметку
-                    training.trainingData = existingMarks as NSObject // Присваиваем обратно
+                var existingMarks: [Int]
+                
+                // Получить текущие оценки
+                if let marks = training.trainingData as? [Int] {
+                    existingMarks = marks
                 } else {
-                    training.trainingData = [mark] as NSObject // Если ранее не было отметок, создаем новый массив
+                    existingMarks = []
                 }
                 
-                // Сохраняем изменения контекста
-                try context.save()
-                print("Данные успешно сохранены.")
+                // Добавляем новую оценку
+                existingMarks.append(mark)
+                
+                // Проверяем количество оценок в зависимости от typetraining
+                if typetraining == 1 {
+                    if existingMarks.count <= allAttempts {
+                        training.trainingData = existingMarks as NSObject
+                        
+                        // Сохраняем изменения в контексте
+                        try context.save()
+                        print("Данные успешно сохранены.")
+                    } else {
+                        print("Достигнут лимит попыток.")
+                    }
+                } else if typetraining == 0 {
+                    // Если typetraining == 0, сохраняем без ограничения по количеству оценок
+                    training.trainingData = existingMarks as NSObject
+                    
+                    // Сохраняем изменения в контексте
+                    try context.save()
+                    print("Данные успешно сохранены.")
+                } else {
+                    print("Некорректный тип тренировки.")
+                }
             } else {
                 print("Тренировка с заданным ID не найдена.")
             }
@@ -125,38 +141,47 @@ extension ArcheryService {
             print("Ошибка при сохранении данных: \(error.localizedDescription)")
         }
     }
+
     
-    func fetchOneTraining(_ id: UUID) -> [Int] {
-        var oneTraining = [Int]()
+    func fetchOneTraining(_ id: UUID) -> TrainingModel? {
         let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         
         do {
             let results = try managedObjectContext.fetch(fetchRequest)
-            
-            for training in results {
-                
-                // Проверяем, что trainingData существует и преобразуем его
-                if let points = training.trainingData as? [Int] {
-                    oneTraining.append(contentsOf: points) // добавляем все значения в массив
-                } else {
-                    print("Нет тренировочных точек для данной тренировки.")
-                }
+            guard let training = results.first else {
+                print("Тренировка не найдена.")
+                return nil
             }
+
+            // Извлечение данных из Core Data
+            let trainingModel = TrainingModel(
+                id: training.id,
+                typeTraining: Int(training.typeTraining),
+                imageTarget: training.image ?? "",
+                dateTraining: training.dateTraining ?? Date(),
+                nameTaget: training.nameTarget ?? "",
+                distance: Int(training.distance),
+                training: extractPoints(from: training.trainingData)
+            )
+
+            return trainingModel
+            
         } catch {
             print("Ошибка при получении данных: \(error.localizedDescription)")
         }
-        
-        return oneTraining
+        return nil
+    }
+
+    private func extractPoints(from data: NSObject?) -> [PointModel] {
+        guard let pointsArray = data as? [Int] else {
+            print("Неверный формат данных тренировки.")
+            return []
+        }
+        return pointsArray.map { PointModel(point: $0) }
     }
     
     func updateAllTrainingData() {
-        // Получаем новые данные из Core Data
-        let newTrainingData = fetchAndPrintData()
-        
-        // Обновляем массив trainingData
-        trainingData = newTrainingData
-        
-        print("Все данные успешно обновлены.")
+        trainingData = fetchAndPrintData()
     }
 }

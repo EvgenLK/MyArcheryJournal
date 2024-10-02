@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListTrainingView: View {
     @EnvironmentObject var archeryService: ArcheryService
-    @StateObject var trainingController: ListTrainingController // Измените на StateObject, чтобы управлять состоянием
+    @StateObject var trainingController: ListTrainingController
     
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
@@ -100,7 +100,6 @@ struct ListTrainingView: View {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

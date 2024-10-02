@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B033AEA2CA1900B005A7ECE /* EnumCountSeriesInTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */; };
 		9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274082C3C9FA700A3B17B /* ArcheryService.swift */; };
 		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
 		9B1B352C2C7B520D00D84AA6 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */; };
@@ -25,6 +26,7 @@
 		9B88B9292C32C1FE005931E3 /* ListTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */; };
 		9B88B92B2C32C1FF005931E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B88B92A2C32C1FF005931E3 /* Assets.xcassets */; };
 		9B88B92E2C32C1FF005931E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B88B92D2C32C1FF005931E3 /* Preview Assets.xcassets */; };
+		9B93BE5F2CA6E515007DAF63 /* SectionCellMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B93BE5E2CA6E515007DAF63 /* SectionCellMarkView.swift */; };
 		9BA9DA922C342239004158EF /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9DA912C342239004158EF /* SFProText-Bold.ttf */; };
 		9BA9DA942C34224C004158EF /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9DA932C34224C004158EF /* SFProText-Regular.ttf */; };
 		9BA9DA982C342320004158EF /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9DA972C342320004158EF /* Digest.swift */; };
@@ -44,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCountSeriesInTarget.swift; sourceTree = "<group>"; };
 		9B1274082C3C9FA700A3B17B /* ArcheryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryService.swift; sourceTree = "<group>"; };
 		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
 		9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingView.swift; sourceTree = "<group>"; };
 		9B88B92A2C32C1FF005931E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B88B92D2C32C1FF005931E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9B93BE5E2CA6E515007DAF63 /* SectionCellMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCellMarkView.swift; sourceTree = "<group>"; };
 		9BA9DA912C342239004158EF /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		9BA9DA932C34224C004158EF /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		9BA9DA972C342320004158EF /* Digest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			children = (
 				9B8525142C6C236900C22E42 /* CalculatorView.swift */,
 				9BBEADF12C71AD2900F3BBDE /* MarkAttemptCellView.swift */,
+				9B93BE5E2CA6E515007DAF63 /* SectionCellMarkView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				9B8161DA2C809B8800606803 /* EnumMarkCount.swift */,
 				9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */,
 				9B73BCA32C9AEDD30066C006 /* EnumListingMark.swift */,
+				9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,9 +500,11 @@
 				9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */,
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
 				9BF43E152C360E0F002C0D98 /* ListTrainingViewCell.swift in Sources */,
+				9B93BE5F2CA6E515007DAF63 /* SectionCellMarkView.swift in Sources */,
 				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
 				9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */,
 				9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */,
+				9B033AEA2CA1900B005A7ECE /* EnumCountSeriesInTarget.swift in Sources */,
 				9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */,
 				9BBEADF62C7233FB00F3BBDE /* EnumSelectedTraining.swift in Sources */,
 				9BA9DA982C342320004158EF /* Digest.swift in Sources */,

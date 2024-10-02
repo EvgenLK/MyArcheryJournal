@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ListTrainingViewCell: View {
-    var cellDataTrainig: ListTrainingModelCell
+    let cellDataTrainig: ListTrainingModelCell
+    
     var body: some View {
         HStack {
             VStack(alignment: .center) {

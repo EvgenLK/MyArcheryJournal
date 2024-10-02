@@ -28,4 +28,5 @@
 "DataInCell.milimetr" = "мм";
 "DataInCell.distance" = "Дистанция";
 "DataInCell.average" = "Сред.";
-
+// MARK: - CalculatorView
+"CalculatorView.round" = "Раунд";

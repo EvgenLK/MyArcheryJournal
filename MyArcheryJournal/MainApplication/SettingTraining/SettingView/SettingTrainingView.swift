@@ -78,11 +78,8 @@ struct SettingTrainingView: View {
                         }) {
                             VStack {
                                 ZStack {
-                                    ListImages.IconButton.target_mark
+                                    ListImages.IconButton.target_pro
                                         .font(.title)
-                                    
-                                    //                                ListImages.IconButton.icon_pro
-                                    //                                    .position(x: 90, y: 180)
                                 }
                                 Text(Tx.AddTraining.markOnTarget)
                                     .font(OurFonts.fontSFProTextRegular14)
@@ -93,6 +90,7 @@ struct SettingTrainingView: View {
                             .background(selectedButton == 2 ? PaletteApp.systemGray : PaletteApp.white)
                             .cornerRadius(10)
                         }
+                        .disabled(true) // пока что недоступна , потом навещать либо алерт либо переход на платную версию
                     }
                     .padding(.horizontal, 16)
                 }
@@ -100,7 +98,7 @@ struct SettingTrainingView: View {
                 
                 VStack {
                     Button(action: {
-                        archeryService.createOrUpdateTraining(TrainingModel(id: UUID(),
+                        archeryService.createTraining(TrainingModel(id: UUID(),
                                                                             typeTraining: selectedTraining.rawValue,
                                                                             imageTarget: selectedTarget.caseName(),
                                                                             dateTraining: Date(),

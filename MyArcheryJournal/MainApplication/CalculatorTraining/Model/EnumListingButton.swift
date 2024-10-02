@@ -25,6 +25,7 @@ enum EnumListingButton: String {
             return  Array(arrayLiteral: "-")
         }
     }
+    
     static func fromValueTarget(_ value: String) -> EnumListingButton {
         switch value {
         case "universalFita3x20Ver":

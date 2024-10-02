@@ -30,6 +30,6 @@ enum ListImages {
         static let calculator = Image("calculator")
         static let target_mark = Image("target_mark")
         static let icon_pro = Image("icon_pro")
-        
+        static let target_pro = Image("target_pro")
     }
 }

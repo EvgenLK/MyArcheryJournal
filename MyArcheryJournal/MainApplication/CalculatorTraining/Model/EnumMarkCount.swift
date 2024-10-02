@@ -20,6 +20,7 @@ enum EnumMarkCount: Int {
             return 0
         }
     }
+    
     static func fromValue(_ value: Int) -> EnumMarkCount {
         switch value {
         case 12, 18:
@@ -31,5 +32,3 @@ enum EnumMarkCount: Int {
         }
     }
 }
-
-

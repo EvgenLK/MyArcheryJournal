@@ -8,5 +8,4 @@
 enum EnumSelectedTraining: Int {
     case free = 0
     case fixed = 1
-
 }

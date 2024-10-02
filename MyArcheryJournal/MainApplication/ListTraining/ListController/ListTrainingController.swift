@@ -11,7 +11,7 @@ import Combine
 final class ListTrainingController: ObservableObject {
     @Published var training: [TrainingSection] = []
     
-    let archeryServise: ArcheryService
+    private let archeryServise: ArcheryService
     private var cancellables = Set<AnyCancellable>()
     
     init(archeryServise: ArcheryService) {
@@ -42,16 +42,16 @@ final class ListTrainingController: ObservableObject {
         }
         .map { (key, value) in
             let trainingCells = value.map { data in
-                let totalShots = data.training.reduce(0) { ($0) + ($1.point == 11 ? 10 : $1.point) }  // Предполагаем, что point - это свойство типа Int
+                let totalShots = data.training.reduce(0) { ($0) + ($1.point == 11 ? 10 : $1.point) }
                 let countOfShots = data.training.count * 10 + countPointShot(data.training.count, data.distance)
                 let averageShots: Int
                 if countOfShots > 0 {
-                    averageShots = totalShots / data.training.count // Целочисленное деление
+                    averageShots = totalShots / data.training.count
                 } else {
-                    averageShots = 0 // Значение по умолчанию, если выстрелов нет
+                    averageShots = 0
                 }
                 
-                return ListTrainingModelCell( // Добавлен return здесь
+                return ListTrainingModelCell(
                     imageTaghet: data.imageTarget.fromStringInImage(),
                     dateTraining: data.dateTraining.formatDate("dd.MM"),
                     countShot: "\(totalShots)" ,

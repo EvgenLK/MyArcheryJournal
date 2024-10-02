@@ -16,7 +16,6 @@ struct MyArcheryJournalApp: App {
         WindowGroup {
             ListTrainingView(archeryService: archeryService)
                 .environmentObject(archeryService)
-
         }
     }
 }
