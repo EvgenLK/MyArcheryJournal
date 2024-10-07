@@ -46,15 +46,17 @@ final class CalculatorController: ObservableObject {
         var pointArray = [String]()
         var sumPoints = 0
         var series = 1
+        let mark10 = 10
+        let mark11 = 11
         
         oneTrainingData.append(RoundSection(roundNumber: 0, roundSum: 0, trainings: []))
         
         for (index, point) in training.training.enumerated() {
             let pointValue = point.point
             
-            sumPoints += pointValue == 11 ? 10 : pointValue // Считаем сумму очков
+            sumPoints += pointValue == mark11 ? mark10 : pointValue // Считаем сумму очков
             
-            if pointValue == 11 {
+            if pointValue == mark11 {
                 pointArray.append("X")
             } else if pointValue == 0 {
                 pointArray.append("M")
