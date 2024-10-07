@@ -93,7 +93,7 @@ extension ArcheryService {
     }
     
     func saveOneTraining(by id: UUID, _ mark: Int, _ series: Int, _ typetraining: Int) {
-        let allAttempts = series == 10 ? (10 * 3) * 2 : (6 * 6) * 2
+        let allAttempts = series == 10 ? (10 * 3) * 2 : (6 * 6) * 2 // этот код не будет никогда меняться это хардовая константа.
         let context = managedObjectContext
         let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
@@ -142,7 +142,6 @@ extension ArcheryService {
         }
     }
 
-    
     func fetchOneTraining(_ id: UUID) -> TrainingModel? {
         let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)

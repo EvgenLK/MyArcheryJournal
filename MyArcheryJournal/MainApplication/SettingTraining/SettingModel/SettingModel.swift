@@ -16,6 +16,7 @@ struct TrainingModel {
     let distance: Int
     var training: [PointModel]
 }
+
 struct PointModel: Hashable {
     let point: Int
 }

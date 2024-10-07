@@ -36,5 +36,7 @@ enum Tx {
     }
     enum CalculatorView {
         static let round = NSLocalizedString("CalculatorView.round", comment: "Раунд")
+        static let text_Ok = NSLocalizedString("CalculatorView.textOk", comment: "OK")
+        static let text_AttemptEnd = NSLocalizedString("CalculatorView.textAttemptEnd", comment: "Попытки закончены!")
     }
 }

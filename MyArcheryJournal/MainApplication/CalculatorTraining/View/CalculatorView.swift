@@ -10,6 +10,7 @@ import SwiftUI
 struct CalculatorView: View {
     @EnvironmentObject var archeryService: ArcheryService
     @ObservedObject var oneTraining: CalculatorController
+    @State private var showAlert = false
     private let idTraining: UUID
     private var trainingSetting: [TrainingModel]
     private let numberButton: [String]
@@ -43,7 +44,6 @@ struct CalculatorView: View {
                                 }
                             }
                         }
-                        
                         if trainingSetting.last?.typeTraining == 0, !oneTraining.oneTrainingData.isEmpty {
                             // Также показываем тренировки, если тип 0
                             ForEach(oneTraining.oneTrainingData, id: \.id) { section in
@@ -79,7 +79,7 @@ struct CalculatorView: View {
                                         // Сохраняем попытку в архивах
                                         archeryService.saveOneTraining(by: idTraining, newScore, countSeriesInTarget, typeTraining)
                                         oneTraining.fetchOneTraining(idTraining, attemptSeries)
-                                        
+                                        showAlert = oneTraining.fetchBoolTrainingFull(idTraining, countSeriesInTarget, typeTraining) ? true : false
                                     }) {
                                         Text("\(numberButton[innerIndex])")
                                             .font(OurFonts.fontSFProTextRegular17)
@@ -97,9 +97,12 @@ struct CalculatorView: View {
                 .frame(maxWidth: .infinity)
                 .background(PaletteApp.systemGray)
             }
-            .navigationBarTitle("Калькулятор", displayMode: .inline)
+            .navigationBarTitle(Tx.AddTraining.calculator, displayMode: .inline)
             .onDisappear {
                 archeryService.updateAllTrainingData()
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(""), message: Text("\(Tx.CalculatorView.text_AttemptEnd)"), dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok)")))
             }
         }
     }

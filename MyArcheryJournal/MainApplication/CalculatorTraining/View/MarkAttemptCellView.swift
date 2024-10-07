@@ -36,7 +36,6 @@ struct MarkAttemptCellView: View {
                             .foregroundColor(EnumColorMark.fromForegroundColor(attempt).color)
                     }
                 }
-
                 ForEach(0..<max(0, countMarkInCell - cellDataAttempt.numberAttempts.count), id: \.self) { _ in
                     ZStack {
                         Circle()

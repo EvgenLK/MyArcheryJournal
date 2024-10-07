@@ -13,6 +13,7 @@ final class CalculatorController: ObservableObject {
     private let archeryServise: ArcheryService
     private var cancellables = Set<AnyCancellable>()
     
+    
     init(archeryServise: ArcheryService) {
         self.archeryServise = archeryServise
         
@@ -23,7 +24,7 @@ final class CalculatorController: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func fetchOneTraining(_ id: UUID, _ mark: Int) {
+    func fetchOneTraining(_ id: UUID, _ attemptSeries: Int) {
         oneTrainingData.removeAll()
         
         // Получаем тренировку по идентификатору
@@ -31,17 +32,17 @@ final class CalculatorController: ObservableObject {
             print("Тренировка не найдена.")
             return
         }
-
+        
         let typeTraining = training.typeTraining
-
+        
         if typeTraining != 1 {
-            fetchfreeTraining(training, mark)
+            fetchfreeTraining(training, attemptSeries)
         } else {
-            fetchfixedTraining(training, mark)
+            fetchfixedTraining(training, attemptSeries)
         }
     }
     
-    func fetchfreeTraining(_ training: TrainingModel, _ mark: Int) {
+    func fetchfreeTraining(_ training: TrainingModel, _ attempt: Int) {
         var pointArray = [String]()
         var sumPoints = 0
         var series = 1
@@ -60,51 +61,45 @@ final class CalculatorController: ObservableObject {
             } else {
                 pointArray.append("\(pointValue)")
             }
-
+            
             // Проверяем, достиг ли массив нужного размера
-            if pointArray.count == mark { // Здесь мы проверяем на значение mark
+            if pointArray.count == attempt { // Здесь мы проверяем на значение mark
                 let attemptMark = MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray)
                 
                 if var firstTraining = oneTrainingData.first {
-                                firstTraining.trainings.append(attemptMark)
-
-                                // Обновляем первый элемент в массиве
-                                oneTrainingData[0] = firstTraining
-                            }
+                    firstTraining.trainings.append(attemptMark)
+                    
+                    // Обновляем первый элемент в массиве
+                    oneTrainingData[0] = firstTraining
+                }
                 sumPoints = 0
                 pointArray.removeAll()
                 series += 1
             }
-
+            
             // Если это последний элемент и у нас есть недостаточно точек для заполнения последней попытки
             if index == training.training.count - 1 && pointArray.count > 0 {
                 let attemptMark = MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray)
                 
                 if var firstTraining = oneTrainingData.first {
-                                firstTraining.trainings.append(attemptMark)
-
-                                // Обновляем первый элемент в массиве
-                                oneTrainingData[0] = firstTraining
-                            }
+                    firstTraining.trainings.append(attemptMark)
+                    
+                    // Обновляем первый элемент в массиве
+                    oneTrainingData[0] = firstTraining
+                }
             }
         }
     }
     
-    func fetchfixedTraining(_ training: TrainingModel, _ mark: Int) {
+    func fetchfixedTraining(_ training: TrainingModel, _ attempt: Int) {
         var pointArray = [String]()
         var sumPoints = 0
         var series = 1
         var round = 1
-                    
         let numberRound = EnumCountSeriesInTarget.fromValueSeries(training.imageTarget).setCount
         var sumAllRound = 0
         
         for (index, point) in training.training.enumerated() {
-            // Проверяем, достигли ли мы 3-го раунда
-            if round == 3 {
-                break // может кинуть алерт??
-            }
-
             if oneTrainingData.count < round {
                 oneTrainingData.append(RoundSection(roundNumber: round, roundSum: sumAllRound, trainings: []))
                 sumAllRound = 0
@@ -114,7 +109,6 @@ final class CalculatorController: ObservableObject {
             
             sumPoints += pointValue == 11 ? 10 : pointValue // Считаем сумму серии
             sumAllRound += pointValue == 11 ? 10 : pointValue // Считаем сумму раунда
-
             
             if pointValue == 11 {
                 pointArray.append("X")
@@ -123,9 +117,9 @@ final class CalculatorController: ObservableObject {
             } else {
                 pointArray.append("\(pointValue)")
             }
-
+            
             // Проверяем, достиг ли массив нужного размера
-            if pointArray.count == mark { // Здесь мы проверяем на значение mark
+            if pointArray.count == attempt { // Здесь мы проверяем на значение mark
                 let attemptMark = MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray)
                 
                 if oneTrainingData.firstIndex(where: { $0.roundNumber == round }) != nil {
@@ -148,6 +142,30 @@ final class CalculatorController: ObservableObject {
                     oneTrainingData[round - 1].roundSum += sumAllRound
                 }
             }
+        }
+    }
+    
+    func fetchBoolTrainingFull(_ trainingID: UUID, _ series: Int, _ typeTraining: Int) -> Bool {
+        var markCount = 0
+        let allAttempts = series == 10 ? (10 * 3) * 2 : (6 * 6) * 2 // этот код не будет никогда меняться это хардовая константа.
+        
+        if typeTraining == 1 {
+            guard let training = archeryServise.fetchOneTraining(trainingID) else {
+                print("Тренировка не найдена.")
+                return false
+            }
+            
+            for _ in training.training {
+                markCount += 1
+            }
+            
+            if markCount == allAttempts {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
         }
     }
 }

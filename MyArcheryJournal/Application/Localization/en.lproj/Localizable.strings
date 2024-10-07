@@ -30,3 +30,5 @@
 "DataInCell.average" = "Сред.";
 // MARK: - CalculatorView
 "CalculatorView.round" = "Раунд";
+"CalculatorView.textOk" = "OK";
+"CalculatorView.textAttemptEnd" = "Попытки закончены!";
