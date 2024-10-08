@@ -3,19 +3,10 @@
     <entity name="EntityTraining" representedClassName="EntityTraining" syncable="YES" codeGenerationType="class">
         <attribute name="dateTraining" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="distance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="nameTarget" optional="YES" attributeType="String"/>
-        <relationship name="trainingSeries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainingSeries" inverseName="training" inverseEntity="TrainingSeries"/>
-    </entity>
-    <entity name="TrainingPoint" representedClassName="TrainingPoint" syncable="YES" codeGenerationType="class">
-        <attribute name="arrow" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="point" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="series" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrainingSeries" inverseName="dataPoint" inverseEntity="TrainingSeries"/>
-    </entity>
-    <entity name="TrainingSeries" representedClassName="TrainingSeries" syncable="YES" codeGenerationType="class">
-        <attribute name="series" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="dataPoint" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainingPoint" inverseName="series" inverseEntity="TrainingPoint"/>
-        <relationship name="training" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityTraining" inverseName="trainingSeries" inverseEntity="EntityTraining"/>
+        <attribute name="trainingData" optional="YES" attributeType="Transformable"/>
+        <attribute name="typeTraining" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
 </model>

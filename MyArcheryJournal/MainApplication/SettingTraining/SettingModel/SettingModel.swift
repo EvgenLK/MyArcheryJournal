@@ -9,19 +9,14 @@ import SwiftUI
 
 struct TrainingModel {
     let id: UUID?
+    let typeTraining: Int
     let imageTarget: String
     let dateTraining: Date
     let nameTaget: String
     let distance: Int
-    var training: [TrainingSeriesModel]?
+    var training: [PointModel]
 }
 
-struct TrainingSeriesModel {
-    let series: Int
-    var dataShot: [PointModel]
-}
-
-struct PointModel {
+struct PointModel: Hashable {
     let point: Int
-    let arrowNumber: Int
 }

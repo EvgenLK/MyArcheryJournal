@@ -6,18 +6,22 @@
 //
 
 import SwiftUI
+import Combine
 
 final class ListTrainingController: ObservableObject {
     @Published var training: [TrainingSection] = []
     
-    let archeryServise: ArcheryService
+    private let archeryServise: ArcheryService
+    private var cancellables = Set<AnyCancellable>()
     
     init(archeryServise: ArcheryService) {
         self.archeryServise = archeryServise
-    }
-    
-    func saveTraining(_ data: TrainingModel) {
-        archeryServise.createOrUpdateTraining(data)
+        
+        archeryServise.$trainingData
+            .sink { [weak self] _ in
+                self?.fetchTraining()
+            }
+            .store(in: &cancellables)
     }
     
     func fetchTraining() {
@@ -30,25 +34,54 @@ final class ListTrainingController: ObservableObject {
             return
         }
         
-        let groupedTrainings = Dictionary(grouping: trainingAllData) {
-            $0.dateTraining.formatDate("MM.YY")
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM.YY"
         
-        training = groupedTrainings.map { (key, value) in
+        training = Dictionary(grouping: trainingAllData) { training in
+            dateFormatter.string(from: training.dateTraining)
+        }
+        .map { (key, value) in
             let trainingCells = value.map { data in
-                ListTrainingModelCell(imageTaghet: data.imageTarget.fromStringInImage(),
-                                  dateTraining: data.dateTraining.formatDate("dd.MM"),
-                                  countShot: "100",
-                                  allShot: "200",
-                                  distance: "\(data.distance)",
-                                  nameTaget: data.nameTaget,
-                                  avarageShot: "9")
+                let totalShots = data.training.reduce(0) { ($0) + ($1.point == 11 ? 10 : $1.point) }
+                let countOfShots = data.training.count * 10 + countPointShot(data.training.count, data.distance)
+                let averageShots: Int
+                if countOfShots > 0 {
+                    averageShots = totalShots / data.training.count
+                } else {
+                    averageShots = 0
+                }
+                
+                return ListTrainingModelCell(
+                    imageTaghet: data.imageTarget.fromStringInImage(),
+                    dateTraining: data.dateTraining.formatDate("dd.MM"),
+                    countShot: "\(totalShots)" ,
+                    allShot: "\(countOfShots)",
+                    distance: "\(data.distance)",
+                    nameTaget: data.nameTaget,
+                    avarageShot: "\(averageShots)"
+                )
             }
+            
             return TrainingSection(monthYear: key, trainings: trainingCells)
         }.sorted(by: { $0.monthYear > $1.monthYear })
     }
     
     func deleteAlldata() {
         archeryServise.deleteAll()
+    }
+    
+    func countPointShot(_ count: Int, _ distance: Int) -> Int {
+        var countShot = 0
+        
+        let attemptTarget = distance == 12 || distance == 18 ?
+        EnumMarkCount.fromValue(distance).markCount : EnumMarkCount.fromValue(distance).markCount
+        
+        if count % attemptTarget == 1 {
+            countShot += 20
+            
+        } else if count % attemptTarget == 2 {
+            countShot += 10
+        }
+        return countShot
     }
 }

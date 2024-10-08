@@ -34,4 +34,9 @@ enum Tx {
         static let distance = NSLocalizedString("DataInCell.distance", comment: "Дистанция")
         static let average = NSLocalizedString("DataInCell.average", comment: "Сред.")
     }
+    enum CalculatorView {
+        static let round = NSLocalizedString("CalculatorView.round", comment: "Раунд")
+        static let text_Ok = NSLocalizedString("CalculatorView.textOk", comment: "OK")
+        static let text_AttemptEnd = NSLocalizedString("CalculatorView.textAttemptEnd", comment: "Попытки закончены!")
+    }
 }

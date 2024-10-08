@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ListTrainingView: View {
     @EnvironmentObject var archeryService: ArcheryService
-    @ObservedObject var trainingController: ListTrainingController
-
+    @StateObject var trainingController: ListTrainingController
+    
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.backgroundColor = .white
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-        self.trainingController = ListTrainingController(archeryServise: archeryService)
+        self._trainingController = StateObject(wrappedValue: ListTrainingController(archeryServise: archeryService))
     }
     
     var body: some View {
-        ZStack {
+        NavigationStack {
             TabView {
                 NavigationStack {
                     ZStack {
@@ -80,7 +80,8 @@ struct ListTrainingView: View {
                     .background(PaletteApp.backGroundView)
                     .navigationTitle(Tx.ListTraining.myTraining)
                 }
-                .environmentObject(trainingController)
+                .environmentObject(archeryService)
+                
                 .tabItem {
                     ListImages.TapBar.target
                     Text(Tx.ListTraining.training)
@@ -96,9 +97,6 @@ struct ListTrainingView: View {
                         Text(Tx.ListTraining.setting)
                     }
             }
-        }
-        .onAppear{
-            trainingController.fetchTraining()
         }
     }
 }
