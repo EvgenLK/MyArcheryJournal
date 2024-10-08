@@ -13,7 +13,6 @@ final class CalculatorController: ObservableObject {
     private let archeryServise: ArcheryService
     private var cancellables = Set<AnyCancellable>()
     
-    
     init(archeryServise: ArcheryService) {
         self.archeryServise = archeryServise
         
@@ -65,7 +64,7 @@ final class CalculatorController: ObservableObject {
             }
             
             // Проверяем, достиг ли массив нужного размера
-            if pointArray.count == attempt { // Здесь мы проверяем на значение mark
+            if pointArray.count == attempt { // Здесь мы проверяем на значение attempt
                 let attemptMark = MarkAttemptCellModel(series: "\(series)", sumAllPoint: sumPoints, numberAttempts: pointArray)
                 
                 if var firstTraining = oneTrainingData.first {
@@ -100,6 +99,8 @@ final class CalculatorController: ObservableObject {
         var round = 1
         let numberRound = EnumCountSeriesInTarget.fromValueSeries(training.imageTarget).setCount
         var sumAllRound = 0
+        let mark10 = 10
+        let mark11 = 11
         
         for (index, point) in training.training.enumerated() {
             if oneTrainingData.count < round {
@@ -109,10 +110,10 @@ final class CalculatorController: ObservableObject {
             
             let pointValue = point.point
             
-            sumPoints += pointValue == 11 ? 10 : pointValue // Считаем сумму серии
-            sumAllRound += pointValue == 11 ? 10 : pointValue // Считаем сумму раунда
+            sumPoints += pointValue == mark11 ? mark10 : pointValue // Считаем сумму серии
+            sumAllRound += pointValue == mark11 ? mark10 : pointValue // Считаем сумму раунда
             
-            if pointValue == 11 {
+            if pointValue == mark11 {
                 pointArray.append("X")
             } else if pointValue == 0 {
                 pointArray.append("M")
@@ -160,12 +161,7 @@ final class CalculatorController: ObservableObject {
             for _ in training.training {
                 markCount += 1
             }
-            
-            if markCount == allAttempts {
-                return true
-            } else {
-                return false
-            }
+            return markCount == allAttempts
         } else {
             return false
         }
