@@ -5,6 +5,8 @@
 //  Created by Evgenii Kutasov on 29.07.2024.
 //
 
+import Foundation
+
 enum EnumDistance: String, CaseIterable {
     case notSelected = "Не выбрано"
     case twelve = "12"
@@ -14,4 +16,13 @@ enum EnumDistance: String, CaseIterable {
     case sixty = "60"
     case seventy = "70"
     case ninety = "90"
+
+    var localized: String {
+        switch self {
+        case .notSelected:
+            return Tx.AddTraining.notSelected
+        default:
+            return self.rawValue
+        }
+    }
 }

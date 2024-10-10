@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  MyArcheryJournal
+
+  Created by Evgenii Kutasov on 02.07.2024.
+  
+*/
+
+// MARK: - System
+"System.error" = "Ошибка";
+"System.close" = "Закрыть";
+// MARK: - ScreenMain
+"ScreenMain.Mytraining" = "Мои Тренировки";
+"ScreenMain.training" = "Тренировки";
+"ScreenMain.statistics" = "Статистика";
+"ScreenMain.setting" = "Настройки";
+"ScreenMain.emptyList" = "Список тренировок пуст";
+// MARK: - AddTraining
+"AddTraining.addTraining" = "Добавить тренировку";
+"AddTraining.free" = "Свободная";
+"AddTraining.fixed" = "Фиксированая";
+"AddTraining.markOnTarget" = "Отметка на мишени";
+"AddTraining.calculator" = "Калькулятор";
+"AddTraining.inputMethod" = "Способ ввода";
+"AddTraining.further" = "Далее";
+"AddTraining.notSelected" = "Не выбрано";
+// MARK: - DataInCell
+"DataInCell.milimetr" = "мм";
+"DataInCell.distance" = "Дистанция";
+"DataInCell.average" = "Сред.";
+// MARK: - CalculatorView
+"CalculatorView.round" = "Раунд";
+"CalculatorView.textOk" = "OK";
+"CalculatorView.textAttemptEnd" = "Попытки закончены!";

@@ -30,7 +30,8 @@ struct SettingTrainingView: View {
                     Form {
                         Picker(Tx.DataInCell.distance, selection: $selectedDistance) {
                             ForEach(EnumDistance.allCases, id: \.self) { distance in
-                                Text(distance.rawValue)
+                                Text(distance.localized)
+                                    .tag(distance)
                             }
                         }
                         .pickerStyle(.navigationLink)
@@ -41,7 +42,8 @@ struct SettingTrainingView: View {
                         HStack {
                             Picker(Tx.AddTraining.markOnTarget, selection: $selectedTarget) {
                                 ForEach(EnumTarget.allCases, id: \.self) { target in
-                                    Text(target.rawValue)
+                                    Text(target.localized)
+                                        .tag(target)
                                 }
                             }
                             .pickerStyle(.navigationLink)

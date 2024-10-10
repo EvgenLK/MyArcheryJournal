@@ -12,7 +12,7 @@ struct SectionCellMarkView: View {
     
     var body: some View {
         HStack {
-            Text("Раунд \(roundCellAttempt.roundNumber)")
+            Text("\(Tx.CalculatorView.round) \(roundCellAttempt.roundNumber)")
                 .font(OurFonts.fontSFProTextRegular17)
                 .foregroundColor(PaletteApp.gray)
             

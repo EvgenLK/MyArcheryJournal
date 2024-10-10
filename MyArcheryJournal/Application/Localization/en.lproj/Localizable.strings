@@ -7,28 +7,28 @@
 */
 
 // MARK: - System
-"System.error" = "Ошибка";
-"System.close" = "Закрыть";
+"System.error" = "Error";
+"System.close" = "Close";
 // MARK: - ScreenMain
-"ScreenMain.Mytraining" = "Мои Тренировки";
-"ScreenMain.training" = "Тренировки";
-"ScreenMain.statistics" = "Статистика";
-"ScreenMain.setting" = "Настройки";
-"ScreenMain.emptyList" = "Список тренировок пуст";
+"ScreenMain.Mytraining" = "My sessions";
+"ScreenMain.training" = "Sessions";
+"ScreenMain.statistics" = "Statistics";
+"ScreenMain.setting" = "Settings";
+"ScreenMain.emptyList" = "The session list is empty";
 // MARK: - AddTraining
-"AddTraining.addTraining" = "Добавить тренировку";
-"AddTraining.free" = "Свободная";
-"AddTraining.fixed" = "Фиксированая";
-"AddTraining.markOnTarget" = "Отметка на мишени";
-"AddTraining.calculator" = "Калькулятор";
-"AddTraining.inputMethod" = "Способ ввода";
-"AddTraining.further" = "Далее";
-"AddTraining.notSelected" = "Не выбрано";
+"AddTraining.addTraining" = "Add new session";
+"AddTraining.free" = "Free";
+"AddTraining.fixed" = "Fixed";
+"AddTraining.markOnTarget" = "Mark on the target";
+"AddTraining.calculator" = "Calculator";
+"AddTraining.inputMethod" = "Input method";
+"AddTraining.further" = "Continue";
+"AddTraining.notSelected" = "Not selected";
 // MARK: - DataInCell
-"DataInCell.milimetr" = "мм";
-"DataInCell.distance" = "Дистанция";
-"DataInCell.average" = "Сред.";
+"DataInCell.milimetr" = "mm";
+"DataInCell.distance" = "Distance";
+"DataInCell.average" = "Average";
 // MARK: - CalculatorView
-"CalculatorView.round" = "Раунд";
+"CalculatorView.round" = "Round";
 "CalculatorView.textOk" = "OK";
-"CalculatorView.textAttemptEnd" = "Попытки закончены!";
+"CalculatorView.textAttemptEnd" = "The session is finished!";
