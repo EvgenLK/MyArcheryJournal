@@ -20,15 +20,15 @@ struct SettingTrainingView: View {
         NavigationStack {
             VStack {
                 Picker(selection: $selectedTraining , label: Text("Picker")) {
-                    Text(Tx.AddTraining.freeTraining).tag(EnumSelectedTraining.free)
-                    Text(Tx.AddTraining.fixedTraining).tag(EnumSelectedTraining.fixed)
+                    Text(Tx.AddTraining.freeTraining.localized()).tag(EnumSelectedTraining.free)
+                    Text(Tx.AddTraining.fixedTraining.localized()).tag(EnumSelectedTraining.fixed)
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
                 VStack {
                     Form {
-                        Picker(Tx.DataInCell.distance, selection: $selectedDistance) {
+                        Picker(Tx.DataInCell.distance.localized(), selection: $selectedDistance) {
                             ForEach(EnumDistance.allCases, id: \.self) { distance in
                                 Text(distance.localized)
                                     .tag(distance)
@@ -40,7 +40,7 @@ struct SettingTrainingView: View {
                         }
                         
                         HStack {
-                            Picker(Tx.AddTraining.markOnTarget, selection: $selectedTarget) {
+                            Picker(Tx.AddTraining.markOnTarget.localized(), selection: $selectedTarget) {
                                 ForEach(EnumTarget.allCases, id: \.self) { target in
                                     Text(target.localized)
                                         .tag(target)
@@ -56,7 +56,7 @@ struct SettingTrainingView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text(Tx.AddTraining.inputMethod)
+                    Text(Tx.AddTraining.inputMethod.localized())
                         .padding(.leading, 32)
                     
                     HStack {
@@ -66,7 +66,7 @@ struct SettingTrainingView: View {
                             VStack {
                                 ListImages.IconButton.calculator
                                     .font(.title)
-                                Text(Tx.AddTraining.calculator)
+                                Text(Tx.AddTraining.calculator.localized())
                                     .font(OurFonts.fontSFProTextRegular14)
                                     .foregroundColor(PaletteApp.black)
                             }
@@ -83,7 +83,7 @@ struct SettingTrainingView: View {
                                     ListImages.IconButton.target_pro
                                         .font(.title)
                                 }
-                                Text(Tx.AddTraining.markOnTarget)
+                                Text(Tx.AddTraining.markOnTarget.localized())
                                     .font(OurFonts.fontSFProTextRegular14)
                                     .foregroundColor(PaletteApp.black)
                             }
@@ -110,7 +110,7 @@ struct SettingTrainingView: View {
                         isActive.toggle()
                         
                     }) {
-                        Text(Tx.AddTraining.further)
+                        Text(Tx.AddTraining.further.localized())
                             .font(OurFonts.fontSFProTextRegular17)
                             .foregroundColor(.white)
                             .padding()
@@ -126,7 +126,7 @@ struct SettingTrainingView: View {
                 }
             }
             .background(PaletteApp.backGroundView)
-            .navigationBarTitle(Tx.AddTraining.addTraining, displayMode: .inline)
+            .navigationBarTitle(Tx.AddTraining.addTraining.localized(), displayMode: .inline)
         }
     }
 }

@@ -20,7 +20,7 @@ enum EnumDistance: String, CaseIterable {
     var localized: String {
         switch self {
         case .notSelected:
-            return Tx.AddTraining.notSelected
+            return Tx.AddTraining.notSelected.localized()
         default:
             return self.rawValue
         }

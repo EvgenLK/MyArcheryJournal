@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ListTrainingView: View {
-    @EnvironmentObject var archeryService: ArcheryService
     @StateObject var trainingController: ListTrainingController
+    @EnvironmentObject var archeryService: ArcheryService
+    @EnvironmentObject var languageManager: LanguageManager
     
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
@@ -28,7 +29,7 @@ struct ListTrainingView: View {
                             if trainingController.training.isEmpty {
                                 ListImages.Other.emptyTraining
                                     .padding()
-                                Text(Tx.ListTraining.emptyList)
+                                Text(Tx.ListTraining.emptyList.localized())
                                     .foregroundColor(PaletteApp.gray)
                                     .font(OurFonts.fontSFProTextRegular17)
                             } else {
@@ -60,6 +61,7 @@ struct ListTrainingView: View {
                                     }
                                     .scrollIndicators(.hidden)
                                 }
+                                .environmentObject(languageManager)
                             }
                         }
                         VStack {
@@ -78,23 +80,25 @@ struct ListTrainingView: View {
                         }
                     }
                     .background(PaletteApp.backGroundView)
-                    .navigationTitle(Tx.ListTraining.myTraining)
+                    .navigationTitle(Tx.ListTraining.myTraining.localized())
+
                 }
                 .environmentObject(archeryService)
                 
                 .tabItem {
                     ListImages.TapBar.target
-                    Text(Tx.ListTraining.training)
+                    Text(Tx.ListTraining.training.localized())
                 }
                 StatisticView()
                     .tabItem {
                         ListImages.TapBar.statictic
-                        Text(Tx.ListTraining.statictics)
+                        Text(Tx.ListTraining.statictics.localized())
                     }
                 SettingView()
+                    .environmentObject(languageManager)
                     .tabItem {
                         ListImages.TapBar.setting
-                        Text(Tx.ListTraining.setting)
+                        Text(Tx.ListTraining.setting.localized())
                     }
             }
         }

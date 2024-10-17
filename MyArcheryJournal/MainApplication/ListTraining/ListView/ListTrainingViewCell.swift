@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListTrainingViewCell: View {
+    @EnvironmentObject var languageManager: LanguageManager
     let cellDataTrainig: ListTrainingModelCell
     
     var body: some View {
@@ -16,7 +17,7 @@ struct ListTrainingViewCell: View {
                 cellDataTrainig.imageTaghet
                     .resizable()
                     .frame(width: 50, height: 50)
-                Text("\(cellDataTrainig.nameTaget) \(Tx.DataInCell.milimetr)")
+                Text("\(cellDataTrainig.nameTaget) \(Tx.DataInCell.milimetr.localized())")
                     .font(OurFonts.fontSFProTextRegular12)
                     .foregroundStyle(PaletteApp.gray)
             }
@@ -26,7 +27,7 @@ struct ListTrainingViewCell: View {
                     .font(OurFonts.fontSFProTextRegular17)
                     .foregroundStyle(PaletteApp.black)
                 
-                Text("\(Tx.DataInCell.distance): \(cellDataTrainig.distance)")
+                Text("\(Tx.DataInCell.distance.localized()): \(cellDataTrainig.distance)")
                     .font(OurFonts.fontSFProTextRegular14)
                     .foregroundStyle(PaletteApp.gray)
                     .padding(.top, 2)
@@ -42,7 +43,7 @@ struct ListTrainingViewCell: View {
                         .font(OurFonts.fontSFProTextBold17)
                         .foregroundStyle(PaletteApp.gray)
                 }
-                Text("\(Tx.DataInCell.average): \(cellDataTrainig.avarageShot)")
+                Text("\(Tx.DataInCell.average.localized()): \(cellDataTrainig.avarageShot)")
                     .font(OurFonts.fontSFProTextRegular12)
                     .foregroundStyle(PaletteApp.gray)
                     .padding(.top, 4)
