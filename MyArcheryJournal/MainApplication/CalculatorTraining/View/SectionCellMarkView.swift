@@ -14,13 +14,13 @@ struct SectionCellMarkView: View {
         HStack {
             Text("\(Tx.CalculatorView.round.localized()) \(roundCellAttempt.roundNumber)")
                 .font(OurFonts.fontSFProTextRegular17)
-                .foregroundColor(PaletteApp.gray)
+                .foregroundColor(PaletteApp.adaptiveLabelSecondary)
             
             Spacer()
             
             Text("\(roundCellAttempt.roundSum)")
                 .font(OurFonts.fontSFProTextRegular17)
-                .foregroundColor(PaletteApp.gray)
+                .foregroundColor(PaletteApp.adaptiveLabelPrimary)
         }
     }
 }

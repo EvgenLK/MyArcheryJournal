@@ -17,15 +17,15 @@ enum EnumColorMark {
     var color: Color {
         switch self {
         case .yellow:
-            return Color.yellow
+            return PaletteApp.targetYellow
         case .red:
-            return Color.red
+            return PaletteApp.targetRed
         case .blue:
-            return Color.blue
+            return PaletteApp.targetBlue
         case .black:
-            return Color.black
+            return PaletteApp.targetBlack
         case .white:
-            return Color.white
+            return PaletteApp.targetWhite
         }
     }
     

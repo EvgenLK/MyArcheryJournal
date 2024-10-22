@@ -43,6 +43,7 @@ struct CalculatorView: View {
                                     }
                                 }
                             }
+                            .scrollContentBackground(.hidden)
                         }
                         if trainingSetting.last?.typeTraining == 0, !oneTraining.oneTrainingData.isEmpty {
                             // Также показываем тренировки, если тип 0
@@ -54,6 +55,7 @@ struct CalculatorView: View {
                             }
                         }
                     }
+                    .listRowBackground(PaletteApp.adaptiveBGSecondary)
                     .onChange(of: oneTraining.oneTrainingData) { _ in
                         // Прокрутка к последнему элементу при изменении данных
                         if let lastSection = oneTraining.oneTrainingData.last,
@@ -95,7 +97,7 @@ struct CalculatorView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(PaletteApp.systemGray)
+                .background(PaletteApp.adaptiveBGSecondary)
             }
             .navigationBarTitle(Tx.AddTraining.calculator.localized(), displayMode: .inline)
             .onDisappear {

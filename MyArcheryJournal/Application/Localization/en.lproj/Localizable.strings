@@ -9,12 +9,12 @@
 // MARK: - System
 "System.error" = "Error";
 "System.close" = "Close";
-// MARK: - ScreenMain
-"ScreenMain.Mytraining" = "My sessions";
-"ScreenMain.training" = "Sessions";
-"ScreenMain.statistics" = "Statistics";
-"ScreenMain.setting" = "Settings";
-"ScreenMain.emptyList" = "The session list is empty";
+// MARK: - ListTraining
+"ListTraining.Mytraining" = "My sessions";
+"ListTraining.training" = "Sessions";
+"ListTraining.statistics" = "Statistics";
+"ListTraining.setting" = "Settings";
+"ListTraining.emptyList" = "The session list is empty";
 // MARK: - AddTraining
 "AddTraining.addTraining" = "Add new session";
 "AddTraining.free" = "Free";
@@ -32,3 +32,8 @@
 "CalculatorView.round" = "Round";
 "CalculatorView.textOk" = "OK";
 "CalculatorView.textAttemptEnd" = "The session is finished!";
+// MARK: - SettingMain
+"SettingMain.themeBlack" = "Dark theme";
+"SettingMain.themeLight" = "Light theme";
+"SettingMain.selectLanguage" = "Select a language";
+"SettingMain.paidVersion" = "Switch to the paid version";

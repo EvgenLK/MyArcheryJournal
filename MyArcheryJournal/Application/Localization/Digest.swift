@@ -13,11 +13,11 @@ enum Tx {
         static let close  = "System.close"
     }
     enum ListTraining {
-        static let myTraining = "ScreenMain.Mytraining"
-        static let training = "ScreenMain.training"
-        static let statictics  = "ScreenMain.statistics"
-        static let setting  = "ScreenMain.setting"
-        static let emptyList  = "ScreenMain.emptyList"
+        static let myTraining = "ListTraining.Mytraining"
+        static let training = "ListTraining.training"
+        static let statictics  = "ListTraining.statistics"
+        static let setting  = "ListTraining.setting"
+        static let emptyList  = "ListTraining.emptyList"
     }
     enum AddTraining {
         static let addTraining = "AddTraining.addTraining"
@@ -38,5 +38,11 @@ enum Tx {
         static let round = "CalculatorView.round"
         static let text_Ok = "CalculatorView.textOk"
         static let text_AttemptEnd = "CalculatorView.textAttemptEnd"
+    }
+    enum SettingMain {
+        static let themeBlack = "SettingMain.themeBlack"
+        static let themeLight = "SettingMain.themeLight"
+        static let selectLanguage = "SettingMain.selectLanguage"
+        static let paidVersion = "SettingMain.paidVersion"
     }
 }

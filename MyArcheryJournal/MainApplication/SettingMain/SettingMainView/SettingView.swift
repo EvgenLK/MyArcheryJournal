@@ -8,48 +8,55 @@
 import SwiftUI
 
 struct SettingView: View {
+    @Binding var isDarkModeEnabled: Bool
     @EnvironmentObject var languageManager: LanguageManager
-
+    
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                Text(Tx.AddTraining.calculator.localized())
-                    .font(.largeTitle)
-                    .padding()
-                
-                ForEach(EnumLanguage.allCases, id: \.self) { language in
-                    HStack {
-                        Button(action: {
-                            if languageManager.selectedLanguage == language {
-                            } else {
-                                languageManager.selectedLanguage = language
+            ZStack {
+                VStack {
+                    Form {
+                        Section {
+                            Toggle(isOn: $isDarkModeEnabled) {
+                                Text(isDarkModeEnabled ? Tx.SettingMain.themeLight.localized() : Tx.SettingMain.themeBlack.localized())
                             }
-                        }) {
-                            Image(systemName: languageManager.selectedLanguage == language ? "checkmark.square" : "square")
-                                .foregroundColor(languageManager.selectedLanguage == language ? .blue : .gray)
+                            
+                            Picker(Tx.SettingMain.selectLanguage.localized(), selection: $languageManager.selectedLanguage) {
+                                ForEach(EnumLanguage.allCases, id: \.self) { language in
+                                    Text(language.displayName).tag(language)
+                                }
+                                .listRowBackground(PaletteApp.adaptiveBGPrimary)
+                            }
+                            .pickerStyle(.navigationLink)
                         }
+                        .listRowBackground(PaletteApp.adaptiveBGPrimary)
                         
-                        Text(language.displayName)
-                            .font(.title2)
+                        Section {
+                            Button(action: {
+                                print("платная версия")
+                            }) {
+                                Text(Tx.SettingMain.paidVersion.localized())
+                                    .foregroundColor(PaletteApp.adaptiveBlue)
+                            }
+                        }
+                        .listRowBackground(PaletteApp.adaptiveBGPrimary)
                     }
-                    .padding(.horizontal)
+                    .scrollContentBackground(.hidden)
+                    .background(PaletteApp.adaptiveBGSecondary)
+                    .scrollDisabled(true)
                 }
-                
-                Spacer()
-                
-                Button(action: {
-                    let selectedLanguage = languageManager.selectedLanguage.rawValue
-                    print("Выбранный язык: \(selectedLanguage)")
-                }) {
-                    Text("Подтвердить выбор")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding()
             }
-            .navigationTitle("Языки")
+            .navigationTitle(Tx.ListTraining.setting.localized())
         }
+    }
+}
+
+struct SettingView_Previews: PreviewProvider {
+    @State static var isDarkModeEnabled: Bool = false // Создаем состояние для темной темы
+    static var languageManager = LanguageManager() // Здесь также можно настроить язык, если нужно
+
+    static var previews: some View {
+        SettingView(isDarkModeEnabled: $isDarkModeEnabled) // Передаем привязку
+            .environmentObject(languageManager) // Предоставляем окружение для предварительного просмотра
     }
 }
