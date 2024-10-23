@@ -11,7 +11,6 @@ struct ListTrainingView: View {
     @StateObject var trainingController: ListTrainingController
     @EnvironmentObject var archeryService: ArcheryService
     @EnvironmentObject var languageManager: LanguageManager
-    @State private var isDarkModeEnabled: Bool = false
     
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
@@ -93,9 +92,8 @@ struct ListTrainingView: View {
                     ListImages.TapBar.statictic
                     Text(Tx.ListTraining.statictics.localized())
                 }
-            SettingView(isDarkModeEnabled: $isDarkModeEnabled)
+            SettingView()
                 .environmentObject(languageManager)
-                .preferredColorScheme(isDarkModeEnabled ? .dark : .light)
                 .tabItem {
                     ListImages.TapBar.setting
                     Text(Tx.ListTraining.setting.localized())

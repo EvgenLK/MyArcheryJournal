@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @Binding var isDarkModeEnabled: Bool
+    @AppStorage("isDarkModeEnabled") var isDarkModeEnabled: Bool = false
     @EnvironmentObject var languageManager: LanguageManager
     
     var body: some View {
@@ -20,6 +20,7 @@ struct SettingView: View {
                             Toggle(isOn: $isDarkModeEnabled) {
                                 Text(isDarkModeEnabled ? Tx.SettingMain.themeLight.localized() : Tx.SettingMain.themeBlack.localized())
                             }
+                            .preferredColorScheme(isDarkModeEnabled ? .dark : .light)
                             
                             Picker(Tx.SettingMain.selectLanguage.localized(), selection: $languageManager.selectedLanguage) {
                                 ForEach(EnumLanguage.allCases, id: \.self) { language in
@@ -48,15 +49,5 @@ struct SettingView: View {
             }
             .navigationTitle(Tx.ListTraining.setting.localized())
         }
-    }
-}
-
-struct SettingView_Previews: PreviewProvider {
-    @State static var isDarkModeEnabled: Bool = false // Создаем состояние для темной темы
-    static var languageManager = LanguageManager() // Здесь также можно настроить язык, если нужно
-
-    static var previews: some View {
-        SettingView(isDarkModeEnabled: $isDarkModeEnabled) // Передаем привязку
-            .environmentObject(languageManager) // Предоставляем окружение для предварительного просмотра
     }
 }
