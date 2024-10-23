@@ -80,6 +80,7 @@ struct ListTrainingView: View {
                     }
                 }
                 .navigationTitle(Tx.ListTraining.myTraining.localized())
+                .background(PaletteApp.adaptiveBGSecondary)
             }
             .environmentObject(archeryService)
             
