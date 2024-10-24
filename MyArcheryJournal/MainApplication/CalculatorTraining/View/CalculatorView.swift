@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalculatorView: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var archeryService: ArcheryService
     @ObservedObject var oneTraining: CalculatorController
     @State private var showAlert = false
@@ -43,6 +44,7 @@ struct CalculatorView: View {
                                     }
                                 }
                             }
+                            .scrollContentBackground(.hidden)
                         }
                         if trainingSetting.last?.typeTraining == 0, !oneTraining.oneTrainingData.isEmpty {
                             // Также показываем тренировки, если тип 0
@@ -54,6 +56,7 @@ struct CalculatorView: View {
                             }
                         }
                     }
+                    .listRowBackground(PaletteApp.adaptiveBGSecondary)
                     .onChange(of: oneTraining.oneTrainingData) { _ in
                         // Прокрутка к последнему элементу при изменении данных
                         if let lastSection = oneTraining.oneTrainingData.last,
@@ -95,15 +98,21 @@ struct CalculatorView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(PaletteApp.systemGray)
+                .background(PaletteApp.adaptiveBGSecondary)
             }
-            .navigationBarTitle(Tx.AddTraining.calculator, displayMode: .inline)
+            .navigationBarTitle(Tx.AddTraining.calculator.localized(), displayMode: .inline)
             .onDisappear {
                 archeryService.updateAllTrainingData()
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text(""), message: Text("\(Tx.CalculatorView.text_AttemptEnd)"), dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok)")))
+                Alert(
+                    title: Text(""),
+                    message: Text("\(Tx.CalculatorView.text_AttemptEnd.localized())"),
+                    dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok.localized())")) {
+                        presentationMode.wrappedValue.dismiss()
+                    })
             }
         }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
