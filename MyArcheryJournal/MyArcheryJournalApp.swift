@@ -13,7 +13,6 @@ struct MyArcheryJournalApp: App {
     @StateObject private var archeryService = ArcheryService()
     @StateObject private var languageManager = LanguageManager()
 
-    
     var body: some Scene {
         WindowGroup {
             ListTrainingView(archeryService: archeryService)

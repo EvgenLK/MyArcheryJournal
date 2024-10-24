@@ -21,84 +21,86 @@ struct ListTrainingView: View {
     }
     
     var body: some View {
-        TabView {
-            NavigationStack {
-                ZStack {
-                    VStack {
-                        if trainingController.training.isEmpty {
-                            ListImages.Other.emptyTraining
-                                .padding()
-                            Text(Tx.ListTraining.emptyList.localized())
-                                .foregroundColor(PaletteApp.adaptiveLabelSecondary)
-                                .font(OurFonts.fontSFProTextRegular17)
-                        } else {
-                            List {
-                                ForEach(trainingController.training, id: \.monthYear) { section in
-                                    
-                                    let headerText = Text(section.monthYear)
-                                        .font(OurFonts.fontSFProTextBold20)
-                                        .foregroundColor(PaletteApp.adaptiveLabelPrimary)
-                                    
-                                    Section(header: headerText) {
-                                        let trainings = section.trainings
+        NavigationStack {
+            TabView {
+                NavigationStack {
+                    ZStack {
+                        VStack {
+                            if trainingController.training.isEmpty {
+                                ListImages.Other.emptyTraining
+                                    .padding()
+                                Text(Tx.ListTraining.emptyList.localized())
+                                    .foregroundColor(PaletteApp.adaptiveLabelSecondary)
+                                    .font(OurFonts.fontSFProTextRegular17)
+                            } else {
+                                List {
+                                    ForEach(trainingController.training, id: \.monthYear) { section in
                                         
-                                        ForEach(trainings.indices, id: \.self) { index in
-                                            let item = trainings[index]
+                                        let headerText = Text(section.monthYear)
+                                            .font(OurFonts.fontSFProTextBold20)
+                                            .foregroundColor(PaletteApp.adaptiveLabelPrimary)
+                                        
+                                        Section(header: headerText) {
+                                            let trainings = section.trainings
                                             
-                                            ListTrainingViewCell(cellDataTrainig: item)
-                                                .padding()
-                                                .background(PaletteApp.adaptiveBGPrimary)
-                                                .cornerRadius(10)
-                                                .padding(.vertical, 5)
-                                                .listRowInsets(EdgeInsets())
-                                                .listRowSeparator(.hidden)
-                                                .padding(.bottom, index == trainings.count - 1 ? 60 : 0)
+                                            ForEach(trainings.indices, id: \.self) { index in
+                                                let item = trainings[index]
+                                                
+                                                ListTrainingViewCell(cellDataTrainig: item)
+                                                    .padding()
+                                                    .background(PaletteApp.adaptiveBGPrimary)
+                                                    .cornerRadius(10)
+                                                    .padding(.vertical, 5)
+                                                    .listRowInsets(EdgeInsets())
+                                                    .listRowSeparator(.hidden)
+                                                    .padding(.bottom, index == trainings.count - 1 ? 60 : 0)
+                                            }
+                                            .listRowBackground(PaletteApp.adaptiveBGSecondary)
                                         }
-                                        .listRowBackground(PaletteApp.adaptiveBGSecondary)
                                     }
+                                    .scrollIndicators(.hidden)
                                 }
-                                .scrollIndicators(.hidden)
+                                .scrollContentBackground(.hidden)
+                                .background(PaletteApp.adaptiveBGSecondary)
+                                .environmentObject(languageManager)
                             }
-                            .scrollContentBackground(.hidden)
-                            .background(PaletteApp.adaptiveBGSecondary)
-                            .environmentObject(languageManager)
+                        }
+                        VStack {
+                            Spacer()
+                            NavigationLink(destination: SettingTrainingView()) {
+                                ListImages.Other.addTraining
+                                    .font(.largeTitle)
+                                    .foregroundColor(PaletteApp.adaptiveBlue)
+                                    .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
+                                    .background(PaletteApp.targetWhite)
+                                    .scaleEffect(1.9)
+                                    .clipShape(Circle())
+                            }
+                            .frame(maxWidth: .infinity, alignment: .trailing )
+                            .padding()
                         }
                     }
-                    VStack {
-                        Spacer()
-                        NavigationLink(destination: SettingTrainingView()) {
-                            ListImages.Other.addTraining
-                                .font(.largeTitle)
-                                .foregroundColor(PaletteApp.adaptiveBlue)
-                                .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
-                                .background(PaletteApp.targetWhite)
-                                .scaleEffect(1.9)
-                                .clipShape(Circle())
-                        }
-                        .frame(maxWidth: .infinity, alignment: .trailing )
-                        .padding()
+                    .navigationTitle(Tx.ListTraining.myTraining.localized())
+                    .background(PaletteApp.adaptiveBGSecondary)
+                }
+                .environmentObject(archeryService)
+                
+                .tabItem {
+                    ListImages.TapBar.target
+                    Text(Tx.ListTraining.training.localized())
+                }
+                StatisticView()
+                    .tabItem {
+                        ListImages.TapBar.statictic
+                        Text(Tx.ListTraining.statictics.localized())
                     }
-                }
-                .navigationTitle(Tx.ListTraining.myTraining.localized())
-                .background(PaletteApp.adaptiveBGSecondary)
+                SettingView()
+                    .environmentObject(languageManager)
+                    .tabItem {
+                        ListImages.TapBar.setting
+                        Text(Tx.ListTraining.setting.localized())
+                    }
             }
-            .environmentObject(archeryService)
-            
-            .tabItem {
-                ListImages.TapBar.target
-                Text(Tx.ListTraining.training.localized())
-            }
-            StatisticView()
-                .tabItem {
-                    ListImages.TapBar.statictic
-                    Text(Tx.ListTraining.statictics.localized())
-                }
-            SettingView()
-                .environmentObject(languageManager)
-                .tabItem {
-                    ListImages.TapBar.setting
-                    Text(Tx.ListTraining.setting.localized())
-                }
         }
     }
 }

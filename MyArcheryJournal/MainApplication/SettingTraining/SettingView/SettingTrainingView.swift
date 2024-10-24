@@ -74,7 +74,7 @@ struct SettingTrainingView: View {
                             }
                             .padding()
                             .frame(width: 177, height: 84)
-                            .background(PaletteApp.adaptiveBGPrimary)
+                            .background(selectedButton == 1 ? PaletteApp.adaptiveGreysSysGrey5 : PaletteApp.adaptiveBGPrimary)
                             .cornerRadius(10)
                         }
                         Button(action: {
@@ -89,7 +89,7 @@ struct SettingTrainingView: View {
                             }
                             .padding()
                             .frame(width: 177, height: 84)
-                            .background(PaletteApp.adaptiveBGPrimary)
+                            .background(selectedButton == 2 ? PaletteApp.adaptiveGreysSysGrey5 : PaletteApp.adaptiveBGPrimary)
                             .cornerRadius(10)
                         }
                         .disabled(true)
@@ -134,6 +134,6 @@ struct SettingTrainingView: View {
 struct SettingTrainingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingTrainingView()
-            .environmentObject(ArcheryService()) // Замените на ваш реальный объект
+            .environmentObject(ArcheryService())
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalculatorView: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var archeryService: ArcheryService
     @ObservedObject var oneTraining: CalculatorController
     @State private var showAlert = false
@@ -104,7 +105,12 @@ struct CalculatorView: View {
                 archeryService.updateAllTrainingData()
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text(""), message: Text("\(Tx.CalculatorView.text_AttemptEnd.localized())"), dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok.localized())")))
+                Alert(
+                    title: Text(""),
+                    message: Text("\(Tx.CalculatorView.text_AttemptEnd.localized())"),
+                    dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok.localized())")) {
+                        presentationMode.wrappedValue.dismiss()
+                    })
             }
         }
     }
