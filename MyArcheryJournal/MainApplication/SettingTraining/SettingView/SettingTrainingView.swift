@@ -128,6 +128,7 @@ struct SettingTrainingView: View {
             .background(PaletteApp.adaptiveBGSecondary)
             .navigationBarTitle(Tx.AddTraining.addTraining.localized(), displayMode: .inline)
         }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

@@ -113,5 +113,6 @@ struct CalculatorView: View {
                     })
             }
         }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
