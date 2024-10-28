@@ -37,3 +37,6 @@
 "SettingMain.themeLight" = "Светлая тема";
 "SettingMain.selectLanguage" = "Выбрать язык";
 "SettingMain.paidVersion" = "Перейти на платную версию";
+// MARK: - Language
+"LanguageApp.English" = "English";
+"LanguageApp.Russia" = "Русский";

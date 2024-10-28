@@ -5,8 +5,6 @@
 //  Created by Evgenii Kutasov on 29.07.2024.
 //
 
-import Foundation
-
 enum EnumDistance: String, CaseIterable {
     case notSelected = "Не выбрано"
     case twelve = "12"

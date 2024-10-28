@@ -45,4 +45,8 @@ enum Tx {
         static let selectLanguage = "SettingMain.selectLanguage"
         static let paidVersion = "SettingMain.paidVersion"
     }
+    enum LanguageApp {
+        static let english = "Language.English"
+        static let russia = "Language.Russia"
+    }
 }
