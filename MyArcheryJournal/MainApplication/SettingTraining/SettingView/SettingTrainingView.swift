@@ -20,41 +20,45 @@ struct SettingTrainingView: View {
         NavigationStack {
             VStack {
                 Picker(selection: $selectedTraining , label: Text("Picker")) {
-                    Text(Tx.AddTraining.freeTraining).tag(EnumSelectedTraining.free)
-                    Text(Tx.AddTraining.fixedTraining).tag(EnumSelectedTraining.fixed)
+                    Text(Tx.AddTraining.freeTraining.localized()).tag(EnumSelectedTraining.free)
+                    Text(Tx.AddTraining.fixedTraining.localized()).tag(EnumSelectedTraining.fixed)
                 }
+                .background(PaletteApp.adaptiveGreysSysGrey5)
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
                 VStack {
                     Form {
-                        Picker(Tx.DataInCell.distance, selection: $selectedDistance) {
+                        Picker(Tx.DataInCell.distance.localized(), selection: $selectedDistance) {
                             ForEach(EnumDistance.allCases, id: \.self) { distance in
-                                Text(distance.rawValue)
+                                Text(distance.localized)
+                                    .tag(distance)
                             }
                         }
+                        .listRowBackground(PaletteApp.adaptiveBGPrimary)
                         .pickerStyle(.navigationLink)
                         .onChange(of: selectedDistance) { newValue in
                             disabledTaggetPicker = newValue == .notSelected
                         }
                         
-                        HStack {
-                            Picker(Tx.AddTraining.markOnTarget, selection: $selectedTarget) {
-                                ForEach(EnumTarget.allCases, id: \.self) { target in
-                                    Text(target.rawValue)
-                                }
+                        Picker(Tx.AddTraining.markOnTarget.localized(), selection: $selectedTarget) {
+                            ForEach(EnumTarget.allCases, id: \.self) { target in
+                                Text(target.localized)
+                                    .tag(target)
                             }
-                            .pickerStyle(.navigationLink)
-                            .disabled(disabledTaggetPicker)
                         }
+                        .listRowBackground(PaletteApp.adaptiveBGPrimary)
+                        .pickerStyle(.navigationLink)
+                        .disabled(disabledTaggetPicker)
                         .foregroundColor(disabledTaggetPicker ? .gray : .primary)
                     }
+                    .scrollContentBackground(.hidden)
                     .scrollDisabled(true)
                     .frame(height: 150)
                 }
                 
                 VStack(alignment: .leading) {
-                    Text(Tx.AddTraining.inputMethod)
+                    Text(Tx.AddTraining.inputMethod.localized())
                         .padding(.leading, 32)
                     
                     HStack {
@@ -64,33 +68,31 @@ struct SettingTrainingView: View {
                             VStack {
                                 ListImages.IconButton.calculator
                                     .font(.title)
-                                Text(Tx.AddTraining.calculator)
+                                Text(Tx.AddTraining.calculator.localized())
                                     .font(OurFonts.fontSFProTextRegular14)
-                                    .foregroundColor(PaletteApp.black)
+                                    .foregroundColor(PaletteApp.adaptiveLabelPrimary)
                             }
                             .padding()
-                            .frame(width: 177)
-                            .background(selectedButton == 1 ? PaletteApp.systemGray : PaletteApp.white)
+                            .frame(width: 177, height: 84)
+                            .background(selectedButton == 1 ? PaletteApp.adaptiveGreysSysGrey5 : PaletteApp.adaptiveBGPrimary)
                             .cornerRadius(10)
                         }
                         Button(action: {
                             self.selectedButton = 2
                         }) {
                             VStack {
-                                ZStack {
-                                    ListImages.IconButton.target_pro
-                                        .font(.title)
-                                }
-                                Text(Tx.AddTraining.markOnTarget)
+                                ListImages.IconButton.target_pro
+                                    .font(.title)
+                                Text(Tx.AddTraining.markOnTarget.localized())
                                     .font(OurFonts.fontSFProTextRegular14)
-                                    .foregroundColor(PaletteApp.black)
+                                    .foregroundColor(PaletteApp.adaptiveLabelPrimary)
                             }
                             .padding()
-                            .frame(width: 177)
-                            .background(selectedButton == 2 ? PaletteApp.systemGray : PaletteApp.white)
+                            .frame(width: 177, height: 84)
+                            .background(selectedButton == 2 ? PaletteApp.adaptiveGreysSysGrey5 : PaletteApp.adaptiveBGPrimary)
                             .cornerRadius(10)
                         }
-                        .disabled(true) // пока что недоступна , потом навещать либо алерт либо переход на платную версию
+                        .disabled(true)
                     }
                     .padding(.horizontal, 16)
                 }
@@ -108,12 +110,12 @@ struct SettingTrainingView: View {
                         isActive.toggle()
                         
                     }) {
-                        Text(Tx.AddTraining.further)
+                        Text(Tx.AddTraining.further.localized())
                             .font(OurFonts.fontSFProTextRegular17)
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(selectedButton == nil || selectedDistance == .notSelected || selectedTarget == .notSelected  ? PaletteApp.systemGray : PaletteApp.blue)
+                            .background(selectedButton == nil || selectedDistance == .notSelected || selectedTarget == .notSelected  ? PaletteApp.adaptiveLabelTertiary : PaletteApp.adaptiveBlue)
                             .cornerRadius(10)
                     }
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
@@ -123,8 +125,16 @@ struct SettingTrainingView: View {
                     }
                 }
             }
-            .background(PaletteApp.backGroundView)
-            .navigationBarTitle(Tx.AddTraining.addTraining, displayMode: .inline)
+            .background(PaletteApp.adaptiveBGSecondary)
+            .navigationBarTitle(Tx.AddTraining.addTraining.localized(), displayMode: .inline)
         }
+        .toolbar(.hidden, for: .tabBar)
+    }
+}
+
+struct SettingTrainingView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingTrainingView()
+            .environmentObject(ArcheryService())
     }
 }

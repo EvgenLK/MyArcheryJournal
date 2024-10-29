@@ -5,8 +5,6 @@
 //  Created by Evgenii Kutasov on 23.09.2024.
 //
 
-import Foundation
-
 enum EnumCountSeriesInTarget {
     case teenSeries
     case sexSeries

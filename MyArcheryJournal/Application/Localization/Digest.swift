@@ -9,34 +9,44 @@ import Foundation
 
 enum Tx {
     enum System {
-        static let error = NSLocalizedString("System.error", comment: "Ошибка")
-        static let close  = NSLocalizedString("System.close", comment: "Закрыть")
+        static let error = "System.error"
+        static let close  = "System.close"
     }
     enum ListTraining {
-        static let myTraining = NSLocalizedString("ScreenMain.Mytraining", comment: "Мои тренировки")
-        static let training = NSLocalizedString("ScreenMain.training", comment: "Тренировки")
-        static let statictics  = NSLocalizedString("ScreenMain.statistics", comment: "Статистика")
-        static let setting  = NSLocalizedString("ScreenMain.setting", comment: "Настройки")
-        static let emptyList  = NSLocalizedString("ScreenMain.emptyList", comment: "Список тренировок пуст")
+        static let myTraining = "ListTraining.Mytraining"
+        static let training = "ListTraining.training"
+        static let statictics  = "ListTraining.statistics"
+        static let setting  = "ListTraining.setting"
+        static let emptyList  = "ListTraining.emptyList"
     }
     enum AddTraining {
-        static let addTraining = NSLocalizedString("AddTraining.addTraining", comment: "Добавить тренировку")
-        static let freeTraining = NSLocalizedString("AddTraining.free", comment: "Свободная")
-        static let fixedTraining = NSLocalizedString("AddTraining.fixed", comment: "Фиксированая")
-        static let markOnTarget = NSLocalizedString("AddTraining.markOnTarget", comment: "Отметка на мишени")
-        static let calculator = NSLocalizedString("AddTraining.calculator", comment: "Калькулятор")
-        static let inputMethod = NSLocalizedString("AddTraining.inputMethod", comment: "Способ ввода")
-        static let further = NSLocalizedString("AddTraining.further", comment: "Далее")
-        static let notSelected = NSLocalizedString("AddTraining.notSelected", comment: "Не выбрано")
+        static let addTraining = "AddTraining.addTraining"
+        static let freeTraining = "AddTraining.free"
+        static let fixedTraining = "AddTraining.fixed"
+        static let markOnTarget = "AddTraining.markOnTarget"
+        static let calculator = "AddTraining.calculator"
+        static let inputMethod = "AddTraining.inputMethod"
+        static let further = "AddTraining.further"
+        static let notSelected = "AddTraining.notSelected"
     }
     enum DataInCell {
-        static let milimetr = NSLocalizedString("DataInCell.milimetr", comment: "мм")
-        static let distance = NSLocalizedString("DataInCell.distance", comment: "Дистанция")
-        static let average = NSLocalizedString("DataInCell.average", comment: "Сред.")
+        static let milimetr = "DataInCell.milimetr"
+        static let distance = "DataInCell.distance"
+        static let average = "DataInCell.average"
     }
     enum CalculatorView {
-        static let round = NSLocalizedString("CalculatorView.round", comment: "Раунд")
-        static let text_Ok = NSLocalizedString("CalculatorView.textOk", comment: "OK")
-        static let text_AttemptEnd = NSLocalizedString("CalculatorView.textAttemptEnd", comment: "Попытки закончены!")
+        static let round = "CalculatorView.round"
+        static let text_Ok = "CalculatorView.textOk"
+        static let text_AttemptEnd = "CalculatorView.textAttemptEnd"
+    }
+    enum SettingMain {
+        static let themeBlack = "SettingMain.themeBlack"
+        static let themeLight = "SettingMain.themeLight"
+        static let selectLanguage = "SettingMain.selectLanguage"
+        static let paidVersion = "SettingMain.paidVersion"
+    }
+    enum LanguageApp {
+        static let english = "Language.English"
+        static let russia = "Language.Russia"
     }
 }

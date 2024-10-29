@@ -14,6 +14,15 @@ enum EnumTarget: String, CaseIterable {
     case recurceFita3x20Ver = "rec. Fita 3x20 Vertical"
     case universalFita3x20Ver = "universal Fita 3x20 Ver"
     
+    var localized: String {
+        switch self {
+        case .notSelected:
+            return Tx.AddTraining.notSelected.localized()
+        default:
+            return self.rawValue
+        }
+    }
+    
     func caseName() -> String {
         return String(describing: self)
     }

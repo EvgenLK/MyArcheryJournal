@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListTrainingViewCell: View {
+    @EnvironmentObject var languageManager: LanguageManager
     let cellDataTrainig: ListTrainingModelCell
     
     var body: some View {
@@ -16,35 +17,35 @@ struct ListTrainingViewCell: View {
                 cellDataTrainig.imageTaghet
                     .resizable()
                     .frame(width: 50, height: 50)
-                Text("\(cellDataTrainig.nameTaget) \(Tx.DataInCell.milimetr)")
+                Text("\(cellDataTrainig.nameTaget) \(Tx.DataInCell.milimetr.localized())")
                     .font(OurFonts.fontSFProTextRegular12)
-                    .foregroundStyle(PaletteApp.gray)
+                    .foregroundStyle(PaletteApp.adaptiveLabelSecondary)
             }
             
             VStack(alignment: .leading) {
                 Text("\(cellDataTrainig.dateTraining)")
                     .font(OurFonts.fontSFProTextRegular17)
-                    .foregroundStyle(PaletteApp.black)
+                    .foregroundStyle(PaletteApp.adaptiveLabelPrimary)
                 
-                Text("\(Tx.DataInCell.distance): \(cellDataTrainig.distance)")
+                Text("\(Tx.DataInCell.distance.localized()): \(cellDataTrainig.distance)")
                     .font(OurFonts.fontSFProTextRegular14)
-                    .foregroundStyle(PaletteApp.gray)
+                    .foregroundStyle(PaletteApp.adaptiveLabelSecondary)
                     .padding(.top, 2)
             }
             Spacer()
             
             VStack(alignment: .center) {
                 HStack(spacing: 0) {
-                    Text("\(cellDataTrainig.countShot)")
+                    Text("\(cellDataTrainig.countShot)/")
                         .font(OurFonts.fontSFProTextBold17)
-                        .foregroundStyle(PaletteApp.black)
-                    Text("/\(cellDataTrainig.allShot)")
+                        .foregroundStyle(PaletteApp.adaptiveLabelPrimary)
+                    Text("\(cellDataTrainig.allShot)")
                         .font(OurFonts.fontSFProTextBold17)
-                        .foregroundStyle(PaletteApp.gray)
+                        .foregroundStyle(PaletteApp.adaptiveLabelSecondary)
                 }
-                Text("\(Tx.DataInCell.average): \(cellDataTrainig.avarageShot)")
+                Text("\(Tx.DataInCell.average.localized()): \(cellDataTrainig.avarageShot)")
                     .font(OurFonts.fontSFProTextRegular12)
-                    .foregroundStyle(PaletteApp.gray)
+                    .foregroundStyle(PaletteApp.adaptiveLabelSecondary)
                     .padding(.top, 4)
             }
         }

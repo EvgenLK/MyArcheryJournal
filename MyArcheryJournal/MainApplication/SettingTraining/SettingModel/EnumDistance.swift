@@ -14,4 +14,13 @@ enum EnumDistance: String, CaseIterable {
     case sixty = "60"
     case seventy = "70"
     case ninety = "90"
+
+    var localized: String {
+        switch self {
+        case .notSelected:
+            return Tx.AddTraining.notSelected.localized()
+        default:
+            return self.rawValue
+        }
+    }
 }
