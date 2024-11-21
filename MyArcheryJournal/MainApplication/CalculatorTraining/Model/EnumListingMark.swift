@@ -18,6 +18,7 @@ enum EnumListingMark {
     case mark_2
     case mark_1
     case mark_M
+    case mark_dash
     case empty
     
     var setMark: Int  {
@@ -46,6 +47,8 @@ enum EnumListingMark {
             return 1
         case .mark_M:
             return 0
+        case .mark_dash:
+            return 12
         case .empty:
             return 0
         }
@@ -77,6 +80,8 @@ enum EnumListingMark {
             return .mark_1
         case "M":
             return .mark_M
+        case "-":
+            return .mark_dash
         default:
             return .empty
         }

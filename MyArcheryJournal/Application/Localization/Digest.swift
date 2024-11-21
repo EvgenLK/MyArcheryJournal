@@ -18,6 +18,7 @@ enum Tx {
         static let statictics  = "ListTraining.statistics"
         static let setting  = "ListTraining.setting"
         static let emptyList  = "ListTraining.emptyList"
+        static let deleteCell = "ListTraining.deleteCell"
     }
     enum AddTraining {
         static let addTraining = "AddTraining.addTraining"
@@ -46,7 +47,7 @@ enum Tx {
         static let paidVersion = "SettingMain.paidVersion"
     }
     enum LanguageApp {
-        static let english = "Language.English"
-        static let russia = "Language.Russia"
+        static let english = "LanguageApp.English"
+        static let russia = "LanguageApp.Russia"
     }
 }

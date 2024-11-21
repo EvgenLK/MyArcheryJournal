@@ -42,7 +42,9 @@ final class ListTrainingController: ObservableObject {
         }
         .map { (key, value) in
             let trainingCells = value.map { data in
-                let totalShots = data.training.reduce(0) { ($0) + ($1.point == 11 ? 10 : $1.point) }
+                let totalShots = data.training.reduce(0) {
+                    $0 + ($1.point == 12 ? 0 : ($1.point == 11 ? 10 : $1.point))
+                }
                 let countOfShots = data.training.count * 10 + countPointShot(data.training.count, data.distance)
                 let averageShots: Int
                 if countOfShots > 0 {
@@ -52,12 +54,13 @@ final class ListTrainingController: ObservableObject {
                 }
                 
                 return ListTrainingModelCell(
+                    id: data.id ?? UUID(),
                     imageTaghet: data.imageTarget.fromStringInImage(),
                     dateTraining: data.dateTraining.formatDate("dd.MM"),
                     countShot: "\(totalShots)" ,
                     allShot: "\(countOfShots)",
                     distance: "\(data.distance)",
-                    nameTaget: data.nameTaget,
+                    nameTaget: data.nameTarget,
                     avarageShot: "\(averageShots)"
                 )
             }

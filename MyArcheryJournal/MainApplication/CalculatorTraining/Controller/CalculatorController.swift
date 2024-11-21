@@ -53,13 +53,16 @@ final class CalculatorController: ObservableObject {
         for (index, point) in training.training.enumerated() {
             let pointValue = point.point
             
-            sumPoints += pointValue == mark11 ? mark10 : pointValue // Считаем сумму очков
+            sumPoints += (pointValue == 12 ? 0 : (pointValue == mark11 ? mark10 : pointValue)) // Считаем сумму очков
             
             if pointValue == mark11 {
                 pointArray.append("X")
             } else if pointValue == 0 {
                 pointArray.append("M")
-            } else {
+            }  else if pointValue == 12 {
+                pointArray.append("-")
+            }
+            else {
                 pointArray.append("\(pointValue)")
             }
             
@@ -110,14 +113,17 @@ final class CalculatorController: ObservableObject {
             
             let pointValue = point.point
             
-            sumPoints += pointValue == mark11 ? mark10 : pointValue // Считаем сумму серии
-            sumAllRound += pointValue == mark11 ? mark10 : pointValue // Считаем сумму раунда
+            sumPoints += (pointValue == 12 ? 0 : (pointValue == mark11 ? mark10 : pointValue)) // Считаем сумму очков
+            sumAllRound += (pointValue == 12 ? 0 : (pointValue == mark11 ? mark10 : pointValue)) // Считаем сумму раунда
             
             if pointValue == mark11 {
                 pointArray.append("X")
             } else if pointValue == 0 {
                 pointArray.append("M")
-            } else {
+            }  else if pointValue == 12 {
+                pointArray.append("-")
+            }
+            else {
                 pointArray.append("\(pointValue)")
             }
             

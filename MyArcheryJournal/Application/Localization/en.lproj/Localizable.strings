@@ -15,6 +15,7 @@
 "ListTraining.statistics" = "Statistics";
 "ListTraining.setting" = "Settings";
 "ListTraining.emptyList" = "The session list is empty";
+"ListTraining.deleteCell" = "Delete";
 // MARK: - AddTraining
 "AddTraining.addTraining" = "Add new session";
 "AddTraining.free" = "Free";
@@ -39,4 +40,4 @@
 "SettingMain.paidVersion" = "Switch to the paid version";
 // MARK: - Language
 "LanguageApp.English" = "English";
-"LanguageApp.Russia" = "Russia";
+"LanguageApp.Russia" = "Русский";

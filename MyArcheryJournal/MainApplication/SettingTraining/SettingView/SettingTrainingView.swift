@@ -104,7 +104,7 @@ struct SettingTrainingView: View {
                                                                             typeTraining: selectedTraining.rawValue,
                                                                             imageTarget: selectedTarget.caseName(),
                                                                             dateTraining: Date(),
-                                                                            nameTaget: selectedTarget.sizeTargerCase().rawValue,
+                                                                            nameTarget: selectedTarget.sizeTargerCase().rawValue,
                                                                             distance: Int(selectedDistance.rawValue) ?? 0,
                                                                             training: []))
                         isActive.toggle()

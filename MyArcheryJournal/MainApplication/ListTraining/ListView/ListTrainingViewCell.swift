@@ -48,6 +48,8 @@ struct ListTrainingViewCell: View {
                     .foregroundStyle(PaletteApp.adaptiveLabelSecondary)
                     .padding(.top, 4)
             }
+            Image(systemName: "chevron.right")
+                .foregroundStyle(PaletteApp.adaptiveLabelTertiary)
         }
     }
 }

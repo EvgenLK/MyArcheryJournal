@@ -11,9 +11,8 @@ enum EnumLanguage: String, CaseIterable {
     
     var displayName: String {
         switch self {
-        case .english: return Tx.LanguageApp.english
-        case .russian: return Tx.LanguageApp.russia
-            
+        case .english: return Tx.LanguageApp.english.localized()
+        case .russian: return Tx.LanguageApp.russia.localized()
         }
     }
 }

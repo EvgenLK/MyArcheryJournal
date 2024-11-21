@@ -36,7 +36,7 @@ extension ArcheryService {
         newTraining.id = data.id
         newTraining.image = data.imageTarget
         newTraining.dateTraining = data.dateTraining
-        newTraining.nameTarget = data.nameTaget 
+        newTraining.nameTarget = data.nameTarget
         newTraining.distance = Int64(data.distance)
         newTraining.typeTraining = Int32(data.typeTraining)
         newTraining.trainingData = data.training as NSObject
@@ -46,6 +46,28 @@ extension ArcheryService {
             trainingData.append(data)
         } catch {
             print("Ошибка сохранения данных: \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteDataWithId(id: UUID) {
+        let context = managedObjectContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityTraining")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        
+        do {
+            // Выполняем запрос для получения объектов
+            let results = try context.fetch(fetchRequest)
+            
+            // Удаляем каждый найденный объект
+            for object in results {
+                if let objectToDelete = object as? NSManagedObject {
+                    context.delete(objectToDelete)
+                }
+            }
+            // Сохраняем изменения
+            try context.save()
+        } catch {
+            print("Ошибка при удалении объекта: \(error.localizedDescription)")
         }
     }
     
@@ -66,7 +88,7 @@ extension ArcheryService {
                     typeTraining: Int(data.typeTraining),
                     imageTarget: data.image ?? "",
                     dateTraining: data.dateTraining ?? Date(),
-                    nameTaget: data.nameTarget ?? "",
+                    nameTarget: data.nameTarget ?? "",
                     distance: Int(data.distance),
                     training: trainingArray
                 )
@@ -92,29 +114,32 @@ extension ArcheryService {
         }
     }
     
-    func saveOneTraining(by id: UUID, _ mark: Int, _ series: Int, _ typetraining: Int) {
-        let allAttempts = series == 10 ? (10 * 3) * 2 : (6 * 6) * 2 // этот код не будет никогда меняться это хардовая константа.
+    func saveOneTraining(with model: SaveOneTrainingModel) {
+        let allAttempts = model.seriesCount == 10 ? (10 * 3) * 2 : (6 * 6) * 2 // этот код не будет никогда меняться это хардовая константа.
+        let numberAttempt = (model.numberSeries * model.attemptInSeries) - (model.attemptInSeries - (model.index + 1)) - 1 //хардовая константа для поиска индекса
         let context = managedObjectContext
         let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", model.id as CVarArg)
         
         do {
             let results = try context.fetch(fetchRequest)
             if let training = results.first {
                 var existingMarks: [Int]
                 
-                // Получить текущие оценки
                 if let marks = training.trainingData as? [Int] {
                     existingMarks = marks
                 } else {
                     existingMarks = []
                 }
                 
-                // Добавляем новую оценку
-                existingMarks.append(mark)
-                
+                if model.changeInCell {
+                    existingMarks[numberAttempt] = model.mark
+
+                } else {
+                    existingMarks.append(model.mark)
+                }
                 // Проверяем количество оценок в зависимости от typetraining
-                if typetraining == 1 {
+                if model.typetraining == 1 {
                     if existingMarks.count <= allAttempts {
                         training.trainingData = existingMarks as NSObject
                         
@@ -124,7 +149,7 @@ extension ArcheryService {
                     } else {
                         print("Достигнут лимит попыток.")
                     }
-                } else if typetraining == 0 {
+                } else if model.typetraining == 0 {
                     // Если typetraining == 0, сохраняем без ограничения по количеству оценок
                     training.trainingData = existingMarks as NSObject
                     
@@ -141,7 +166,7 @@ extension ArcheryService {
             print("Ошибка при сохранении данных: \(error.localizedDescription)")
         }
     }
-
+    
     func fetchOneTraining(_ id: UUID) -> TrainingModel? {
         let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
@@ -152,18 +177,18 @@ extension ArcheryService {
                 print("Тренировка не найдена.")
                 return nil
             }
-
+            
             // Извлечение данных из Core Data
             let trainingModel = TrainingModel(
                 id: training.id,
                 typeTraining: Int(training.typeTraining),
                 imageTarget: training.image ?? "",
                 dateTraining: training.dateTraining ?? Date(),
-                nameTaget: training.nameTarget ?? "",
+                nameTarget: training.nameTarget ?? "",
                 distance: Int(training.distance),
                 training: extractPoints(from: training.trainingData)
             )
-
+            
             return trainingModel
             
         } catch {
@@ -171,7 +196,7 @@ extension ArcheryService {
         }
         return nil
     }
-
+    
     private func extractPoints(from data: NSObject?) -> [PointModel] {
         guard let pointsArray = data as? [Int] else {
             print("Неверный формат данных тренировки.")
@@ -182,5 +207,37 @@ extension ArcheryService {
     
     func updateAllTrainingData() {
         trainingData = fetchAndPrintData()
+    }
+    
+    func deleteAttemptTraining(by id: UUID, _ attemptInSeries: Int, _ series: Int, _ index: Int) {
+        let numberAttempt = (series * attemptInSeries) - (attemptInSeries - (index + 1)) - 1 // хардовая константа для поиска индекса
+        let context = managedObjectContext
+        let fetchRequest: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let training = results.first {
+                var existingMarks: [Int] = []
+                
+                if let marks = training.trainingData as? [Int] {
+                    existingMarks = marks
+                } else if let marks = training.trainingData as? [NSNumber] {
+                    // Если trainingData хранит NSNumber, преобразуем его в [Int]
+                    existingMarks = marks.map { $0.intValue }
+                }
+                existingMarks[numberAttempt] = 12
+                // Сохраняем обновленные оценки обратно в trainingData
+                training.trainingData = existingMarks as NSObject
+                
+                try context.save()
+                print("Данные успешно обновлены.")
+            } else {
+                print("Тренировка с заданным ID не найдена.")
+            }
+        } catch {
+            print("Ошибка при получении данных: \(error.localizedDescription)")
+        }
+        updateAllTrainingData()
     }
 }

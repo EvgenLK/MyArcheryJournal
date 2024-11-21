@@ -18,7 +18,11 @@ struct CalculatorView: View {
     private let attemptSeries: Int
     private let countSeriesInTarget: Int
     private let typeTraining: Int
+    @State private var selectedCell: SelectedElementModel?
+    @State private var tapElementBool = false
     
+    
+
     init(archeryService: ArcheryService, idTraining: UUID) {
         self.idTraining = idTraining
         self.trainingSetting = archeryService.trainingData
@@ -27,6 +31,7 @@ struct CalculatorView: View {
         self.numberButton = EnumListingButton.fromValueTarget(trainingSetting.last?.imageTarget ?? "").setButton
         self.countSeriesInTarget = EnumCountSeriesInTarget.fromValueSeries(trainingSetting.last?.imageTarget ?? "").setCount
         self.attemptSeries = EnumMarkCount.fromValue(trainingSetting.last?.distance ?? 0).markCount
+        self.oneTraining.fetchOneTraining(idTraining, attemptSeries)
     }
     
     var body: some View {
@@ -39,21 +44,30 @@ struct CalculatorView: View {
                             ForEach(oneTraining.oneTrainingData, id: \.id) { section in
                                 Section(header: SectionCellMarkView(roundCellAttempt: section)) {
                                     ForEach(section.trainings, id: \.series) { item in
-                                        MarkAttemptCellView(cellDataAttempt: item, countMarkInCell: attemptSeries)
-                                            .id(item.series) // Присваиваем уникальный ID каждому элементу
+                                        MarkAttemptCellView(cellDataAttempt: item,
+                                                            countMarkInCell: attemptSeries,
+                                                            selectedElementIndex: $selectedCell)
+                                        .id(item.series) // Присваиваем уникальный ID каждому элементу
                                     }
                                 }
                             }
                             .scrollContentBackground(.hidden)
                         }
-                        if trainingSetting.last?.typeTraining == 0, !oneTraining.oneTrainingData.isEmpty {
+                        if trainingSetting.last?.typeTraining == 0 {
                             // Также показываем тренировки, если тип 0
                             ForEach(oneTraining.oneTrainingData, id: \.id) { section in
                                 ForEach(section.trainings, id: \.series) { item in
-                                    MarkAttemptCellView(cellDataAttempt: item, countMarkInCell: attemptSeries)
-                                        .id(item.series) // Присваиваем уникальный ID каждому элементу
+                                    MarkAttemptCellView(cellDataAttempt: item,
+                                                        countMarkInCell: attemptSeries,
+                                                        selectedElementIndex: $selectedCell)
+                                    .id(item.series) // Присваиваем уникальный ID каждому элементу
                                 }
                             }
+                        }
+                    }
+                    .onChange(of: selectedCell) { newValue in
+                        if let tapElement = newValue?.tapElement, tapElement {
+                            tapElementBool.toggle()
                         }
                     }
                     .listRowBackground(PaletteApp.adaptiveBGSecondary)
@@ -79,9 +93,20 @@ struct CalculatorView: View {
                                     Button(action: {
                                         // Создаем новую попытку
                                         let newScore = EnumListingMark.fromValue(numberButton[innerIndex]).setMark
+                                        let indexElement = selectedCell?.index ?? 0
+                                        let numberSeries = selectedCell?.series ?? 0
+                                        let tapCellBool = selectedCell?.tapElement ?? false
                                         // Сохраняем попытку в архивах
-                                        archeryService.saveOneTraining(by: idTraining, newScore, countSeriesInTarget, typeTraining)
+                                        archeryService.saveOneTraining(with: SaveOneTrainingModel(id: idTraining,
+                                                                                                  mark: newScore,
+                                                                                                  seriesCount: countSeriesInTarget,
+                                                                                                  typetraining: typeTraining,
+                                                                                                  attemptInSeries: attemptSeries,
+                                                                                                  numberSeries: numberSeries,
+                                                                                                  index: indexElement,
+                                                                                                  changeInCell: tapCellBool))
                                         oneTraining.fetchOneTraining(idTraining, attemptSeries)
+                                        selectedCell = nil
                                         showAlert = oneTraining.fetchBoolTrainingFull(idTraining, countSeriesInTarget, typeTraining) ? true : false
                                     }) {
                                         Text("\(numberButton[innerIndex])")
@@ -101,6 +126,9 @@ struct CalculatorView: View {
                 .background(PaletteApp.adaptiveBGSecondary)
             }
             .navigationBarTitle(Tx.AddTraining.calculator.localized(), displayMode: .inline)
+            .task {
+                archeryService.updateAllTrainingData()
+            }
             .onDisappear {
                 archeryService.updateAllTrainingData()
             }
@@ -111,6 +139,27 @@ struct CalculatorView: View {
                     dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok.localized())")) {
                         presentationMode.wrappedValue.dismiss()
                     })
+            }
+            .alert(isPresented: $tapElementBool) {
+                Alert(
+                    title: Text("Удалить попытку?"),
+                    message: Text("Вы уверены, что хотите удалить?"),
+                    primaryButton: .destructive(Text("Да")) {
+                        // Проверка значений перед удалением
+                        guard let selectedSeries = selectedCell?.series,
+                              let selectedIndex = selectedCell?.index else {
+                            print("Ошибка: Одно или несколько значений отсутствуют.")
+                            return
+                        }
+
+                        // Вызов метода для удаления
+                        archeryService.deleteAttemptTraining(by: idTraining, attemptSeries, selectedSeries, selectedIndex)
+                        oneTraining.fetchOneTraining(idTraining, attemptSeries)
+                    },
+                    secondaryButton: .cancel(Text("Нет")) {
+                        // Ничего не делать
+                    }
+                )
             }
         }
         .toolbar(.hidden, for: .tabBar)

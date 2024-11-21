@@ -15,6 +15,7 @@
 "ListTraining.statistics" = "Статистика";
 "ListTraining.setting" = "Настройки";
 "ListTraining.emptyList" = "Список тренировок пуст";
+"ListTraining.deleteCell" = "Удалить";
 // MARK: - AddTraining
 "AddTraining.addTraining" = "Добавить тренировку";
 "AddTraining.free" = "Свободная";
