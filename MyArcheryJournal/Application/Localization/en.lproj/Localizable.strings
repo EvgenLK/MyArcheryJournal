@@ -33,6 +33,10 @@
 "CalculatorView.round" = "Round";
 "CalculatorView.textOk" = "OK";
 "CalculatorView.textAttemptEnd" = "The session is finished!";
+"CalculatorView.deleteAttempt" = "Delete the attempt?";
+"CalculatorView.messageWantDelete" = "Are you sure you want to delete?";
+"CalculatorView.confirmationYes" = "Yes";
+"CalculatorView.confirmationNo" = "No";
 // MARK: - SettingMain
 "SettingMain.themeBlack" = "Dark mode";
 "SettingMain.themeLight" = "Light mode";

@@ -13,7 +13,6 @@
 		9B1B352C2C7B520D00D84AA6 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */; };
 		9B3E64CE2CECC34200EF1844 /* SaveOneTrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E64CD2CECC34200EF1844 /* SaveOneTrainingModel.swift */; };
 		9B4FBD712CEA2332007E4327 /* SelectedElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4FBD702CEA2332007E4327 /* SelectedElementModel.swift */; };
-		9B5C87E02CEF603F00D4E41A /* EnumArcheryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C87DF2CEF603F00D4E41A /* EnumArcheryError.swift */; };
 		9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130342C34B6A400551E2F /* StatisticView.swift */; };
 		9B7130372C34B9D700551E2F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130362C34B9D700551E2F /* SettingView.swift */; };
 		9B7148022C813A1D00EE7EB1 /* EnumListingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */; };
@@ -58,7 +57,6 @@
 		9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
 		9B3E64CD2CECC34200EF1844 /* SaveOneTrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOneTrainingModel.swift; sourceTree = "<group>"; };
 		9B4FBD702CEA2332007E4327 /* SelectedElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedElementModel.swift; sourceTree = "<group>"; };
-		9B5C87DF2CEF603F00D4E41A /* EnumArcheryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumArcheryError.swift; sourceTree = "<group>"; };
 		9B7130342C34B6A400551E2F /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		9B7130362C34B9D700551E2F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumListingButton.swift; sourceTree = "<group>"; };
@@ -110,14 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B5C87DE2CEF602D00D4E41A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9B5C87DF2CEF603F00D4E41A /* EnumArcheryError.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9B7D8B082C6189250018DF1A /* MainApplication */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,7 +311,6 @@
 		9B85285B2C3526430006FB34 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9B5C87DE2CEF602D00D4E41A /* Model */,
 				9B1274082C3C9FA700A3B17B /* ArcheryService.swift */,
 				9B87686D2CC075F40091E4DC /* LanguageManager.swift */,
 			);
@@ -555,7 +544,6 @@
 				9B8161D92C7FDD8A00606803 /* EnumColorMark.swift in Sources */,
 				9B8525152C6C236900C22E42 /* CalculatorView.swift in Sources */,
 				9B8768772CC077A20091E4DC /* String+Localized.swift in Sources */,
-				9B5C87E02CEF603F00D4E41A /* EnumArcheryError.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
 				9B84DF9A2C400C53003DB50F /* SettingModel.swift in Sources */,

@@ -33,6 +33,10 @@
 "CalculatorView.round" = "Раунд";
 "CalculatorView.textOk" = "OK";
 "CalculatorView.textAttemptEnd" = "Попытки закончены!";
+"CalculatorView.deleteAttempt" = "Удалить попытку";
+"CalculatorView.messageWantDelete" = "Вы уверены, что хотите удалить?";
+"CalculatorView.confirmationYes" = "Да";
+"CalculatorView.confirmationNo" = "Нет";
 // MARK: - SettingMain
 "SettingMain.themeBlack" = "Темная тема";
 "SettingMain.themeLight" = "Светлая тема";

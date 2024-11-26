@@ -20,8 +20,6 @@ struct CalculatorView: View {
     private let typeTraining: Int
     @State private var selectedCell: SelectedElementModel?
     @State private var tapElementBool = false
-    
-    
 
     init(archeryService: ArcheryService, idTraining: UUID) {
         self.idTraining = idTraining
@@ -142,9 +140,9 @@ struct CalculatorView: View {
             }
             .alert(isPresented: $tapElementBool) {
                 Alert(
-                    title: Text("Удалить попытку?"),
-                    message: Text("Вы уверены, что хотите удалить?"),
-                    primaryButton: .destructive(Text("Да")) {
+                    title: Text(Tx.CalculatorView.text_deleteAttempt.localized()),
+                    message: Text(Tx.CalculatorView.test_messageDelete.localized()),
+                    primaryButton: .destructive(Text(Tx.CalculatorView.text_confirmationYes.localized())) {
                         // Проверка значений перед удалением
                         guard let selectedSeries = selectedCell?.series,
                               let selectedIndex = selectedCell?.index else {
@@ -156,8 +154,8 @@ struct CalculatorView: View {
                         archeryService.deleteAttemptTraining(by: idTraining, attemptSeries, selectedSeries, selectedIndex)
                         oneTraining.fetchOneTraining(idTraining, attemptSeries)
                     },
-                    secondaryButton: .cancel(Text("Нет")) {
-                        // Ничего не делать
+                    secondaryButton: .cancel(Text(Tx.CalculatorView.text_confirmationNo.localized())) {
+                        selectedCell = nil
                     }
                 )
             }

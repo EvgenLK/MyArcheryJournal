@@ -39,6 +39,11 @@ enum Tx {
         static let round = "CalculatorView.round"
         static let text_Ok = "CalculatorView.textOk"
         static let text_AttemptEnd = "CalculatorView.textAttemptEnd"
+        static let text_deleteAttempt = "CalculatorView.deleteAttempt"
+        static let test_messageDelete = "CalculatorView.messageWantDelete"
+        static let text_confirmationYes = "CalculatorView.confirmationYes"
+        static let text_confirmationNo = "CalculatorView.confirmationNo"
+
     }
     enum SettingMain {
         static let themeBlack = "SettingMain.themeBlack"
