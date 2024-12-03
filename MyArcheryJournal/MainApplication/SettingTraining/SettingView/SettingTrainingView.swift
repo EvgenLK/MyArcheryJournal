@@ -14,12 +14,13 @@ struct SettingTrainingView: View {
     @State private var selectedButton: Int? = nil
     @State private var disabledTaggetPicker: Bool = true
     @EnvironmentObject var archeryService: ArcheryService
+    @EnvironmentObject var snackBarManager: SnackBarManager
     @State private var isActive: Bool = false
     
     var body: some View {
         NavigationStack {
             VStack {
-                Picker(selection: $selectedTraining , label: Text("Picker")) {
+                Picker(selection: $selectedTraining , label: Text("")) {
                     Text(Tx.AddTraining.freeTraining.localized()).tag(EnumSelectedTraining.free)
                     Text(Tx.AddTraining.fixedTraining.localized()).tag(EnumSelectedTraining.fixed)
                 }
@@ -107,6 +108,7 @@ struct SettingTrainingView: View {
                                                                             nameTarget: selectedTarget.sizeTargerCase().rawValue,
                                                                             distance: Int(selectedDistance.rawValue) ?? 0,
                                                                             training: []))
+                        snackBarManager.show(message: archeryService.snackBarMessage ?? "")
                         isActive.toggle()
                         
                     }) {
@@ -122,6 +124,7 @@ struct SettingTrainingView: View {
                     .disabled(selectedButton == nil || selectedDistance == .notSelected || selectedTarget == .notSelected)
                     .navigationDestination(isPresented: $isActive) {
                         CalculatorView(archeryService: archeryService, idTraining: archeryService.trainingData.last?.id ?? UUID())
+                            .environmentObject(snackBarManager)
                     }
                 }
             }

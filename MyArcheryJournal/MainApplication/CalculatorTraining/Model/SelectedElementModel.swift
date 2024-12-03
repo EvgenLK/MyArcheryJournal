@@ -8,9 +8,9 @@
 import Foundation
 
 struct SelectedElementModel: Equatable {
-    var cellID: UUID
-    var index: Int
-    var series: Int
-    var selectMark: Int
-    var tapElement: Bool
+    let cellID: UUID
+    let index: Int
+    let series: Int
+    let selectMark: Int
+    let tapElement: Bool
 }

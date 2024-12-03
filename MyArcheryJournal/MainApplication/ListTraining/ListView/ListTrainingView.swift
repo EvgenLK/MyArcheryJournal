@@ -11,6 +11,7 @@ struct ListTrainingView: View {
     @StateObject var trainingController: ListTrainingController
     @EnvironmentObject var archeryService: ArcheryService
     @EnvironmentObject var languageManager: LanguageManager
+    @EnvironmentObject var snackBarManager: SnackBarManager
     
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
@@ -59,9 +60,8 @@ struct ListTrainingView: View {
                             .background(PaletteApp.adaptiveBGSecondary)
                             .scrollIndicators(.hidden)
                         }
-                        
                     }
-                    
+
                     HStack {
                         NavigationLink(destination: SettingTrainingView()) {
                             ListImages.Other.addTraining
@@ -75,11 +75,17 @@ struct ListTrainingView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                         .padding()
                     }
-                    
                 }
                 .navigationTitle(Tx.ListTraining.myTraining.localized())
             }
+            .overlay(alignment: .top) {
+                SnackbarView(message: snackBarManager.snackBarMessage,
+                             icon: EnumSnackBarMessage.messageType(for: snackBarManager.snackBarMessage).icon,
+                             color: EnumSnackBarMessage.messageType(for: snackBarManager.snackBarMessage).color,
+                             isShowing: $snackBarManager.showSnackBar)
+            }
             .environmentObject(archeryService)
+            .environmentObject(snackBarManager)
             
             .tabItem {
                 ListImages.TapBar.target
@@ -99,7 +105,7 @@ struct ListTrainingView: View {
                 }
         }
     }
-    
+
     private func contextViewWithCell(item: ListTrainingModelCell) -> some View {
         ZStack {
             NavigationLink(destination: CalculatorView(archeryService: archeryService, idTraining: item.id)) {
@@ -115,6 +121,7 @@ struct ListTrainingView: View {
                     Button(role: .destructive) {
                         archeryService.deleteDataWithId(id: item.id)
                         trainingController.fetchTraining()
+                        snackBarManager.show(message: archeryService.snackBarMessage ?? "")
                     } label: {
                         Label(Tx.ListTraining.deleteCell.localized(), systemImage: "trash")
                     }

@@ -45,3 +45,9 @@
 // MARK: - Language
 "LanguageApp.English" = "English";
 "LanguageApp.Russia" = "Русский";
+// MARK: - UserEvents
+"UserEvents.trainingCreate" = "Тренировка успешно создана";
+"UserEvents.trainingDelete" = "Тренировка удалена";
+"UserEvents.attemptDelete" = "Попытка удалена";
+"UserEvents.errorSave" = "Ошибка сохранения";
+"UserEvents.errorDelete" = "Ошибка удаления";

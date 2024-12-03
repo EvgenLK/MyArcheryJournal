@@ -29,10 +29,7 @@ final class ListTrainingController: ObservableObject {
         
         let trainingAllData = archeryServise.fetchAndPrintData()
         
-        guard !trainingAllData.isEmpty else {
-            print("Нет доступных тренировок")
-            return
-        }
+        guard !trainingAllData.isEmpty else { return } // проверка доступности тренировок
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.YY"

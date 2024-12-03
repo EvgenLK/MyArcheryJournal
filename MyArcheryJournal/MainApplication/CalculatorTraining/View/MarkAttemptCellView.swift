@@ -28,11 +28,13 @@ struct MarkAttemptCellView: View {
                 ForEach(0..<min(countMarkInCell, cellDataAttempt.numberAttempts.count), id: \.self) { index in
                     let attempt = cellDataAttempt.numberAttempts[index]
                     ZStack {
-                        if attempt != "-" {
+                        if attempt != EnumValueException.valueDash.rawValue { // решить эту грязь!!!!
                             Circle()
                             .fill(EnumColorMark.fromValue(attempt).color) // Изменение цвета выбранного элемента
                             .frame(width: 36, height: 36)
-                            .overlay(Circle().strokeBorder(attempt == "2" || attempt == "1" || attempt == "M" ? PaletteApp.adaptiveLabelSecondary : Color.clear))
+                            .overlay(Circle().strokeBorder(attempt == EnumValueException.valueTwo.rawValue ||
+                                                           attempt == EnumValueException.valueOne.rawValue ||
+                                                           attempt == EnumValueException.valueM.rawValue ? PaletteApp.adaptiveLabelSecondary : Color.clear))
                             .onTapGesture {
                                 selectedElementIndex = nil
                                 tapElementBool.toggle()
@@ -51,7 +53,7 @@ struct MarkAttemptCellView: View {
                                 Circle()
                                     .strokeBorder(PaletteApp.adaptiveLabelTertiary)
                                     .frame(width: 36, height: 36)
-                                Text("-")
+                                Text(EnumValueException.valueDash.rawValue)
                                     .font(OurFonts.fontSFProTextBold17)
                                     .foregroundColor(PaletteApp.adaptiveLabelTertiary)
                         }
@@ -63,7 +65,7 @@ struct MarkAttemptCellView: View {
                         Circle()
                             .strokeBorder(PaletteApp.adaptiveLabelTertiary)
                             .frame(width: 36, height: 36)
-                        Text("-")
+                        Text(EnumValueException.valueDash.rawValue)
                             .font(OurFonts.fontSFProTextBold17)
                             .foregroundColor(PaletteApp.adaptiveLabelTertiary)
                     }

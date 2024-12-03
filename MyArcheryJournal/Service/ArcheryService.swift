@@ -12,6 +12,8 @@ import Combine
 final class ArcheryService: ObservableObject {
     // MARK: - Свойства
     @Published var trainingData: [TrainingModel] = []
+    @Published var snackBarMessage: String? = nil
+    @Published var showSnackBar: Bool = false 
     
     private var managedObjectContext: NSManagedObjectContext {
         return persistentContainer.viewContext
@@ -44,8 +46,12 @@ extension ArcheryService {
         do {
             try context.save()
             trainingData.append(data)
+            snackBarMessage = Tx.UserEvents.createTraining.localized()
+            showSnackBar = true
+
         } catch {
-            print("Ошибка сохранения данных: \(error.localizedDescription)")
+            snackBarMessage = Tx.UserEvents.errorSave.localized()
+            showSnackBar = true
         }
     }
     
@@ -62,8 +68,11 @@ extension ArcheryService {
             }
             
             try context.save()
+            snackBarMessage = Tx.UserEvents.trainingDelete.localized()
+            showSnackBar = true
         } catch {
-            print("Ошибка при удалении объекта: \(error.localizedDescription)")
+            snackBarMessage = Tx.UserEvents.errorDelete.localized()
+            showSnackBar = true
         }
     }
     
@@ -104,9 +113,7 @@ extension ArcheryService {
         
         do {
             try context.execute(deleteRequest)
-        } catch {
-            print("Ошибка удаления всех данных: \(error.localizedDescription)")
-        }
+        } catch { }
     }
     
     func saveOneTraining(with model: SaveOneTrainingModel) {
@@ -137,7 +144,6 @@ extension ArcheryService {
             
             // Проверяем количество оценок в зависимости от типа тренировки
             if (model.typetraining == 1 && existingMarks.count > maxAttempts) {
-                print("Достигнут лимит попыток.")
                 return
             }
             
@@ -145,10 +151,8 @@ extension ArcheryService {
             training.trainingData = existingMarks as NSObject
             
             try context.save()
-            print("Данные успешно сохранены.")
-            
         } catch {
-            print("Ошибка при сохранении данных: \(error.localizedDescription)")
+            print("ошибка сохранения тренировки: \(error.localizedDescription)")
         }
     }
     
@@ -159,7 +163,6 @@ extension ArcheryService {
         do {
             let results = try managedObjectContext.fetch(fetchRequest)
             guard let training = results.first else {
-                print("Тренировка не найдена.")
                 return nil
             }
             
@@ -219,9 +222,11 @@ extension ArcheryService {
             training.trainingData = existingMarks as NSObject
 
             try context.save()
-            print("Данные успешно обновлены.")
+            snackBarMessage = Tx.UserEvents.attemptDelete.localized()
+            showSnackBar = true
         } catch {
-            print("Ошибка при получении данных: \(error.localizedDescription)")
+            snackBarMessage = Tx.UserEvents.errorDelete.localized()
+            showSnackBar = true
         }
         
         updateAllTrainingData()

@@ -11,8 +11,12 @@
 		9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274082C3C9FA700A3B17B /* ArcheryService.swift */; };
 		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
 		9B1B352C2C7B520D00D84AA6 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */; };
+		9B355A6C2CFE65E6006FAF2A /* EnumSnackBarMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B355A6B2CFE65E6006FAF2A /* EnumSnackBarMessage.swift */; };
+		9B355A702CFF3990006FAF2A /* EnumValueException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B355A6F2CFF3990006FAF2A /* EnumValueException.swift */; };
 		9B3E64CE2CECC34200EF1844 /* SaveOneTrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E64CD2CECC34200EF1844 /* SaveOneTrainingModel.swift */; };
 		9B4FBD712CEA2332007E4327 /* SelectedElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4FBD702CEA2332007E4327 /* SelectedElementModel.swift */; };
+		9B542FA52CF9221E00B22984 /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B542FA42CF9221E00B22984 /* SnackbarView.swift */; };
+		9B542FAA2CF92A5600B22984 /* SnackBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B542FA92CF92A5600B22984 /* SnackBarManager.swift */; };
 		9B7130352C34B6A400551E2F /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130342C34B6A400551E2F /* StatisticView.swift */; };
 		9B7130372C34B9D700551E2F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7130362C34B9D700551E2F /* SettingView.swift */; };
 		9B7148022C813A1D00EE7EB1 /* EnumListingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */; };
@@ -55,8 +59,12 @@
 		9B1274082C3C9FA700A3B17B /* ArcheryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryService.swift; sourceTree = "<group>"; };
 		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
 		9B1B352B2C7B520D00D84AA6 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
+		9B355A6B2CFE65E6006FAF2A /* EnumSnackBarMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumSnackBarMessage.swift; sourceTree = "<group>"; };
+		9B355A6F2CFF3990006FAF2A /* EnumValueException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumValueException.swift; sourceTree = "<group>"; };
 		9B3E64CD2CECC34200EF1844 /* SaveOneTrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOneTrainingModel.swift; sourceTree = "<group>"; };
 		9B4FBD702CEA2332007E4327 /* SelectedElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedElementModel.swift; sourceTree = "<group>"; };
+		9B542FA42CF9221E00B22984 /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+		9B542FA92CF92A5600B22984 /* SnackBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarManager.swift; sourceTree = "<group>"; };
 		9B7130342C34B6A400551E2F /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		9B7130362C34B9D700551E2F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9B7148012C813A1D00EE7EB1 /* EnumListingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumListingButton.swift; sourceTree = "<group>"; };
@@ -108,6 +116,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B355A682CFE65C2006FAF2A /* SnackBar */ = {
+			isa = PBXGroup;
+			children = (
+				9B355A6A2CFE65D2006FAF2A /* Model */,
+				9B355A692CFE65CC006FAF2A /* View */,
+			);
+			path = SnackBar;
+			sourceTree = "<group>";
+		};
+		9B355A692CFE65CC006FAF2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B542FA42CF9221E00B22984 /* SnackbarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B355A6A2CFE65D2006FAF2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B355A6B2CFE65E6006FAF2A /* EnumSnackBarMessage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B542FA32CF921ED00B22984 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				9B355A682CFE65C2006FAF2A /* SnackBar */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		9B7D8B082C6189250018DF1A /* MainApplication */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +345,7 @@
 				9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */,
 				9B4FBD702CEA2332007E4327 /* SelectedElementModel.swift */,
 				9B3E64CD2CECC34200EF1844 /* SaveOneTrainingModel.swift */,
+				9B355A6F2CFF3990006FAF2A /* EnumValueException.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +355,7 @@
 			children = (
 				9B1274082C3C9FA700A3B17B /* ArcheryService.swift */,
 				9B87686D2CC075F40091E4DC /* LanguageManager.swift */,
+				9B542FA92CF92A5600B22984 /* SnackBarManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -349,6 +392,7 @@
 				9BA9DA8E2C341FA2004158EF /* SupportingFiles */,
 				9BA9DA952C3422F4004158EF /* Application */,
 				9B85285B2C3526430006FB34 /* Service */,
+				9B542FA32CF921ED00B22984 /* CustomUI */,
 				9B7D8B082C6189250018DF1A /* MainApplication */,
 				9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */,
 				9B88B92A2C32C1FF005931E3 /* Assets.xcassets */,
@@ -513,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B542FAA2CF92A5600B22984 /* SnackBarManager.swift in Sources */,
 				9B775A762C99AC1100F78B62 /* MyArcheryData.xcdatamodeld in Sources */,
 				9B8768702CC076B30091E4DC /* EnumLanguage.swift in Sources */,
 				9B8161DB2C809B8800606803 /* EnumMarkCount.swift in Sources */,
@@ -534,8 +579,10 @@
 				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
 				9BED22122C57D3E400598529 /* EnumTarget.swift in Sources */,
 				9B4FBD712CEA2332007E4327 /* SelectedElementModel.swift in Sources */,
+				9B355A6C2CFE65E6006FAF2A /* EnumSnackBarMessage.swift in Sources */,
 				9BED22102C57D3D000598529 /* EnumDistance.swift in Sources */,
 				9B033AEA2CA1900B005A7ECE /* EnumCountSeriesInTarget.swift in Sources */,
+				9B542FA52CF9221E00B22984 /* SnackbarView.swift in Sources */,
 				9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */,
 				9BBEADF62C7233FB00F3BBDE /* EnumSelectedTraining.swift in Sources */,
 				9BA9DA982C342320004158EF /* Digest.swift in Sources */,
@@ -546,6 +593,7 @@
 				9B8768772CC077A20091E4DC /* String+Localized.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
+				9B355A702CFF3990006FAF2A /* EnumValueException.swift in Sources */,
 				9B84DF9A2C400C53003DB50F /* SettingModel.swift in Sources */,
 				9B87FF572C3580C900E72743 /* ListTrainingModelCell.swift in Sources */,
 				9BBEADF22C71AD2900F3BBDE /* MarkAttemptCellView.swift in Sources */,

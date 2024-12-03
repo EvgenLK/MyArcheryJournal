@@ -10,6 +10,7 @@ import SwiftUI
 struct CalculatorView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var archeryService: ArcheryService
+    @EnvironmentObject var snackBarManager: SnackBarManager
     @ObservedObject var oneTraining: CalculatorController
     @State private var showAlert = false
     private let idTraining: UUID
@@ -137,6 +138,7 @@ struct CalculatorView: View {
                     dismissButton: .default(Text("\(Tx.CalculatorView.text_Ok.localized())")) {
                         presentationMode.wrappedValue.dismiss()
                     })
+                
             }
             .alert(isPresented: $tapElementBool) {
                 Alert(
@@ -153,6 +155,7 @@ struct CalculatorView: View {
                         // Вызов метода для удаления
                         archeryService.deleteAttemptTraining(by: idTraining, attemptSeries, selectedSeries, selectedIndex)
                         oneTraining.fetchOneTraining(idTraining, attemptSeries)
+                        snackBarManager.show(message: archeryService.snackBarMessage ?? "")
                     },
                     secondaryButton: .cancel(Text(Tx.CalculatorView.text_confirmationNo.localized())) {
                         selectedCell = nil
