@@ -12,7 +12,7 @@ struct TrainingModel {
     let typeTraining: Int
     let imageTarget: String
     let dateTraining: Date
-    let nameTaget: String
+    let nameTarget: String
     let distance: Int
     var training: [PointModel]
 }

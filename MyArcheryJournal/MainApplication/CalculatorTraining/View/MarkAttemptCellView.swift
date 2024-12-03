@@ -10,6 +10,8 @@ import SwiftUI
 struct MarkAttemptCellView: View {
     let cellDataAttempt: MarkAttemptCellModel
     let countMarkInCell: Int
+    @State private var tapElementBool: Bool = false
+    @Binding var selectedElementIndex: SelectedElementModel?
     
     var body: some View {
         HStack {
@@ -26,22 +28,44 @@ struct MarkAttemptCellView: View {
                 ForEach(0..<min(countMarkInCell, cellDataAttempt.numberAttempts.count), id: \.self) { index in
                     let attempt = cellDataAttempt.numberAttempts[index]
                     ZStack {
-                        Circle()
-                            .fill(EnumColorMark.fromValue(attempt).color)
+                        if attempt != EnumValueException.valueDash.rawValue { // решить эту грязь!!!!
+                            Circle()
+                            .fill(EnumColorMark.fromValue(attempt).color) // Изменение цвета выбранного элемента
                             .frame(width: 36, height: 36)
-                            .overlay(Circle().strokeBorder(attempt == "2" || attempt == "1" || attempt == "M" ? PaletteApp.adaptiveLabelSecondary : Color.clear))
-
-                        Text("\(attempt)")
-                            .font(OurFonts.fontSFProTextRegular17)
-                            .foregroundColor(EnumColorMark.fromForegroundColor(attempt).color)
+                            .overlay(Circle().strokeBorder(attempt == EnumValueException.valueTwo.rawValue ||
+                                                           attempt == EnumValueException.valueOne.rawValue ||
+                                                           attempt == EnumValueException.valueM.rawValue ? PaletteApp.adaptiveLabelSecondary : Color.clear))
+                            .onTapGesture {
+                                selectedElementIndex = nil
+                                tapElementBool.toggle()
+                                selectedElementIndex = SelectedElementModel(cellID: cellDataAttempt.id,
+                                                                            index: index,
+                                                                            series: Int(cellDataAttempt.series) ?? 0,
+                                                                            selectMark: EnumListingMark.fromValue(attempt).setMark,
+                                                                            tapElement: tapElementBool
+                                )
+                            }
+                            
+                            Text("\(attempt)")
+                                .font(OurFonts.fontSFProTextRegular17)
+                                .foregroundColor(EnumColorMark.fromForegroundColor(attempt).color)
+                        } else {
+                                Circle()
+                                    .strokeBorder(PaletteApp.adaptiveLabelTertiary)
+                                    .frame(width: 36, height: 36)
+                                Text(EnumValueException.valueDash.rawValue)
+                                    .font(OurFonts.fontSFProTextBold17)
+                                    .foregroundColor(PaletteApp.adaptiveLabelTertiary)
+                        }
                     }
                 }
+                
                 ForEach(0..<max(0, countMarkInCell - cellDataAttempt.numberAttempts.count), id: \.self) { _ in
                     ZStack {
                         Circle()
                             .strokeBorder(PaletteApp.adaptiveLabelTertiary)
-                            .frame(width: 40, height: 40)
-                        Text("-")
+                            .frame(width: 36, height: 36)
+                        Text(EnumValueException.valueDash.rawValue)
                             .font(OurFonts.fontSFProTextBold17)
                             .foregroundColor(PaletteApp.adaptiveLabelTertiary)
                     }

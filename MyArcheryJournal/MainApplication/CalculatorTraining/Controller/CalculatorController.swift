@@ -27,10 +27,7 @@ final class CalculatorController: ObservableObject {
         oneTrainingData.removeAll()
         
         // Получаем тренировку по идентификатору
-        guard let training = archeryServise.fetchOneTraining(id) else {
-            print("Тренировка не найдена.")
-            return
-        }
+        guard let training = archeryServise.fetchOneTraining(id) else { return }
         
         let typeTraining = training.typeTraining
         
@@ -53,13 +50,16 @@ final class CalculatorController: ObservableObject {
         for (index, point) in training.training.enumerated() {
             let pointValue = point.point
             
-            sumPoints += pointValue == mark11 ? mark10 : pointValue // Считаем сумму очков
+            sumPoints += (pointValue == 12 ? 0 : (pointValue == mark11 ? mark10 : pointValue)) // Считаем сумму очков
             
             if pointValue == mark11 {
-                pointArray.append("X")
+                pointArray.append(EnumValueException.valueX.rawValue)
             } else if pointValue == 0 {
-                pointArray.append("M")
-            } else {
+                pointArray.append(EnumValueException.valueM.rawValue)
+            }  else if pointValue == 12 {
+                pointArray.append(EnumValueException.valueDash.rawValue)
+            }
+            else {
                 pointArray.append("\(pointValue)")
             }
             
@@ -110,14 +110,17 @@ final class CalculatorController: ObservableObject {
             
             let pointValue = point.point
             
-            sumPoints += pointValue == mark11 ? mark10 : pointValue // Считаем сумму серии
-            sumAllRound += pointValue == mark11 ? mark10 : pointValue // Считаем сумму раунда
+            sumPoints += (pointValue == 12 ? 0 : (pointValue == mark11 ? mark10 : pointValue)) // Считаем сумму очков
+            sumAllRound += (pointValue == 12 ? 0 : (pointValue == mark11 ? mark10 : pointValue)) // Считаем сумму раунда
             
             if pointValue == mark11 {
-                pointArray.append("X")
+                pointArray.append(EnumValueException.valueX.rawValue)
             } else if pointValue == 0 {
-                pointArray.append("M")
-            } else {
+                pointArray.append(EnumValueException.valueM.rawValue)
+            }  else if pointValue == 12 {
+                pointArray.append(EnumValueException.valueDash.rawValue)
+            }
+            else {
                 pointArray.append("\(pointValue)")
             }
             
@@ -153,10 +156,7 @@ final class CalculatorController: ObservableObject {
         let allAttempts = series == 10 ? (10 * 3) * 2 : (6 * 6) * 2 // этот код не будет никогда меняться это хардовая константа.
         
         if typeTraining == 1 {
-            guard let training = archeryServise.fetchOneTraining(trainingID) else {
-                print("Тренировка не найдена.")
-                return false
-            }
+            guard let training = archeryServise.fetchOneTraining(trainingID) else { return false }
             
             for _ in training.training {
                 markCount += 1

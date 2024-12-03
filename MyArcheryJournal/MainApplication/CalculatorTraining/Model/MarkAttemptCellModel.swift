@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct RoundSection: Identifiable, Equatable {
     let id = UUID()

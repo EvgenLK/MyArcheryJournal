@@ -11,6 +11,7 @@ struct ListTrainingView: View {
     @StateObject var trainingController: ListTrainingController
     @EnvironmentObject var archeryService: ArcheryService
     @EnvironmentObject var languageManager: LanguageManager
+    @EnvironmentObject var snackBarManager: SnackBarManager
     
     init(archeryService: ArcheryService) {
         let tabBarAppearance = UITabBarAppearance()
@@ -44,28 +45,24 @@ struct ListTrainingView: View {
                                         
                                         ForEach(trainings.indices, id: \.self) { index in
                                             let item = trainings[index]
-                                            
-                                            ListTrainingViewCell(cellDataTrainig: item)
-                                                .padding()
-                                                .background(PaletteApp.adaptiveBGPrimary)
-                                                .cornerRadius(10)
-                                                .padding(.vertical, 5)
-                                                .listRowInsets(EdgeInsets())
+                                            contextViewWithCell(item: item)
                                                 .listRowSeparator(.hidden)
-                                                .padding(.bottom, index == trainings.count - 1 ? 60 : 0)
                                         }
                                         .listRowBackground(PaletteApp.adaptiveBGSecondary)
                                     }
                                 }
-                                .scrollIndicators(.hidden)
+                                .padding(.bottom, 12)
+                                .listRowInsets(EdgeInsets())
+                                .environmentObject(languageManager)
+                                
                             }
                             .scrollContentBackground(.hidden)
                             .background(PaletteApp.adaptiveBGSecondary)
-                            .environmentObject(languageManager)
+                            .scrollIndicators(.hidden)
                         }
                     }
-                    VStack {
-                        Spacer()
+
+                    HStack {
                         NavigationLink(destination: SettingTrainingView()) {
                             ListImages.Other.addTraining
                                 .font(.largeTitle)
@@ -75,18 +72,25 @@ struct ListTrainingView: View {
                                 .scaleEffect(1.9)
                                 .clipShape(Circle())
                         }
-                        .frame(maxWidth: .infinity, alignment: .trailing )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                         .padding()
                     }
                 }
                 .navigationTitle(Tx.ListTraining.myTraining.localized())
-                .background(PaletteApp.adaptiveBGSecondary)
+            }
+            .overlay(alignment: .top) {
+                SnackbarView(message: snackBarManager.snackBarMessage,
+                             icon: EnumSnackBarMessage.messageType(for: snackBarManager.snackBarMessage).icon,
+                             color: EnumSnackBarMessage.messageType(for: snackBarManager.snackBarMessage).color,
+                             isShowing: $snackBarManager.showSnackBar)
             }
             .environmentObject(archeryService)
+            .environmentObject(snackBarManager)
             
             .tabItem {
                 ListImages.TapBar.target
                 Text(Tx.ListTraining.training.localized())
+                
             }
             StatisticView()
                 .tabItem {
@@ -101,8 +105,30 @@ struct ListTrainingView: View {
                 }
         }
     }
-}
 
+    private func contextViewWithCell(item: ListTrainingModelCell) -> some View {
+        ZStack {
+            NavigationLink(destination: CalculatorView(archeryService: archeryService, idTraining: item.id)) {
+                EmptyView()
+            }
+            ListTrainingViewCell(cellDataTrainig: item)
+                .padding()
+                .background(PaletteApp.adaptiveBGPrimary)
+                .cornerRadius(12)
+                .listRowSeparator(.hidden)
+                
+                .contextMenu {
+                    Button(role: .destructive) {
+                        archeryService.deleteDataWithId(id: item.id)
+                        trainingController.fetchTraining()
+                        snackBarManager.show(message: archeryService.snackBarMessage ?? "")
+                    } label: {
+                        Label(Tx.ListTraining.deleteCell.localized(), systemImage: "trash")
+                    }
+                }
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

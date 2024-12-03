@@ -15,6 +15,7 @@
 "ListTraining.statistics" = "Statistics";
 "ListTraining.setting" = "Settings";
 "ListTraining.emptyList" = "The session list is empty";
+"ListTraining.deleteCell" = "Delete";
 // MARK: - AddTraining
 "AddTraining.addTraining" = "Add new session";
 "AddTraining.free" = "Free";
@@ -32,6 +33,10 @@
 "CalculatorView.round" = "Round";
 "CalculatorView.textOk" = "OK";
 "CalculatorView.textAttemptEnd" = "The session is finished!";
+"CalculatorView.deleteAttempt" = "Delete the attempt?";
+"CalculatorView.messageWantDelete" = "Are you sure you want to delete?";
+"CalculatorView.confirmationYes" = "Yes";
+"CalculatorView.confirmationNo" = "No";
 // MARK: - SettingMain
 "SettingMain.themeBlack" = "Dark mode";
 "SettingMain.themeLight" = "Light mode";
@@ -39,4 +44,10 @@
 "SettingMain.paidVersion" = "Switch to the paid version";
 // MARK: - Language
 "LanguageApp.English" = "English";
-"LanguageApp.Russia" = "Russia";
+"LanguageApp.Russia" = "Русский";
+// MARK: - UserEvents
+"UserEvents.trainingCreate" = "Training has been successfully created";
+"UserEvents.trainingDelete" = "Training deleted";
+"UserEvents.attemptDelete" = "Attempt deleted";
+"UserEvents.errorSave" = "Save error";
+"UserEvents.errorDelete" = "Delete error";

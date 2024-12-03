@@ -15,6 +15,7 @@
 "ListTraining.statistics" = "Статистика";
 "ListTraining.setting" = "Настройки";
 "ListTraining.emptyList" = "Список тренировок пуст";
+"ListTraining.deleteCell" = "Удалить";
 // MARK: - AddTraining
 "AddTraining.addTraining" = "Добавить тренировку";
 "AddTraining.free" = "Свободная";
@@ -32,6 +33,10 @@
 "CalculatorView.round" = "Раунд";
 "CalculatorView.textOk" = "OK";
 "CalculatorView.textAttemptEnd" = "Попытки закончены!";
+"CalculatorView.deleteAttempt" = "Удалить попытку";
+"CalculatorView.messageWantDelete" = "Вы уверены, что хотите удалить?";
+"CalculatorView.confirmationYes" = "Да";
+"CalculatorView.confirmationNo" = "Нет";
 // MARK: - SettingMain
 "SettingMain.themeBlack" = "Темная тема";
 "SettingMain.themeLight" = "Светлая тема";
@@ -40,3 +45,9 @@
 // MARK: - Language
 "LanguageApp.English" = "English";
 "LanguageApp.Russia" = "Русский";
+// MARK: - UserEvents
+"UserEvents.trainingCreate" = "Тренировка успешно создана";
+"UserEvents.trainingDelete" = "Тренировка удалена";
+"UserEvents.attemptDelete" = "Попытка удалена";
+"UserEvents.errorSave" = "Ошибка сохранения";
+"UserEvents.errorDelete" = "Ошибка удаления";

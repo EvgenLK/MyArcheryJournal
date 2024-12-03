@@ -18,6 +18,7 @@ enum Tx {
         static let statictics  = "ListTraining.statistics"
         static let setting  = "ListTraining.setting"
         static let emptyList  = "ListTraining.emptyList"
+        static let deleteCell = "ListTraining.deleteCell"
     }
     enum AddTraining {
         static let addTraining = "AddTraining.addTraining"
@@ -38,6 +39,10 @@ enum Tx {
         static let round = "CalculatorView.round"
         static let text_Ok = "CalculatorView.textOk"
         static let text_AttemptEnd = "CalculatorView.textAttemptEnd"
+        static let text_deleteAttempt = "CalculatorView.deleteAttempt"
+        static let test_messageDelete = "CalculatorView.messageWantDelete"
+        static let text_confirmationYes = "CalculatorView.confirmationYes"
+        static let text_confirmationNo = "CalculatorView.confirmationNo"
     }
     enum SettingMain {
         static let themeBlack = "SettingMain.themeBlack"
@@ -46,7 +51,14 @@ enum Tx {
         static let paidVersion = "SettingMain.paidVersion"
     }
     enum LanguageApp {
-        static let english = "Language.English"
-        static let russia = "Language.Russia"
+        static let english = "LanguageApp.English"
+        static let russia = "LanguageApp.Russia"
+    }
+    enum UserEvents {
+        static let createTraining = "UserEvents.trainingCreate"
+        static let attemptDelete = "UserEvents.attemptDelete"
+        static let trainingDelete = "UserEvents.trainingDelete"
+        static let errorSave = "UserEvents.errorSave"
+        static let errorDelete = "UserEvents.errorDelete"
     }
 }

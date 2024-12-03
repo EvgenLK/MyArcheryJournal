@@ -16,6 +16,8 @@ enum ListImages {
     enum Other {
         static let emptyTraining = Image("EmptyListTr")
         static let addTraining = Image(systemName: "plus.circle.fill")
+        static let markTrash = Image(systemName: "trash")
+        static let markchevron_right = Image(systemName: "chevron.right")
     }
     enum Target {
         static let compoundFita40mm5Circle = Image("compound FITA 40mm 5 circle")
@@ -31,5 +33,10 @@ enum ListImages {
         static let target_mark = Image("target_mark")
         static let icon_pro = Image("icon_pro")
         static let target_pro = Image("target_pro")
+    }
+    enum IconSnackBar {
+        static let markSuccess = Image(systemName: "checkmark.circle")
+        static let markXFail = Image(systemName: "xmark.circle")
+        static let markInformation = Image(systemName: "exclamationmark.circle")
     }
 }

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TrainingSection {
     let monthYear: String
-    let trainings: [ListTrainingModelCell]
+    var trainings: [ListTrainingModelCell]
 }
 
 struct ListTrainingModelCell: Identifiable {
-    let id = UUID()
+    let id: UUID
     let imageTaghet: Image
     let dateTraining: String
     let countShot: String
