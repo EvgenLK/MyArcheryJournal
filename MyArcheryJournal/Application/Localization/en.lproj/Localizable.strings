@@ -51,3 +51,11 @@
 "UserEvents.attemptDelete" = "Attempt deleted";
 "UserEvents.errorSave" = "Save error";
 "UserEvents.errorDelete" = "Delete error";
+// MARK: - StatisticsView
+"StatisticsView.statistics_text" = "Statistics";
+"StatisticsView.numberHits_text" = "Number of hits on target";
+"StatisticsView.averageHits_text" = "Average hit on target";
+// MARK: - Periods
+"Periods.periodWeek" = "Week";
+"Periods.periodMonth" = "Month";
+"Periods.periodSixMonth" = "SixMonth";

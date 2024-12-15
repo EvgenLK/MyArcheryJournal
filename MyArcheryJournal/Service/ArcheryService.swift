@@ -62,11 +62,9 @@ extension ArcheryService {
         
         do {
             let results = try context.fetch(fetchRequest) as? [NSManagedObject] ?? []
-            
             for object in results {
                 context.delete(object)
             }
-            
             try context.save()
             snackBarMessage = Tx.UserEvents.trainingDelete.localized()
             showSnackBar = true
@@ -78,7 +76,7 @@ extension ArcheryService {
     
     func fetchAndPrintData() -> [TrainingModel] {
         let request: NSFetchRequest<EntityTraining> = EntityTraining.fetchRequest()
-        
+
         do {
             let results = try managedObjectContext.fetch(request)
             
@@ -165,7 +163,6 @@ extension ArcheryService {
             guard let training = results.first else {
                 return nil
             }
-            
             // Извлечение данных из Core Data
             let trainingModel = TrainingModel(
                 id: training.id,
