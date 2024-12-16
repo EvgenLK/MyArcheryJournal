@@ -59,13 +59,14 @@ final class StatisticTrainingController: ObservableObject {
         default:
             break
         }
-        var counts = [Int](repeating: 0, count: 12)
         
-        for session in trainingAllData {
-            for point in session.training {
-                if point.point >= 0 && point.point <= 11 {
-                    counts[point.point] += 1
-                }
+        var counts = Array(repeating: 0, count: 12)
+
+        let session = trainingAllData.map { $0.training }
+
+        for point in session {
+            if point.hashValue >= 0 && point.hashValue <= 11 {
+                counts[point.hashValue] += 1
             }
         }
         
