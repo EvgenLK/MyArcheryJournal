@@ -61,4 +61,14 @@ enum Tx {
         static let errorSave = "UserEvents.errorSave"
         static let errorDelete = "UserEvents.errorDelete"
     }
+    enum StatisticsView {
+        static let statisticsText = "StatisticsView.statistics_text"
+        static let numberHits = "StatisticsView.numberHits_text"
+        static let averageHits = "StatisticsView.averageHits_text"
+    }
+    enum Periods {
+        static let week = "Periods.periodWeek"
+        static let month = "Periods.periodMonth"
+        static let sixMonth = "Periods.periodSixMonth"
+    }
 }

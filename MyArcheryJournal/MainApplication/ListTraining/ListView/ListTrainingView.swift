@@ -90,9 +90,9 @@ struct ListTrainingView: View {
             .tabItem {
                 ListImages.TapBar.target
                 Text(Tx.ListTraining.training.localized())
-                
             }
-            StatisticView()
+            StatisticView(archeryService: archeryService)
+                .environmentObject(languageManager)
                 .tabItem {
                     ListImages.TapBar.statictic
                     Text(Tx.ListTraining.statictics.localized())
@@ -134,9 +134,13 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let archeryService = ArcheryService()
         let languageManager = LanguageManager()
+        let snackBarManager = SnackBarManager() // Создаём экземпляр SnackBarManager
+
 
         return ListTrainingView(archeryService: archeryService)
             .environmentObject(archeryService)
             .environmentObject(languageManager)
+            .environmentObject(snackBarManager)
+
     }
 }

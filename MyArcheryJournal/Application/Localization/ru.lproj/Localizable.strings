@@ -51,3 +51,11 @@
 "UserEvents.attemptDelete" = "Попытка удалена";
 "UserEvents.errorSave" = "Ошибка сохранения";
 "UserEvents.errorDelete" = "Ошибка удаления";
+// MARK: - StatisticsView
+"StatisticsView.statistics_text" = "Статистика";
+"StatisticsView.numberHits_text" = "Количество попаданий в цель";
+"StatisticsView.averageHits_text" = "Среднее попадание в цель";
+// MARK: - Periods
+"Periods.periodWeek" = "Неделя";
+"Periods.periodMonth" = "Месяц";
+"Periods.periodSixMonth" = "Полгода";
