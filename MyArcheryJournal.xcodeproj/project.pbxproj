@@ -186,7 +186,6 @@
 			children = (
 				9B7D8B0E2C618A1F0018DF1A /* SettingModel */,
 				9B7D8B0F2C618A260018DF1A /* SettingView */,
-				9B7D8B102C618A2F0018DF1A /* SettingController */,
 			);
 			path = SettingTraining;
 			sourceTree = "<group>";
@@ -235,13 +234,6 @@
 			path = SettingView;
 			sourceTree = "<group>";
 		};
-		9B7D8B102C618A2F0018DF1A /* SettingController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SettingController;
-			sourceTree = "<group>";
-		};
 		9B7D8B112C618AF90018DF1A /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +249,6 @@
 			children = (
 				9B7D8B172C618B7C0018DF1A /* SettingMainModel */,
 				9B7D8B162C618B6E0018DF1A /* SettingMainView */,
-				9B7D8B182C618B880018DF1A /* SettingMainController */,
 			);
 			path = SettingMain;
 			sourceTree = "<group>";
@@ -303,13 +294,6 @@
 				9B87686F2CC076B30091E4DC /* EnumLanguage.swift */,
 			);
 			path = SettingMainModel;
-			sourceTree = "<group>";
-		};
-		9B7D8B182C618B880018DF1A /* SettingMainController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SettingMainController;
 			sourceTree = "<group>";
 		};
 		9B84DF9B2C401591003DB50F /* Date */ = {
@@ -771,6 +755,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -800,6 +785,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
