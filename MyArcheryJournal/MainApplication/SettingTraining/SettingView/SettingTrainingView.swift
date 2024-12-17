@@ -82,7 +82,7 @@ struct SettingTrainingView: View {
                             self.selectedButton = 2
                         }) {
                             VStack {
-                                ListImages.IconButton.target_pro
+                                ListImages.IconButton.target_mark
                                     .font(.title)
                                 Text(Tx.AddTraining.markOnTarget.localized())
                                     .font(OurFonts.fontSFProTextRegular14)
@@ -92,6 +92,8 @@ struct SettingTrainingView: View {
                             .frame(width: 177, height: 84)
                             .background(selectedButton == 2 ? PaletteApp.adaptiveGreysSysGrey5 : PaletteApp.adaptiveBGPrimary)
                             .cornerRadius(10)
+                            .overlay(
+                                         Color.black.opacity(0.3).cornerRadius(10))
                         }
                         .disabled(true)
                     }

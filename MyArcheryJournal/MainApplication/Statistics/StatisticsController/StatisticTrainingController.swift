@@ -53,26 +53,17 @@ final class StatisticTrainingController: ObservableObject {
             let isFirstHalfOfYear = currentDate.isInFirstHalfOfYear()
 
             trainingAllData = trainingAllData.filter { training in
-                let isTrainingInFirstHalf = training.dateTraining.isInFirstHalfOfYear() //???
+                let isTrainingInFirstHalf = training.dateTraining.isInFirstHalfOfYear()
                 return isFirstHalfOfYear == isTrainingInFirstHalf
             }
         default:
             break
         }
         
-        var counts = Array(repeating: 0, count: 12)
-
-        let session = trainingAllData.map { $0.training }
-
-        for point in session {
-            if point.hashValue >= 0 && point.hashValue <= 11 {
-                counts[point.hashValue] += 1
-            }
-        }
-        
+        let session = trainingAllData.flatMap { $0.training }
         for i in 0...11 {
-            let aXisX = EnumListingMark.fromValueString(i).setMarkString
-            dataStatistic.append(StatisticsModelXY(x: aXisX, y: Double(counts[i])))
+            let aXisXCount = session.filter { $0.point == i }
+            dataStatistic.append(StatisticsModelXY(x: EnumListingMark.fromValueString(i).setMarkString, y: Double(aXisXCount.count)))
         }
         
         return  dataStatistic
