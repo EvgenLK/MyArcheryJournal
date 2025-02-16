@@ -9,8 +9,12 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
+		<key>UIColorName</key>
+		<string>bgColor</string>
 		<key>UIImageName</key>
-		<string>Onboarding logo</string>
+		<string>App Launch</string>
 	</dict>
 </dict>
 </plist>
