@@ -1,0 +1,30 @@
+
+PRIVACY POLICY
+This privacy policy governs your use of the Archery Journal mobile application ("Application"), created by Evgenii Kutasov ("Developer"). The Application is a tool that helps archers record their results and track their training progress using statistics.
+
+WHAT INFORMATION DOES THE APPLICATION COLLECT AND HOW IS IT USED?
+The Application stores the data entered by the user regarding training, including but not limited to, training time, number of shots, results, and other numerical indicators. All this data is stored only on the user's device and is used solely for displaying statistics and analyzing training progress.
+
+AUTOMATICALLY COLLECTED INFORMATION
+The Application does not collect any information automatically, except for the data entered manually by the user.
+
+DOES THE APPLICATION COLLECT REAL-TIME LOCATION INFORMATION FROM THE DEVICE?
+The Application does not collect real-time location information from the device.
+
+DO THIRD PARTIES SEE AND/OR HAVE ACCESS TO INFORMATION COLLECTED BY THE APPLICATION?
+Third parties do not have access to the information stored in the Application. All data remains only on the user's device and is not transmitted to any servers.
+
+DATA STORAGE POLICY, MANAGING YOUR INFORMATION
+The Application stores data as long as it is installed on the device. When the application is deleted, the data will be removed from the device. Users can also manually delete data through the application settings if such a feature is available.
+
+SECURITY
+We care about protecting your information privacy. We take physical, electronic, and procedural measures to protect the data we process and store. For example, we limit access to this data only to authorized personnel and contractors who need to know this information in order to work with the application. However, it is important to note that no security system can fully prevent all possible security breaches.
+
+CHANGES
+This Privacy Policy may be updated from time to time. We will notify you of any changes by posting a new version of the document in this section. You are encouraged to regularly review this policy, as continued use of the Application will be considered as your acceptance of the changes.
+
+YOUR CONSENT
+By using the Application, you consent to the processing of your information as described in this Privacy Policy and with any amendments we make. "Processing" means using cookies on your device or using information in any other way, including but not limited to, collecting, storing, deleting, using, combining, and disclosing information.
+
+CONTACT US
+If you have any questions regarding privacy while using the Application or questions about our program, please contact us by writing to our VK group: https://vk.com/Archery_JournalApp.

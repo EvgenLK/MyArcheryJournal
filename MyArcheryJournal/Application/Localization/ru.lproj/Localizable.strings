@@ -37,11 +37,15 @@
 "CalculatorView.messageWantDelete" = "Вы уверены, что хотите удалить?";
 "CalculatorView.confirmationYes" = "Да";
 "CalculatorView.confirmationNo" = "Нет";
+"SettingMain.copyrights" = "© 2025 Кутасов Евгений. Все права защищены.";
 // MARK: - SettingMain
 "SettingMain.themeBlack" = "Темная тема";
 "SettingMain.themeLight" = "Светлая тема";
 "SettingMain.selectLanguage" = "Выбрать язык";
 "SettingMain.paidVersion" = "Перейти на платную версию";
+"SettingMain.userAgreement" = "Пользовательское соглашение";
+"SettingMain.privacyPolicy" = "Политика конфиденциальности";
+"SettingMain.versionApp" = "Версия";
 // MARK: - Language
 "LanguageApp.English" = "English";
 "LanguageApp.Russia" = "Русский";

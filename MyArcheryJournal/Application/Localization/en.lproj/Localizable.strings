@@ -42,6 +42,10 @@
 "SettingMain.themeLight" = "Light mode";
 "SettingMain.selectLanguage" = "Select a language";
 "SettingMain.paidVersion" = "Switch to the paid version";
+"SettingMain.userAgreement" = "User Agreement";
+"SettingMain.privacyPolicy" = "Privacy Policy";
+"SettingMain.copyrights" = "© 2025 Kutasov Evgenii. All rights reserved.";
+"SettingMain.versionApp" = "Version";
 // MARK: - Language
 "LanguageApp.English" = "English";
 "LanguageApp.Russia" = "Русский";

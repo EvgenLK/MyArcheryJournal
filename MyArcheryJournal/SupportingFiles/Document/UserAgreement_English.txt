@@ -1,0 +1,97 @@
+
+USER AGREEMENT FOR THE MOBILE APPLICATION Archery Journal
+
+1. DEFINITIONS
+In this Agreement, the following terms have the following meanings:
+"Company", "We", "Our", "Us", "Ourselves" or any other similar derivatives (depending on the context) means the following entity: Evgenii Kutasov ("Developer") (including its affiliates and representatives both within and outside the Russian Federation, as well as any other entities created as a result of the reorganization of the Company, and franchisees), who are the owners or managers of the Application.
+"Application Content" refers to all objects posted by the Developer and/or third parties (with the Developer’s permission) in the Application, including design elements, text, graphics, illustrations, virtual objects, videos, programs, music, sounds, information, notifications, and other similar objects, their collections, or combinations.
+
+"Updates" refers to a software patch or package for the Application that is periodically released by the Developer, made available for free download by Users who are already using the Application, and designed to fix non-functional features of the Application, fix bugs, or implement minor software components to ensure better security and compatibility with devices.
+"Platform" refers to the cloud platform where the Developer has placed the Application for subsequent download by the User. The Application is available for download from the App Store.
+"Application Software" refers to the software released by the Developer (and/or third parties on behalf of the Developer) for the Application, including, but not limited to, all software, scripts, codes (HTML codes), programs, etc.
+"User", "You", "Your", "Yourself" or any other similar derivatives (depending on the context) means the person who (1) uses the Application and gains access to the Services; and (2) has agreed to the rules for using the Application as outlined in this Agreement by checking a special box when opening the Application.
+"Application" refers to the following application: Archery Journal, which the User downloads via the Platform to their smartphone or another device.
+"Services" refers to the collective Application Content and Application Software.
+
+2. JOINING THE AGREEMENT
+General Provisions
+2.1. This User Agreement (hereinafter referred to as "Agreement") sets out the rules and procedure for using the Application, the rights and responsibilities of Users, and governs the behavior of Users when accessing the Application and Services.
+
+2.2. The User accepts the terms of this Agreement by checking a special box when opening the Application on their smartphone or other device.
+
+2.3. This Agreement is mandatory for both parties (i.e., for the Developer and the User).
+
+Warning for Users
+2.5. If the User accesses the Application and/or its Services through any third-party Platform or social network, the User is automatically considered to have accepted the terms of the user agreement of such Platform or social network.
+
+2.6. The User acknowledges that their agreement with the mobile network provider (hereinafter "Provider") will apply to the use of this Application. The User also acknowledges that the Provider may charge the User from time to time for data transmission services when using certain features of the Application and any other fees and charges related to such transmission, for which the User is responsible. If the User is not the bill payer for the Provider on the smartphone or other device used to access the Application, it is assumed that the User has obtained the bill payer’s permission to use the Application.
+
+2.7. The User is solely responsible for verifying and controlling the compatibility of the installed Application with the technical specifications/features of the smartphone or other device and/or other restrictions that may apply to the User and/or their smartphone or other device by third parties, including Internet providers.
+
+3. APPLICATION USERS
+General Criteria and Age
+3.1. To use the Application, Users must meet the following criteria (collectively):
+(1) be at least 3 years old; and
+(2) not be restricted in their right to access the Application and Services by a court decision or in cases provided for by applicable law or the terms of this Agreement.
+
+Creating a Personal Account
+3.2. Use of the Services is available to Users without creating a personal account.
+
+4. INTELLECTUAL PROPERTY
+User License
+4.1. The User is granted a non-exclusive, non-transferable, and non-sublicensable license for personal (non-commercial) use of the Services (hereinafter "User License"). The User undertakes not to use the Services for any other purposes. The User is granted the above User License ONLY if they comply with ALL terms of this Agreement.
+
+4.2. The User License automatically terminates upon removal of the Application from the User's smartphone or other device. Nothing in this Agreement should be interpreted as granting the User any other license to use intellectual property owned by or under the control of the Developer, other than the one provided above.
+
+Developer's Intellectual Property
+4.3. The Developer holds all ownership rights, including intellectual property rights, to all Application Content, as well as the Application Software. The Application Software and Content are protected by copyright under the current civil legislation of the Russian Federation and international treaties and conventions on the protection of intellectual property.
+
+4.4. USERS ARE PROHIBITED from copying, reproducing, modifying, compiling, distributing, displaying in any form, publishing, downloading, transmitting, selling (in whole or in part), assigning in any way, sublicensing, distributing, or using the Application Content and Application Software, except where such actions are expressly permitted by the terms of this Agreement or applicable law.
+
+4.5. Nothing in this Agreement should be interpreted as transferring any exclusive rights to the User for the Application Content (in whole or in part) and/or the Application Software.
+
+5. OPERATING THE APPLICATION
+General Provisions
+5.1. The User agrees to comply with the following rules when using the Application:
+(1) adhere to all obligations the User has undertaken by joining this Agreement; and
+(2) not engage in any activities (using automation tools or without them) aimed at collecting personal data of other Users; and
+(3) not engage in any actions or assist third parties in actions aimed at disrupting the operation of the Application, including but not limited to (a) uploading viruses or malicious code; (b) taking actions that may cause the Application to crash, interrupt the normal operation of the Application or its software, or degrade the appearance of the Application and/or its Content.
+
+Feedback about the Application
+5.2. Each User has the right (but not the obligation) to periodically leave or send their ideas, feedback, suggestions, or projects aimed at improving the operation of the Application. Such feedback can be sent to the User via a message in the VK group: https://vk.com/Archery_JournalApp
+
+6. ADVERTISING IN THE APPLICATION
+Placing Advertising by the Developer
+6.1. The Developer has the right to place any advertising or marketing materials from time to time.
+
+Placing Advertising by Third Parties
+6.2. The Application Content may contain links to third-party websites and/or advertising or marketing materials about products/services provided by such third parties (hereinafter "Third-Party Advertising"). THE DEVELOPER DOES NOT ACCEPT ANY RESPONSIBILITY for (1) the content of third-party advertising, as well as the availability, quality, and safety of the promoted products/services in such advertising; and (2) any losses, damages, or harm incurred or caused to the User as a result of reading such advertising, using third-party products/services promoted in the advertising.
+
+7. ACCESS TO THE APPLICATION
+General Provisions
+7.1. The Developer reserves the right to change or modify the Application Content at any time without providing a reason, at its sole discretion, and without the need for notice to the User.
+
+8. ASKING QUESTIONS
+8.1. If you have any questions regarding the terms of this Agreement or how they are executed, you can address your question to us by sending a message to our VK group: https://vk.com/Archery_JournalApp
+
+9. RESPONSIBILITY
+9.1. UNDER NO CIRCUMSTANCES SHALL THE DEVELOPER OR ITS REPRESENTATIVES BE LIABLE TO THE USER OR ANY THIRD PARTIES:
+
+(1) FOR ANY INDIRECT, INCIDENTAL, UNINTENTIONAL DAMAGE, INCLUDING LOST PROFITS OR LOST DATA, DAMAGE TO HONOR, DIGNITY, OR BUSINESS REPUTATION CAUSED BY THE USE OF THE APPLICATION, SERVICES, OR OTHER MATERIALS; and
+(2) FOR ACTIONS OF OTHER USERS, FOR USER CONTENT POSTED BY USERS, FOR THIRD-PARTY PRODUCTS/SERVICES, OR OTHER CONTENT, EVEN IF ACCESS TO SUCH CONTENT WAS PROVIDED THROUGH THE APPLICATION.
+
+10. DISPUTE RESOLUTION PROCEDURE
+10.1. In case of any disputes or disagreements related to the execution of this Agreement, the User and Developer will make every effort to resolve them through negotiations. If the disputes are not resolved by negotiation, they shall be resolved in accordance with the applicable laws of the Russian Federation.
+
+11. FINAL PROVISIONS
+11.1. We may revise, supplement, or modify the terms of this Agreement from time to time. Such changes are usually not retrospective.
+
+The Developer does not take any responsibility for notifying the Users about any upcoming or completed changes to the Agreement. By joining this Agreement, the User also undertakes to periodically review the terms of this Agreement for any changes or additions.
+
+11.2. Unless expressly stated otherwise in the terms of this Agreement or directly arising from the applicable laws, the material law of the Russian Federation applies to this Agreement.
+
+11.3. An integral part of this Agreement is the following document: Privacy Policy.
+
+11.4. If one or more provisions of this Agreement become legally invalid or are declared null and void under applicable law, the remaining provisions of the Agreement shall remain in full force and continue to operate as if the invalid or legally void provisions never existed.
+
+11.5. Access to the Application is provided to the User "as is", and the Developer does not promise, guarantee, or imply that the Application will meet or not meet the User's needs, goals, expectations, and does not guarantee any specific result or outcome from using the Application.

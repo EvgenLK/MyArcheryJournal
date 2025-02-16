@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7E833EE02D0C7C930090D8AE /* MyArcheryData.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E833EDF2D0C7C930090D8AE /* MyArcheryData.xcdatamodel */; };
+		7EB84C982D61CEFE001BFDD8 /* SettingMainText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */; };
+		7EB84CA22D61D14D001BFDD8 /* UserAgreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */; };
+		7EB84CA42D61D199001BFDD8 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */; };
+		7EB84CA82D61E2B7001BFDD8 /* UserAgreement_English.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA72D61E2B7001BFDD8 /* UserAgreement_English.txt */; };
+		7EB84CAA2D61E2BC001BFDD8 /* PrivacyPolicy_English.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA92D61E2BC001BFDD8 /* PrivacyPolicy_English.txt */; };
 		9B033AEA2CA1900B005A7ECE /* EnumCountSeriesInTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */; };
 		9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274082C3C9FA700A3B17B /* ArcheryService.swift */; };
 		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
@@ -61,6 +66,11 @@
 
 /* Begin PBXFileReference section */
 		7E833EDF2D0C7C930090D8AE /* MyArcheryData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyArcheryData.xcdatamodel; sourceTree = "<group>"; };
+		7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainText.swift; sourceTree = "<group>"; };
+		7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAgreement.txt; sourceTree = "<group>"; };
+		7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		7EB84CA72D61E2B7001BFDD8 /* UserAgreement_English.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAgreement_English.txt; sourceTree = "<group>"; };
+		7EB84CA92D61E2BC001BFDD8 /* PrivacyPolicy_English.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy_English.txt; sourceTree = "<group>"; };
 		9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCountSeriesInTarget.swift; sourceTree = "<group>"; };
 		9B1274082C3C9FA700A3B17B /* ArcheryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryService.swift; sourceTree = "<group>"; };
 		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
@@ -84,7 +94,7 @@
 		9B87686F2CC076B30091E4DC /* EnumLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumLanguage.swift; sourceTree = "<group>"; };
 		9B8768762CC077A20091E4DC /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		9B87FF562C3580C900E72743 /* ListTrainingModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingModelCell.swift; sourceTree = "<group>"; };
-		9B88B9232C32C1FE005931E3 /* MyArcheryJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyArcheryJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B88B9232C32C1FE005931E3 /* Archery Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Archery Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B88B9262C32C1FE005931E3 /* MyArcheryJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArcheryJournalApp.swift; sourceTree = "<group>"; };
 		9B88B9282C32C1FE005931E3 /* ListTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainingView.swift; sourceTree = "<group>"; };
 		9B88B92A2C32C1FF005931E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +136,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EB84C9A2D61D03A001BFDD8 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */,
+				7EB84CA72D61E2B7001BFDD8 /* UserAgreement_English.txt */,
+				7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */,
+				7EB84CA92D61E2BC001BFDD8 /* PrivacyPolicy_English.txt */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
 		9B355A682CFE65C2006FAF2A /* SnackBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				9B7130362C34B9D700551E2F /* SettingView.swift */,
+				7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */,
 			);
 			path = SettingMainView;
 			sourceTree = "<group>";
@@ -378,7 +400,7 @@
 		9B88B9242C32C1FE005931E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B88B9232C32C1FE005931E3 /* MyArcheryJournal.app */,
+				9B88B9232C32C1FE005931E3 /* Archery Journal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,6 +434,7 @@
 		9BA9DA8E2C341FA2004158EF /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				7EB84C9A2D61D03A001BFDD8 /* Document */,
 				9BA9DA8F2C341FD1004158EF /* Font */,
 			);
 			path = SupportingFiles;
@@ -483,9 +506,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B88B9222C32C1FE005931E3 /* MyArcheryJournal */ = {
+		9B88B9222C32C1FE005931E3 /* Archery Journal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B88B9312C32C1FF005931E3 /* Build configuration list for PBXNativeTarget "MyArcheryJournal" */;
+			buildConfigurationList = 9B88B9312C32C1FF005931E3 /* Build configuration list for PBXNativeTarget "Archery Journal" */;
 			buildPhases = (
 				9B88B91F2C32C1FE005931E3 /* Sources */,
 				9B88B9202C32C1FE005931E3 /* Frameworks */,
@@ -495,9 +518,9 @@
 			);
 			dependencies = (
 			);
-			name = MyArcheryJournal;
+			name = "Archery Journal";
 			productName = MyArcheryJournal;
-			productReference = 9B88B9232C32C1FE005931E3 /* MyArcheryJournal.app */;
+			productReference = 9B88B9232C32C1FE005931E3 /* Archery Journal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -515,7 +538,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B88B91E2C32C1FE005931E3 /* Build configuration list for PBXProject "MyArcheryJournal" */;
+			buildConfigurationList = 9B88B91E2C32C1FE005931E3 /* Build configuration list for PBXProject "Archery Journal" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -531,7 +554,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B88B9222C32C1FE005931E3 /* MyArcheryJournal */,
+				9B88B9222C32C1FE005931E3 /* Archery Journal */,
 			);
 		};
 /* End PBXProject section */
@@ -544,8 +567,12 @@
 				9BA9DA9B2C3423BC004158EF /* Localizable.strings in Resources */,
 				9B88B92E2C32C1FF005931E3 /* Preview Assets.xcassets in Resources */,
 				9BA9DA922C342239004158EF /* SFProText-Bold.ttf in Resources */,
+				7EB84CAA2D61E2BC001BFDD8 /* PrivacyPolicy_English.txt in Resources */,
 				9B88B92B2C32C1FF005931E3 /* Assets.xcassets in Resources */,
+				7EB84CA42D61D199001BFDD8 /* PrivacyPolicy.txt in Resources */,
 				9BA9DA942C34224C004158EF /* SFProText-Regular.ttf in Resources */,
+				7EB84CA22D61D14D001BFDD8 /* UserAgreement.txt in Resources */,
+				7EB84CA82D61E2B7001BFDD8 /* UserAgreement_English.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +619,7 @@
 				9BED22142C584DBA00598529 /* String+Extension.swift in Sources */,
 				9B8161D92C7FDD8A00606803 /* EnumColorMark.swift in Sources */,
 				9B8525152C6C236900C22E42 /* CalculatorView.swift in Sources */,
+				7EB84C982D61CEFE001BFDD8 /* SettingMainText.swift in Sources */,
 				9B8768772CC077A20091E4DC /* String+Localized.swift in Sources */,
 				9BB27B9F2D08620E00D5E846 /* EnumStatisticsPeriod.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
@@ -745,16 +773,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyArcheryJournal/Preview Content\"";
-				DEVELOPMENT_TEAM = GX86CHN34S;
+				DEVELOPMENT_TEAM = V6SSVJF63W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyArcheryJournal/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -762,8 +792,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Kutasov-Evgenii.MyArcheryJournal";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kutasovEL.MyArcheryJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -775,16 +809,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyArcheryJournal/Preview Content\"";
-				DEVELOPMENT_TEAM = GX86CHN34S;
+				DEVELOPMENT_TEAM = V6SSVJF63W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyArcheryJournal/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -792,8 +828,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Kutasov-Evgenii.MyArcheryJournal";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kutasovEL.MyArcheryJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -803,7 +843,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B88B91E2C32C1FE005931E3 /* Build configuration list for PBXProject "MyArcheryJournal" */ = {
+		9B88B91E2C32C1FE005931E3 /* Build configuration list for PBXProject "Archery Journal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B88B92F2C32C1FF005931E3 /* Debug */,
@@ -812,7 +852,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B88B9312C32C1FF005931E3 /* Build configuration list for PBXNativeTarget "MyArcheryJournal" */ = {
+		9B88B9312C32C1FF005931E3 /* Build configuration list for PBXNativeTarget "Archery Journal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B88B9322C32C1FF005931E3 /* Debug */,
