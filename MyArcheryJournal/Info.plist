@@ -7,5 +7,10 @@
 		<string>SFProText-Regular.ttf</string>
 		<string>SFProText-Bold.ttf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>Onboarding logo</string>
+	</dict>
 </dict>
 </plist>

@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9B88B9222C32C1FE005931E3"
-               BuildableName = "MyArcheryJournal.app"
-               BlueprintName = "MyArcheryJournal"
-               ReferencedContainer = "container:MyArcheryJournal.xcodeproj">
+               BuildableName = "Archery Journal.app"
+               BlueprintName = "Archery Journal"
+               ReferencedContainer = "container:Archery Journal.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9B88B9222C32C1FE005931E3"
-            BuildableName = "MyArcheryJournal.app"
-            BlueprintName = "MyArcheryJournal"
-            ReferencedContainer = "container:MyArcheryJournal.xcodeproj">
+            BuildableName = "Archery Journal.app"
+            BlueprintName = "Archery Journal"
+            ReferencedContainer = "container:Archery Journal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9B88B9222C32C1FE005931E3"
-            BuildableName = "MyArcheryJournal.app"
-            BlueprintName = "MyArcheryJournal"
-            ReferencedContainer = "container:MyArcheryJournal.xcodeproj">
+            BuildableName = "Archery Journal.app"
+            BlueprintName = "Archery Journal"
+            ReferencedContainer = "container:Archery Journal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

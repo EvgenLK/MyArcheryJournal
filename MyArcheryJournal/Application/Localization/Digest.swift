@@ -49,6 +49,10 @@ enum Tx {
         static let themeLight = "SettingMain.themeLight"
         static let selectLanguage = "SettingMain.selectLanguage"
         static let paidVersion = "SettingMain.paidVersion"
+        static let userAgreement = "SettingMain.userAgreement"
+        static let privacyPolicy = "SettingMain.privacyPolicy"
+        static let copyrights = "SettingMain.copyrights"
+        static let versionApp = "SettingMain.versionApp"
     }
     enum LanguageApp {
         static let english = "LanguageApp.English"
