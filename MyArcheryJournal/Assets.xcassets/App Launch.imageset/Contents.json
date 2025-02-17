@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "AppStore.png",
-      "idiom" : "universal"
+      "filename" : "Frame 12.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
