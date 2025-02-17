@@ -61,7 +61,6 @@ struct SettingView: View {
                         .padding()
                 }
                 .background(PaletteApp.adaptiveBGSecondary)
-
             }
             .navigationTitle(Tx.ListTraining.setting.localized())
         }
