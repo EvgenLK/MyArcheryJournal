@@ -75,4 +75,7 @@ enum Tx {
         static let month = "Periods.periodMonth"
         static let sixMonth = "Periods.periodSixMonth"
     }
+    enum SettingTraining {
+        static let target = "SettingTraining.target"
+    }
 }

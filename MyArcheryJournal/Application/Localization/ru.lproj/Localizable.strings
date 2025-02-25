@@ -63,3 +63,5 @@
 "Periods.periodWeek" = "Неделя";
 "Periods.periodMonth" = "Месяц";
 "Periods.periodSixMonth" = "Полгода";
+// MARK: - SettingTraining
+"SettingTraining.target" = "Мишень";

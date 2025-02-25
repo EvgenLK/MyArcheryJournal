@@ -14,7 +14,7 @@ struct ListTrainingViewCell: View {
     var body: some View {
         HStack {
             VStack(alignment: .center) {
-                cellDataTrainig.imageTaghet
+                cellDataTrainig.imageTarget
                     .resizable()
                     .frame(width: 50, height: 50)
                 Text("\(cellDataTrainig.nameTaget) \(Tx.DataInCell.milimetr.localized())")

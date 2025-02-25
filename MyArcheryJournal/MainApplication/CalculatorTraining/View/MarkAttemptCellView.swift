@@ -28,7 +28,7 @@ struct MarkAttemptCellView: View {
                 ForEach(0..<min(countMarkInCell, cellDataAttempt.numberAttempts.count), id: \.self) { index in
                     let attempt = cellDataAttempt.numberAttempts[index]
                     ZStack {
-                        if attempt != EnumValueException.valueDash.rawValue { // решить эту грязь!!!!
+                        if attempt != EnumValueException.valueDash.rawValue {
                             Circle()
                             .fill(EnumColorMark.fromValue(attempt).color) // Изменение цвета выбранного элемента
                             .frame(width: 36, height: 36)
