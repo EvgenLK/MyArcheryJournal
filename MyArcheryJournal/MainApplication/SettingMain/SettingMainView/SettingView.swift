@@ -52,7 +52,7 @@ struct SettingView: View {
                     .scrollDisabled(true)
                     
                     Spacer()
-                    Text("\(Tx.SettingMain.versionApp.localized()) 1.0")
+                    Text("\(Tx.SettingMain.versionApp.localized()) 1.1")
                         .foregroundColor(.gray)
                     // Текст с авторскими правами
                     Text("\(Tx.SettingMain.copyrights.localized())")

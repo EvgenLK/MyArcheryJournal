@@ -38,29 +38,25 @@ struct CalculatorView: View {
             VStack {
                 ScrollViewReader { proxy in
                     List {
-                        if trainingSetting.last?.typeTraining == 1 {
-                            // Перебираем каждую секцию и её тренировки для отображения
-                            ForEach(oneTraining.oneTrainingData, id: \.id) { section in
+                        ForEach(oneTraining.oneTrainingData, id: \.id) { section in
+                            if trainingSetting.last?.typeTraining == 1 {
                                 Section(header: SectionCellMarkView(roundCellAttempt: section)) {
                                     ForEach(section.trainings, id: \.series) { item in
                                         MarkAttemptCellView(cellDataAttempt: item,
                                                             countMarkInCell: attemptSeries,
                                                             selectedElementIndex: $selectedCell)
-                                        .id(item.series) // Присваиваем уникальный ID каждому элементу
+                                            .id(item.series)
                                     }
                                 }
-                            }
-                            .scrollContentBackground(.hidden)
-                        }
-                        if trainingSetting.last?.typeTraining == 0 {
-                            // Также показываем тренировки, если тип 0
-                            ForEach(oneTraining.oneTrainingData, id: \.id) { section in
+                            } else {
+                                // Для типа тренировки 0 показываем тренировки без заголовков
                                 ForEach(section.trainings, id: \.series) { item in
                                     MarkAttemptCellView(cellDataAttempt: item,
                                                         countMarkInCell: attemptSeries,
                                                         selectedElementIndex: $selectedCell)
-                                    .id(item.series) // Присваиваем уникальный ID каждому элементу
+                                        .id(item.series)
                                 }
+                                .scrollContentBackground(.hidden) // Скрыть фон
                             }
                         }
                     }
@@ -83,46 +79,7 @@ struct CalculatorView: View {
                 
                 Spacer().frame(height: 0)
                 
-                VStack(alignment: .leading) {
-                    ForEach(0..<numberButton.count, id: \.self) { index in
-                        // Создание кнопок в группах по 4
-                        if index % 4 == 0 {
-                            HStack {
-                                ForEach(index..<min(index + 4, numberButton.count), id: \.self) { innerIndex in
-                                    Button(action: {
-                                        // Создаем новую попытку
-                                        let newScore = EnumListingMark.fromValue(numberButton[innerIndex]).setMark
-                                        let indexElement = selectedCell?.index ?? 0
-                                        let numberSeries = selectedCell?.series ?? 0
-                                        let tapCellBool = selectedCell?.tapElement ?? false
-                                        // Сохраняем попытку в архивах
-                                        archeryService.saveOneTraining(with: SaveOneTrainingModel(id: idTraining,
-                                                                                                  mark: newScore,
-                                                                                                  seriesCount: countSeriesInTarget,
-                                                                                                  typetraining: typeTraining,
-                                                                                                  attemptInSeries: attemptSeries,
-                                                                                                  numberSeries: numberSeries,
-                                                                                                  index: indexElement,
-                                                                                                  changeInCell: tapCellBool))
-                                        oneTraining.fetchOneTraining(idTraining, attemptSeries)
-                                        selectedCell = nil
-                                        showAlert = oneTraining.fetchBoolTrainingFull(idTraining, countSeriesInTarget, typeTraining) ? true : false
-                                    }) {
-                                        Text("\(numberButton[innerIndex])")
-                                            .font(OurFonts.fontSFProTextRegular17)
-                                            .frame(width: 83, height: 60)
-                                            .background(EnumColorMark.fromValue("\(numberButton[innerIndex])").color)
-                                            .foregroundColor(EnumColorMark.fromForegroundColor("\(numberButton[innerIndex])").color)
-                                            .cornerRadius(10)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(PaletteApp.adaptiveBGSecondary)
+                ButtonGridView(onButtonTap: handleButtonTap, numberButton: numberButton)
             }
             .navigationBarTitle(Tx.AddTraining.calculator.localized(), displayMode: .inline)
             .task {
@@ -164,5 +121,24 @@ struct CalculatorView: View {
             }
         }
         .toolbar(.hidden, for: .tabBar)
+    }
+    
+    private func handleButtonTap(for index: Int) {
+        let newScore = EnumListingMark.fromValue(numberButton[index]).setMark
+        let indexElement = selectedCell?.index ?? 0
+        let numberSeries = selectedCell?.series ?? 0
+        let tapCellBool = selectedCell?.tapElement ?? false
+        
+        archeryService.saveOneTraining(with: SaveOneTrainingModel(id: idTraining,
+                                                                  mark: newScore,
+                                                                  seriesCount: countSeriesInTarget,
+                                                                  typetraining: typeTraining,
+                                                                  attemptInSeries: attemptSeries,
+                                                                  numberSeries: numberSeries,
+                                                                  index: indexElement,
+                                                                  changeInCell: tapCellBool))
+        oneTraining.fetchOneTraining(idTraining, attemptSeries)
+        selectedCell = nil
+        showAlert = oneTraining.fetchBoolTrainingFull(idTraining, countSeriesInTarget, typeTraining) ? true : false
     }
 }

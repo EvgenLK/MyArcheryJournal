@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E833EE02D0C7C930090D8AE /* MyArcheryData.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E833EDF2D0C7C930090D8AE /* MyArcheryData.xcdatamodel */; };
+		7EB5581F2D6F1DDA00CF70D9 /* ButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5581E2D6F1DDA00CF70D9 /* ButtonGridView.swift */; };
 		7EB84C982D61CEFE001BFDD8 /* SettingMainText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */; };
 		7EB84CA22D61D14D001BFDD8 /* UserAgreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */; };
 		7EB84CA42D61D199001BFDD8 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		7E833EDF2D0C7C930090D8AE /* MyArcheryData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyArcheryData.xcdatamodel; sourceTree = "<group>"; };
+		7EB5581E2D6F1DDA00CF70D9 /* ButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGridView.swift; sourceTree = "<group>"; };
 		7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainText.swift; sourceTree = "<group>"; };
 		7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAgreement.txt; sourceTree = "<group>"; };
 		7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				9B8525142C6C236900C22E42 /* CalculatorView.swift */,
 				9BBEADF12C71AD2900F3BBDE /* MarkAttemptCellView.swift */,
 				9B93BE5E2CA6E515007DAF63 /* SectionCellMarkView.swift */,
+				7EB5581E2D6F1DDA00CF70D9 /* ButtonGridView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				7EB84C982D61CEFE001BFDD8 /* SettingMainText.swift in Sources */,
 				9B8768772CC077A20091E4DC /* String+Localized.swift in Sources */,
 				9BB27B9F2D08620E00D5E846 /* EnumStatisticsPeriod.swift in Sources */,
+				7EB5581F2D6F1DDA00CF70D9 /* ButtonGridView.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
 				9B355A702CFF3990006FAF2A /* EnumValueException.swift in Sources */,
