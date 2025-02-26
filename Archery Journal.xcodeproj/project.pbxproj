@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7E833EE02D0C7C930090D8AE /* MyArcheryData.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E833EDF2D0C7C930090D8AE /* MyArcheryData.xcdatamodel */; };
+		7EB5581F2D6F1DDA00CF70D9 /* ButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5581E2D6F1DDA00CF70D9 /* ButtonGridView.swift */; };
 		7EB84C982D61CEFE001BFDD8 /* SettingMainText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */; };
 		7EB84CA22D61D14D001BFDD8 /* UserAgreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */; };
 		7EB84CA42D61D199001BFDD8 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */; };
 		7EB84CA82D61E2B7001BFDD8 /* UserAgreement_English.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA72D61E2B7001BFDD8 /* UserAgreement_English.txt */; };
 		7EB84CAA2D61E2BC001BFDD8 /* PrivacyPolicy_English.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EB84CA92D61E2BC001BFDD8 /* PrivacyPolicy_English.txt */; };
+		7EBE27F42D6B3D8E00CDF4C9 /* SettingTrainingTargerViewCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE27F32D6B3D8E00CDF4C9 /* SettingTrainingTargerViewCollection.swift */; };
+		7EBE27F62D6B3F8A00CDF4C9 /* SettingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE27F52D6B3F8A00CDF4C9 /* SettingCardView.swift */; };
+		7EBE27F92D6B4C0800CDF4C9 /* SettingTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE27F82D6B4C0800CDF4C9 /* SettingTrainingController.swift */; };
 		9B033AEA2CA1900B005A7ECE /* EnumCountSeriesInTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */; };
 		9B1274092C3C9FA700A3B17B /* ArcheryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1274082C3C9FA700A3B17B /* ArcheryService.swift */; };
 		9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */; };
@@ -66,11 +70,15 @@
 
 /* Begin PBXFileReference section */
 		7E833EDF2D0C7C930090D8AE /* MyArcheryData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyArcheryData.xcdatamodel; sourceTree = "<group>"; };
+		7EB5581E2D6F1DDA00CF70D9 /* ButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGridView.swift; sourceTree = "<group>"; };
 		7EB84C972D61CEFE001BFDD8 /* SettingMainText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainText.swift; sourceTree = "<group>"; };
 		7EB84CA12D61D14D001BFDD8 /* UserAgreement.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAgreement.txt; sourceTree = "<group>"; };
 		7EB84CA32D61D199001BFDD8 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
 		7EB84CA72D61E2B7001BFDD8 /* UserAgreement_English.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAgreement_English.txt; sourceTree = "<group>"; };
 		7EB84CA92D61E2BC001BFDD8 /* PrivacyPolicy_English.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy_English.txt; sourceTree = "<group>"; };
+		7EBE27F32D6B3D8E00CDF4C9 /* SettingTrainingTargerViewCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingTargerViewCollection.swift; sourceTree = "<group>"; };
+		7EBE27F52D6B3F8A00CDF4C9 /* SettingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCardView.swift; sourceTree = "<group>"; };
+		7EBE27F82D6B4C0800CDF4C9 /* SettingTrainingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingController.swift; sourceTree = "<group>"; };
 		9B033AE92CA1900B005A7ECE /* EnumCountSeriesInTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCountSeriesInTarget.swift; sourceTree = "<group>"; };
 		9B1274082C3C9FA700A3B17B /* ArcheryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryService.swift; sourceTree = "<group>"; };
 		9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTrainingView.swift; sourceTree = "<group>"; };
@@ -147,6 +155,14 @@
 			path = Document;
 			sourceTree = "<group>";
 		};
+		7EBE27F72D6B4BE700CDF4C9 /* SettingController */ = {
+			isa = PBXGroup;
+			children = (
+				7EBE27F82D6B4C0800CDF4C9 /* SettingTrainingController.swift */,
+			);
+			path = SettingController;
+			sourceTree = "<group>";
+		};
 		9B355A682CFE65C2006FAF2A /* SnackBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +221,7 @@
 		9B7D8B0A2C6189610018DF1A /* SettingTraining */ = {
 			isa = PBXGroup;
 			children = (
+				7EBE27F72D6B4BE700CDF4C9 /* SettingController */,
 				9B7D8B0E2C618A1F0018DF1A /* SettingModel */,
 				9B7D8B0F2C618A260018DF1A /* SettingView */,
 			);
@@ -251,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				9B12740E2C3CB25A00A3B17B /* SettingTrainingView.swift */,
+				7EBE27F32D6B3D8E00CDF4C9 /* SettingTrainingTargerViewCollection.swift */,
+				7EBE27F52D6B3F8A00CDF4C9 /* SettingCardView.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -350,6 +369,7 @@
 				9B8525142C6C236900C22E42 /* CalculatorView.swift */,
 				9BBEADF12C71AD2900F3BBDE /* MarkAttemptCellView.swift */,
 				9B93BE5E2CA6E515007DAF63 /* SectionCellMarkView.swift */,
+				7EB5581E2D6F1DDA00CF70D9 /* ButtonGridView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -583,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EBE27F42D6B3D8E00CDF4C9 /* SettingTrainingTargerViewCollection.swift in Sources */,
 				9B542FAA2CF92A5600B22984 /* SnackBarManager.swift in Sources */,
 				9B8768702CC076B30091E4DC /* EnumLanguage.swift in Sources */,
 				9B8161DB2C809B8800606803 /* EnumMarkCount.swift in Sources */,
@@ -601,6 +622,8 @@
 				9B84DF9D2C4015A4003DB50F /* Date+Extension.swift in Sources */,
 				9B88B9272C32C1FE005931E3 /* MyArcheryJournalApp.swift in Sources */,
 				9BF43E152C360E0F002C0D98 /* ListTrainingViewCell.swift in Sources */,
+				7EBE27F62D6B3F8A00CDF4C9 /* SettingCardView.swift in Sources */,
+				7EBE27F92D6B4C0800CDF4C9 /* SettingTrainingController.swift in Sources */,
 				9B93BE5F2CA6E515007DAF63 /* SectionCellMarkView.swift in Sources */,
 				9B87686E2CC075F40091E4DC /* LanguageManager.swift in Sources */,
 				9BA9DAA42C3428E1004158EF /* Color+HEX.swift in Sources */,
@@ -622,6 +645,7 @@
 				7EB84C982D61CEFE001BFDD8 /* SettingMainText.swift in Sources */,
 				9B8768772CC077A20091E4DC /* String+Localized.swift in Sources */,
 				9BB27B9F2D08620E00D5E846 /* EnumStatisticsPeriod.swift in Sources */,
+				7EB5581F2D6F1DDA00CF70D9 /* ButtonGridView.swift in Sources */,
 				9B12740F2C3CB25A00A3B17B /* SettingTrainingView.swift in Sources */,
 				9BA9DA9E2C342426004158EF /* PaletteApp.swift in Sources */,
 				9B355A702CFF3990006FAF2A /* EnumValueException.swift in Sources */,

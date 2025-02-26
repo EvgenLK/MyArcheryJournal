@@ -63,3 +63,6 @@
 "Periods.periodWeek" = "Week";
 "Periods.periodMonth" = "Month";
 "Periods.periodSixMonth" = "SixMonth";
+// MARK: - SettingTraining
+"SettingTraining.target" = "Target";
+

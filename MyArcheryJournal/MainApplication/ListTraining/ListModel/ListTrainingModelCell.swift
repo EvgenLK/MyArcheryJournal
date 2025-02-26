@@ -14,7 +14,7 @@ struct TrainingSection {
 
 struct ListTrainingModelCell: Identifiable {
     let id: UUID
-    let imageTaghet: Image
+    let imageTarget: Image
     let dateTraining: String
     let countShot: String
     let allShot: String

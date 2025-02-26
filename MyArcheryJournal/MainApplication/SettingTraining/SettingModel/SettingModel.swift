@@ -20,3 +20,8 @@ struct TrainingModel {
 struct PointModel: Hashable {
     let point: Int
 }
+
+struct CartTarget {
+    let image: String
+    let title: String
+}

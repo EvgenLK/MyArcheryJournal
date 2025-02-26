@@ -52,7 +52,7 @@ final class ListTrainingController: ObservableObject {
                 
                 return ListTrainingModelCell(
                     id: data.id ?? UUID(),
-                    imageTaghet: data.imageTarget.fromStringInImage(),
+                    imageTarget: data.imageTarget.fromStringInImage(),
                     dateTraining: data.dateTraining.formatDate("dd.MM"),
                     countShot: "\(totalShots)" ,
                     allShot: "\(countOfShots)",
